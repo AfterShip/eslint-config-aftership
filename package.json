@@ -19,12 +19,13 @@
     "node": ">= 0.10"
   },
   "dependencies": {
-    "eslint-config-airbnb": "0.0.7",
+    "eslint-config-airbnb": "0.0.8",
     "lodash": "^3.10.1"
   },
   "keywords": [
     "aftership",
     "eslint"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "private": false
 }
