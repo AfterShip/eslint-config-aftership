@@ -6,7 +6,7 @@ var eslint_config_airbnb = require('eslint-config-airbnb');
 // we don't use babel-eslint, no need
 delete eslint_config_airbnb.parser;
 
-// we haven't use react, yet
+// we haven't used react, yet
 delete eslint_config_airbnb.plugins;
 Object.keys(eslint_config_airbnb.rules).forEach(function(key) {
 	if (_.startsWith(key, 'react/')) {
@@ -29,7 +29,7 @@ module.exports = _.merge(eslint_config_airbnb, {
 		// we use generator, a lot
 		generators: true,
 
-		// we haven't use react, yet
+		// we haven't used react, yet
 		jsx: false,
 
 		// we use require() instead of `import ... from ...`
@@ -44,7 +44,7 @@ module.exports = _.merge(eslint_config_airbnb, {
 		'comma-dangle': [2, 'never'],
 
 		// http://eslint.org/docs/rules/no-console
-		'no-console': 2,
+		'no-console': 0,
 
 		// http://eslint.org/docs/rules/no-empty-character-class
 		'no-empty-character-class': 2,
@@ -56,7 +56,7 @@ module.exports = _.merge(eslint_config_airbnb, {
 		 * Best Practices *
 		 ******************/
 		// http://eslint.org/docs/rules/no-alert
-		'no-alert': 2,
+		'no-alert': 0,
 
 		// http://eslint.org/docs/rules/dot-location
 		'dot-location': [2, 'property'],
@@ -73,6 +73,9 @@ module.exports = _.merge(eslint_config_airbnb, {
 
 		// http://eslint.org/docs/rules/no-unused-expressions
 		'no-unused-expressions': 2,
+
+		// http://eslint.org/docs/rules/vars-on-top
+		'vars-on-top': 0,
 
 		// http://eslint.org/docs/rules/yoda
 		yoda: 2,
@@ -154,9 +157,6 @@ module.exports = _.merge(eslint_config_airbnb, {
 
 		// http://eslint.org/docs/rules/no-const-assign
 		'no-const-assign': 2,
-
-		// http://eslint.org/docs/rules/no-this-before-super
-		'no-this-before-super': 2,
 
 		// http://eslint.org/docs/rules/no-var
 		'no-var': 0,
