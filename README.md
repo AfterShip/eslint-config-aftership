@@ -11,10 +11,20 @@ AfterShip ESLint config (modified from Airbnb)
 ### on your repository:
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
-- If you are not or you want to install in exist repository:
+- If you are not or you want to install in the existing repository:
 	1. `npm install --save eslint-config-aftership`
+
 	2. Remove the `^` in the `package.json` is **highly** recommended!
-	3. Add it to `npm test` so `travis` can test it for us
+
+	3. Create a `.eslintrc` in the project root
+
+		```json
+		{
+			"extends": "aftership"
+		}
+		```
+
+	4. Add it to `npm test` so `travis` can test it for us
 
 ### on your editor:
 1. `npm install -g eslint`
