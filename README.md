@@ -1,19 +1,49 @@
-# eslint-config-aftership [![Build Status](https://secure.travis-ci.org/AfterShip/eslint-config-aftership.png?branch=master)](http://travis-ci.org/AfterShip/eslint-config-aftership)
+# eslint-config-aftership
 
 AfterShip ESLint config (modified from Airbnb)
 
-## Getting Started
-_(Coming soon)_
+## How to install
 
-## Documentation
-_(Coming soon)_
+***Please be noticed that this package is not uploaded to npm yet, the following install guide, is not working yet***
 
-## Examples
-_(Coming soon)_
+***If you want to try now, install it by `npm install git+ssh://git@github.com:AfterShip/eslint-config-aftership.git`***
 
+### on your repository:
+- **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
-## Release History
-_(Nothing yet)_
+- If you are not or you want to install in exist repository:
+	1. `npm install --save eslint-config-aftership`
+	2. Remove the `^` in the `package.json` is **highly** recommended!
+	3. Add it to `npm test` so `travis` can test it for us
+
+### on your editor:
+1. `npm install -g eslint`
+
+2. If the repository doesn't have `eslint-config-aftership` installed, you can install it as global package
+	- `npm install -g eslint-config-aftership`
+
+3. if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv`
+	- **(you may need to modify the code a bit to point to your nvm)**
+
+		```bash
+		if [[ "$OSTYPE" == "darwin"* ]]; then
+			export NVM_DIR="$(brew --prefix nvm)"
+		else
+			export NVM_DIR="$HOME/.nvm"
+		fi
+		[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+		```
+
+	- remove the corresponding `nvm` loading script in `.bashrc` or `.zshrc`
+
+4. For `Sublime Text 3`:
+	- Install [Package Control](https://packagecontrol.io/installation)
+	- Install `SublimeLinter-contrib-eslint` by `Package Control`
+	- Restart `Sublime Text 3`
+
+5. For `PhpStorm`:
+	- `Preference` -> `Plugins` -> click `Browse repositories...` -> search `ESLint` -> click `Install plugin`
+	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
 
 ## License
 Copyright (c) 2015 AfterShip  
