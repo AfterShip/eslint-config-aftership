@@ -14,7 +14,7 @@ AfterShip ESLint config (modified from Airbnb)
 - If you are not or you want to install in the existing repository:
 	1. `npm install --save eslint-config-aftership`
 
-	2. Replace the `^` in the `package.json` with `~`
+	2. Replace the `^` with `~` in the `package.json` for `eslint-config-aftership`
 
 	3. Create a `.eslintrc` in the project root
 
