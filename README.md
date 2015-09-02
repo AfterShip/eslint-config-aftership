@@ -4,10 +4,6 @@ AfterShip ESLint config (modified from Airbnb)
 
 ## How to install
 
-***Please be noticed that this package is not uploaded to npm yet, the following install guide, is not working yet***
-
-***If you want to try now, install it by `npm install git+ssh://git@github.com:AfterShip/eslint-config-aftership.git`***
-
 ### on your repository:
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
