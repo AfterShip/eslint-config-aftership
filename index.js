@@ -1,20 +1,8 @@
 'use strict';
 
-var _ = require('lodash');
-var eslint_config_airbnb = require('eslint-config-airbnb');
+const eslint_config_airbnb = require('eslint-config-airbnb');
 
-// we don't use babel-eslint, no need
-delete eslint_config_airbnb.parser;
-
-// we haven't used react, yet
-delete eslint_config_airbnb.plugins;
-Object.keys(eslint_config_airbnb.rules).forEach(function(key) {
-	if (_.startsWith(key, 'react/')) {
-		delete eslint_config_airbnb.rules[key];
-	}
-});
-
-module.exports = _.merge(eslint_config_airbnb, {
+const eslint_config_aftership = {
 	env: {
 		// recognize the predefined variables of mocha
 		mocha: true
@@ -36,9 +24,9 @@ module.exports = _.merge(eslint_config_airbnb, {
 		modules: false
 	},
 	rules: {
-		/* *****************
-		 * Possible Errors *
-		 *******************/
+		/*++++++++++++++++++
+		 + Possible Errors +
+		 ++++++++++++++++++*/
 		// Don't put comma in the last item of object/array
 		// http://eslint.org/docs/rules/comma-dangle
 		'comma-dangle': [2, 'never'],
@@ -52,9 +40,9 @@ module.exports = _.merge(eslint_config_airbnb, {
 		// http://eslint.org/docs/rules/valid-typeof
 		'valid-typeof': 2,
 
-		/* ****************
-		 * Best Practices *
-		 ******************/
+		/*+++++++++++++++++
+		 + Best Practices +
+		 +++++++++++++++++*/
 		// http://eslint.org/docs/rules/no-alert
 		'no-alert': 0,
 
@@ -80,31 +68,32 @@ module.exports = _.merge(eslint_config_airbnb, {
 		// http://eslint.org/docs/rules/yoda
 		yoda: 2,
 
-		/* *************
-		 * Strict Mode *
-		 ***************/
+		/*++++++++++++++
+		 + Strict Mode +
+		 ++++++++++++++*/
 		// http://eslint.org/docs/rules/strict
 		strict: [2, 'global'],
 
-		/* ***********
-		 * Variables *
-		 *************/
+		/*++++++++++++
+		 + Variables +
+		 ++++++++++++*/
 		// http://eslint.org/docs/rules/no-undef
 		'no-undef': 2,
 
 		// http://eslint.org/docs/rules/no-unused-vars
 		'no-unused-vars': [2, {
+			args: 'none',
 			vars: 'local',
-			args: 'after-used'
+			varsIgnorePattern: '^_'
 		}],
 
 		// we may need to use the function before we define it, check `js hoisting`
 		// http://eslint.org/docs/rules/no-use-before-define
 		'no-use-before-define': 0,
 
-		/* ******************
-		 * Stylistic Issues *
-		 ********************/
+		/*+++++++++++++++++++
+		 + Stylistic Issues +
+		 +++++++++++++++++++*/
 		// http://eslint.org/docs/rules/array-bracket-spacing
 		'array-bracket-spacing': 2,
 		// we use snake case
@@ -121,8 +110,9 @@ module.exports = _.merge(eslint_config_airbnb, {
 			SwitchCase: 1
 		}],
 
+		// there are some codes such as `new Bunyan.createLogger` cannot pass, so disable it
 		// http://eslint.org/docs/rules/new-cap
-		'new-cap': [2, {capIsNew: false}],
+		'new-cap': 0,
 
 		// http://eslint.org/docs/rules/new-parens
 		'new-parens': 2,
@@ -140,9 +130,9 @@ module.exports = _.merge(eslint_config_airbnb, {
 		// http://eslint.org/docs/rules/space-in-parens
 		'space-in-parens': 2,
 
-		/* **************
-		 * ECMAScript 6 *
-		 ****************/
+		/*+++++++++++++++
+		 + ECMAScript 6 +
+		 +++++++++++++++*/
 		// http://eslint.org/docs/rules/constructor-super
 		'constructor-super': 2,
 
@@ -159,16 +149,35 @@ module.exports = _.merge(eslint_config_airbnb, {
 		'no-const-assign': 2,
 
 		// http://eslint.org/docs/rules/no-var
-		'no-var': 0,
+		'no-var': 2,
 
-		/* ********
-		 * Legacy *
-		 **********/
-		// we don't restrict the line length, our iMac is wide enough
+		/*+++++++++
+		 + Legacy +
+		 +++++++++*/
 		// http://eslint.org/docs/rules/max-len
-		'max-len': 0,
+		'max-len': [2, 200],
 
 		// http://eslint.org/docs/rules/no-bitwise
 		'no-bitwise': 2
 	}
+};
+
+// we don't use babel-eslint, no need
+delete eslint_config_airbnb.parser;
+
+// we haven't used react, yet
+delete eslint_config_airbnb.plugins;
+Object.keys(eslint_config_airbnb.rules).forEach(function(key) {
+	if (key.startsWith('react/')) {
+		delete eslint_config_airbnb.rules[key];
+	}
 });
+
+// merge the aftership config to airbnb
+Object.keys(eslint_config_aftership).forEach(function(section_name) {
+	Object.keys(eslint_config_aftership[section_name]).forEach(function(rule_name) {
+		eslint_config_airbnb[section_name][rule_name] = eslint_config_aftership[section_name][rule_name];
+	});
+});
+
+module.exports = eslint_config_airbnb;
