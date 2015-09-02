@@ -57,7 +57,12 @@ AfterShip ESLint config (modified from Airbnb)
 
 6. For `vim`:
 	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
-	- Add `let g:syntastic_javascript_checkers = ['eslint']` to `.vimrc`
+	- Add the following lines to `.vimrc`
+
+		```vimrc
+		let g:syntastic_check_on_open = 1
+		let g:syntastic_javascript_checkers = ['eslint']
+		```
 
 ## License
 Copyright (c) 2015 AfterShip  
