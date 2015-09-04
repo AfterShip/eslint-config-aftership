@@ -96,6 +96,7 @@ const eslint_config_aftership = {
 		 +++++++++++++++++++*/
 		// http://eslint.org/docs/rules/array-bracket-spacing
 		'array-bracket-spacing': 2,
+
 		// we use snake case
 		// http://eslint.org/docs/rules/camelcase
 		camelcase: 0,
@@ -126,6 +127,13 @@ const eslint_config_aftership = {
 		// only quote the property when needed
 		// http://eslint.org/docs/rules/quote-props
 		'quote-props': [2, 'as-needed'],
+
+		// add space in anonymous function
+		// http://eslint.org/docs/rules/space-before-function-paren
+		'space-before-function-paren': [2, {
+			anonymous: 'always',
+			named: 'never'
+		}],
 
 		// http://eslint.org/docs/rules/space-in-parens
 		'space-in-parens': 2,
