@@ -12,7 +12,7 @@ AfterShip ESLint config (modified from Airbnb)
 
 	2. Replace the `^` with `~` in the `package.json` for `eslint-config-aftership`
 
-	3. Create a `.eslintrc` in the project root
+	3. Create a `.eslintrc` in the project root (or in `$HOME` as default eslintrc)
 
 		```json
 		{
