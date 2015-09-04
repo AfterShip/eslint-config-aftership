@@ -42,16 +42,20 @@ AfterShip ESLint config (modified from Airbnb)
 
 	- remove the corresponding `nvm` loading script in `.bashrc` or `.zshrc`
 
-4. For `Sublime Text 3`:
-	- Install [Package Control](https://packagecontrol.io/installation)
-	- Install `SublimeLinter-contrib-eslint` by `Package Control`
-	- Restart `Sublime Text 3`
+4. For `Atom`:
+	- Install in terminal by `apm install linter linter-eslint`
+	- `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
 
 5. For `PhpStorm`:
 	- `Preference` -> `Plugins` -> click `Browse repositories...` -> search `ESLint` -> click `Install plugin`
 	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
 
-6. For `vim`:
+6. For `Sublime Text 3`:
+	- Install [Package Control](https://packagecontrol.io/installation)
+	- Install `SublimeLinter-contrib-eslint` by `Package Control`
+	- Restart `Sublime Text 3`
+
+7. For `vim`:
 	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
 	- Add the following lines to `.vimrc`
 
