@@ -122,7 +122,7 @@ var eslint_config_aftership = {
 		'object-curly-spacing': 2,
 
 		// http://eslint.org/docs/rules/operator-linebreak
-		'operator-linebreak': 2,
+		'operator-linebreak': [2, 'after'],
 
 		// only quote the property when needed
 		// http://eslint.org/docs/rules/quote-props
