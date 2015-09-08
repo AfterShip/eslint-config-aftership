@@ -1,0 +1,6 @@
+{
+	"extends": "aftership",
+	"rules": {
+		"no-var": 0
+	}
+}
