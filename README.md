@@ -20,7 +20,25 @@ AfterShip ESLint config (modified from Airbnb)
 		}
 		```
 
-	4. Add it to `npm test` so `travis` can test it for us
+	4. Add it to `npm test` so `travis` can test it for us, for example:
+
+		`package.json`:
+		```json
+		{
+			"scripts": {
+				"test": "grunt lint"
+			}
+		}
+		```
+
+		`travis.yml`:
+		```yml
+		install:
+		  - npm install -g grunt-cli
+		  - npm install
+		script:
+		  - npm test
+		```
 
 ### on your editor:
 1. `npm install -g eslint`
