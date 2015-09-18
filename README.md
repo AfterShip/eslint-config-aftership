@@ -5,6 +5,14 @@ AfterShip ESLint config (modified from Airbnb)
 ## Why we choose these rule(s)?
 See [here](https://github.com/AfterShip/eslint-config-aftership/blob/master/why-we-choose-these-rules.md)
 
+## Versioning
+
+### X.Y.Z
+
+Y for adding rules/options (more strict)
+
+Z for removing rules/options (more loose)
+
 ## How to install
 
 ### on your repository:
