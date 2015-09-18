@@ -2,6 +2,9 @@
 
 AfterShip ESLint config (modified from Airbnb)
 
+## Why we choose these rule(s)?
+See [here](https://github.com/AfterShip/eslint-config-aftership/blob/master/why-we-choose-these-rules.md)
+
 ## How to install
 
 ### on your repository:
