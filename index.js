@@ -52,6 +52,9 @@ var eslint_config_aftership = {
 		// http://eslint.org/docs/rules/no-implicit-coercion
 		'no-implicit-coercion': 2,
 
+		// http://eslint.org/docs/rules/no-loop-func
+		'no-loop-func': 0,
+
 		// http://eslint.org/docs/rules/no-multi-spaces
 		'no-multi-spaces': 2,
 

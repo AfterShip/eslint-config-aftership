@@ -13,11 +13,12 @@
 	1. [no-alert](#no-alert)
 	2. [dot-location](#dot-location)
 	3. [no-implicit-coercion](#no-implicit-coercion)
-	4. [no-multi-spaces](#no-multi-spaces)
-	5. [no-param-reassign](#no-param-reassign)
-	6. [no-unused-expressions](#no-unused-expressions)
-	7. [vars-on-top](#vars-on-top)
-	8. [yoda](#yoda)
+	4. [no-loop-func](#no-loop-func)
+	5. [no-multi-spaces](#no-multi-spaces)
+	6. [no-param-reassign](#no-param-reassign)
+	7. [no-unused-expressions](#no-unused-expressions)
+	8. [vars-on-top](#vars-on-top)
+	9. [yoda](#yoda)
 3. [Strict Mode](#strict-mode)
 	1. [strict](#strict)
 4. [Variables](#variables)
@@ -114,6 +115,23 @@ Change variable type explicitly using `Boolean`, `Number`, `String`, etc.
 Example: http://eslint.org/docs/rules/no-implicit-coercion
 
 We all agree that help improving the readability of code
+
+### no-loop-func
+Allow define function inside loop
+```
+'no-loop-func': 0
+```
+Example: http://eslint.org/docs/rules/no-loop-func
+
+Disabling it because it breaks our loop function:
+
+```js
+for (let results of data) {
+	_.forOwn(results, function (value, key) {
+		// ......
+	});
+}
+```
 
 ### no-multi-spaces
 Not allow multiple spaces in code (not string)
