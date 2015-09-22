@@ -31,6 +31,17 @@ Z for removing rules/options (more loose)
 		}
 		```
 
+		If your repo is using node version `<= 0.10`, you should disable `no-var`
+
+		```json
+		{
+			"extends": "aftership",
+			"rules": {
+				"no-var": 0
+			}
+		}
+		```
+
 	4. Add it to `npm test` so `travis` can test it for us, for example:
 
 		`package.json`:
