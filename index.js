@@ -7,6 +7,16 @@ module.exports = {
 	],
 	parser: null,
 	ecmaFeatures: {
-		jsx: false
+		// not stable and require harmony flag to enable
+		arrowFunctions: false,
+
+		// not stable and require harmony flag to enable
+		destructuring: false,
+
+		// if you want to use jsx, extends "aftership/react"
+		jsx: false,
+
+		// we use require() instead of `import ... from ...`
+		modules: false
 	}
 };
