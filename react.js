@@ -2,11 +2,7 @@
 
 module.exports = {
 	extends: [
-		'eslint-config-airbnb/base',
+		'eslint-config-airbnb',
 		'eslint-config-aftership/aftership'
-	],
-	parser: null,
-	ecmaFeatures: {
-		jsx: false
-	}
+	]
 };
