@@ -6,17 +6,8 @@ module.exports = {
 		mocha: true
 	},
 	ecmaFeatures: {
-		// not stable and require harmony flag to enable
-		arrowFunctions: false,
-
-		// not stable and require harmony flag to enable
-		destructuring: false,
-
 		// we use generator, a lot
-		generators: true,
-
-		// we use require() instead of `import ... from ...`
-		modules: false
+		generators: true
 	},
 	rules: {
 		/*++++++++++++++++++
