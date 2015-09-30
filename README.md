@@ -42,7 +42,7 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo use `React`, you should extends `aftership/react` instead
+		If your repo use `React`, you should extends `aftership/react` instead, you will need to `npm install --save-dev babel-eslint eslint-plugin-react` too
 
 		```json
 		{
@@ -72,12 +72,23 @@ Z for removing rules/options (more loose)
 
 ### on your editor:
 1. `npm install -g eslint`
+	- for users of `aftership/react`, do `npm install -g babel-eslint eslint-plugin-react` too
 
 2. If the repository doesn't have `eslint-config-aftership` installed, you can install it as global package
 	- `npm install -g eslint-config-aftership`
 
-3. if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv`
-	- **(you may need to modify the code a bit to point to your nvm)**
+3. For `Atom`:
+	- Install in terminal by `apm install linter linter-eslint`
+	- `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
+
+4. For `PhpStorm`:
+	- `Preference` -> `Plugins` -> click `Browse repositories...` -> search `ESLint` -> click `Install plugin`
+	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
+
+5. For `Sublime Text 3`:
+	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv`
+
+		**(you may need to modify the code a bit to point to your nvm)**
 
 		```bash
 		if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -88,22 +99,13 @@ Z for removing rules/options (more loose)
 		[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 		```
 
-	- remove the corresponding `nvm` loading script in `.bashrc` or `.zshrc`
+		remove the corresponding `nvm` loading script in `.bashrc` or `.zshrc`
 
-4. For `Atom`:
-	- Install in terminal by `apm install linter linter-eslint`
-	- `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
-
-5. For `PhpStorm`:
-	- `Preference` -> `Plugins` -> click `Browse repositories...` -> search `ESLint` -> click `Install plugin`
-	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
-
-6. For `Sublime Text 3`:
 	- Install [Package Control](https://packagecontrol.io/installation)
 	- Install `SublimeLinter-contrib-eslint` by `Package Control`
 	- Restart `Sublime Text 3`
 
-7. For `vim`:
+6. For `vim`:
 	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
 	- Add the following lines to `.vimrc`
 

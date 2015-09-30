@@ -18,5 +18,12 @@ module.exports = {
 
 		// we use require() instead of `import ... from ...`
 		modules: false
+	},
+	rules: {
+		/*++++++++++++++
+		 + Strict Mode +
+		 ++++++++++++++*/
+		// http://eslint.org/docs/rules/strict
+		strict: [2, 'global']
 	}
 };
