@@ -1,8 +1,8 @@
 'use strict';
 
-var eslint_config_airbnb = require('eslint-config-airbnb');
-
-var eslint_config_aftership = {
+module.exports = {
+	extends: 'eslint-config-airbnb/base',
+	parser: null,
 	env: {
 		// recognize the predefined variables of mocha
 		mocha: true
@@ -172,23 +172,3 @@ var eslint_config_aftership = {
 		'no-bitwise': 2
 	}
 };
-
-// we don't use babel-eslint, no need
-delete eslint_config_airbnb.parser;
-
-// we haven't used react, yet
-delete eslint_config_airbnb.plugins;
-Object.keys(eslint_config_airbnb.rules).forEach(function (key) {
-	if (/^react\//.test(key)) {
-		delete eslint_config_airbnb.rules[key];
-	}
-});
-
-// merge the aftership config to airbnb
-Object.keys(eslint_config_aftership).forEach(function (section_name) {
-	Object.keys(eslint_config_aftership[section_name]).forEach(function (rule_name) {
-		eslint_config_airbnb[section_name][rule_name] = eslint_config_aftership[section_name][rule_name];
-	});
-});
-
-module.exports = eslint_config_airbnb;
