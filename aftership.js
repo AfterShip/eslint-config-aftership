@@ -57,12 +57,6 @@ module.exports = {
 		// http://eslint.org/docs/rules/yoda
 		yoda: 2,
 
-		/*++++++++++++++
-		 + Strict Mode +
-		 ++++++++++++++*/
-		// http://eslint.org/docs/rules/strict
-		strict: [2, 'global'],
-
 		/*++++++++++++
 		 + Variables +
 		 ++++++++++++*/
@@ -93,6 +87,9 @@ module.exports = {
 		// don't force to add function name in anonymous function
 		// http://eslint.org/docs/rules/func-names
 		'func-names': 0,
+
+		// http://eslint.org/docs/rules/id-length
+		'id-length': 0,
 
 		// we use tab and prefer to indent inside the `switch`
 		// http://eslint.org/docs/rules/indent

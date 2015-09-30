@@ -29,14 +29,15 @@
 	1. [array-bracket-spacing](#array-bracket-spacing)
 	2. [camelcase](#camelcase)
 	3. [func-names](#func-names)
-	4. [indent](#indent)
-	5. [new-cap](#new-cap)
-	6. [new-parens](#new-parens)
-	7. [object-curly-spacing](#object-curly-spacing)
-	8. [operator-linebreak](#operator-linebreak)
-	9. [quote-props](#quote-props)
-	10. [space-before-function-paren](#space-before-function-paren)
-	11. [space-in-parens](#space-in-parens)
+	4. [id-length](#id-length)
+	5. [indent](#indent)
+	6. [new-cap](#new-cap)
+	7. [new-parens](#new-parens)
+	8. [object-curly-spacing](#object-curly-spacing)
+	9. [operator-linebreak](#operator-linebreak)
+	10. [quote-props](#quote-props)
+	11. [space-before-function-paren](#space-before-function-paren)
+	12. [space-in-parens](#space-in-parens)
 6. [ECMAScript 6](#ecmascript-6)
 	1. [constructor-super](#constructor-super)
 	2. [computed-property-spacing](#computed-property-spacing)
@@ -245,6 +246,14 @@ Don't force to add function name in anonymous function
 'func-names': 0
 ```
 Example: http://eslint.org/docs/rules/func-names
+
+### id-length
+```
+'id-length': 0
+```
+Example: http://eslint.org/docs/rules/id-length
+
+Too short for jQuery `$` and lodash `_`
 
 ### indent
 ```
