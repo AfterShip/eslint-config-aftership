@@ -42,6 +42,14 @@ Z for removing rules/options (more loose)
 		}
 		```
 
+		If your repo use `React`, you should extends `aftership/react` instead
+
+		```json
+		{
+			"extends": "aftership/react"
+		}
+		```
+
 	4. Add it to `npm test` so `travis` can test it for us, for example:
 
 		`package.json`:
