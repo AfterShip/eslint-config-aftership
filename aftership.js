@@ -110,10 +110,6 @@ module.exports = {
 		// http://eslint.org/docs/rules/operator-linebreak
 		'operator-linebreak': [2, 'after'],
 
-		// only quote the property when needed
-		// http://eslint.org/docs/rules/quote-props
-		'quote-props': [2, 'as-needed'],
-
 		// add space in anonymous function
 		// http://eslint.org/docs/rules/space-before-function-paren
 		'space-before-function-paren': [2, {
