@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports = {
+var extendConfig = require('./lib/extend_config');
+
+module.exports = extendConfig({
 	extends: [
 		'eslint-config-airbnb',
 		'eslint-config-aftership/aftership'
@@ -13,4 +15,4 @@ module.exports = {
 		// don't want to check default props
 		'react/prop-types': [2, {ignore: ['children']}]
 	}
-};
+});
