@@ -1,6 +1,8 @@
 'use strict';
 
-module.exports = {
+var extendConfig = require('./lib/extend_config');
+
+module.exports = extendConfig({
 	extends: [
 		'eslint-config-airbnb/base',
 		'eslint-config-aftership/aftership'
@@ -26,4 +28,4 @@ module.exports = {
 		// http://eslint.org/docs/rules/strict
 		strict: [2, 'global']
 	}
-};
+});
