@@ -35,9 +35,8 @@
 	7. [new-parens](#new-parens)
 	8. [object-curly-spacing](#object-curly-spacing)
 	9. [operator-linebreak](#operator-linebreak)
-	10. [quote-props](#quote-props)
-	11. [space-before-function-paren](#space-before-function-paren)
-	12. [space-in-parens](#space-in-parens)
+	10. [space-before-function-paren](#space-before-function-paren)
+	11. [space-in-parens](#space-in-parens)
 6. [ECMAScript 6](#ecmascript-6)
 	1. [constructor-super](#constructor-super)
 	2. [computed-property-spacing](#computed-property-spacing)
@@ -290,13 +289,6 @@ Example: http://eslint.org/docs/rules/object-curly-spacing
 'operator-linebreak': [2, 'after']
 ```
 Example: http://eslint.org/docs/rules/operator-linebreak
-
-### quote-props
-Only quote the property when needed
-```
-'quote-props': [2, 'as-needed']
-```
-Example: http://eslint.org/docs/rules/quote-props
 
 ### space-before-function-paren
 Add space in anonymous function
