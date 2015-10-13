@@ -102,7 +102,7 @@ Z for removing rules/options (more loose)
 		remove the corresponding `nvm` loading script in `.bashrc` or `.zshrc`
 
 	- Install [Package Control](https://packagecontrol.io/installation)
-	- Install `SublimeLinter-contrib-eslint` by `Package Control`
+	- Install `SublimeLinter` and `SublimeLinter-contrib-eslint` by `Package Control`
 	- Restart `Sublime Text 3`
 
 6. For `vim`:
