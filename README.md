@@ -19,11 +19,13 @@ Z for removing rules/options (more loose)
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
 - If you are not or you want to install in the existing repository:
-	1. `npm install --save-dev eslint-config-aftership`
+	1. `npm install --save-dev eslint@1.6.0 eslint-config-aftership`
+	
+	2. for users of `aftership/react`, do `npm install --save-dev babel-eslint eslint-plugin-react` too
 
-	2. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
+	3. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
 
-	3. Create a `.eslintrc` in the project root (or in `$HOME` as default eslintrc)
+	4. Create a `.eslintrc` in the project root
 
 		```json
 		{
@@ -50,7 +52,7 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-	4. Add it to `npm test` so `travis` can test it for us, for example:
+	5. Add it to `npm test` so `travis` can test it for us, for example:
 
 		`package.json`:
 		```json
@@ -71,21 +73,26 @@ Z for removing rules/options (more loose)
 		```
 
 ### on your editor:
-1. `npm install -g eslint`
+1. If the repository doesn't have `eslint` installed, you can install it as global package
+	- `npm install -g eslint@1.6.0 eslint-config-aftership`
 	- for users of `aftership/react`, do `npm install -g babel-eslint eslint-plugin-react` too
+	- Create a `.eslintrc` in `$HOME`
 
-2. If the repository doesn't have `eslint-config-aftership` installed, you can install it as global package
-	- `npm install -g eslint-config-aftership`
+		```json
+		{
+			"extends": "aftership"
+		}
+		```
 
-3. For `Atom`:
+2. For `Atom`:
 	- Install in terminal by `apm install linter linter-eslint`
-	- `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
+	- If you wish to use global eslint, `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
 
-4. For `PhpStorm`:
+3. For `PhpStorm`:
 	- `Preference` -> `Plugins` -> click `Browse repositories...` -> search `ESLint` -> click `Install plugin`
 	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
 
-5. For `Sublime Text 3`:
+4. For `Sublime Text 3`:
 	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv`
 
 		**(you may need to modify the code a bit to point to your nvm)**
@@ -105,12 +112,14 @@ Z for removing rules/options (more loose)
 	- Install `SublimeLinter` and `SublimeLinter-contrib-eslint` by `Package Control`
 	- Restart `Sublime Text 3`
 
-6. For `vim`:
+5. For `vim`:
 	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
 	- Add the following lines to `.vimrc`
 
 		```vimrc
-		let g:syntastic_check_on_open = 1
+		let g:syntastic_always_populate_loc_list = 1
+		let g:syntastic_auto_loc_list = 1
+		let g:syntastic_check_on_open = 0
 		let g:syntastic_javascript_checkers = ['eslint']
 		```
 
