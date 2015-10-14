@@ -48,6 +48,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-param-reassign
 		'no-param-reassign': 0,
 
+		// http://eslint.org/docs/rules/no-throw-literal
+		'no-throw-literal': 0,
+
 		// http://eslint.org/docs/rules/no-unused-expressions
 		'no-unused-expressions': 2,
 
