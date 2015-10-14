@@ -141,9 +141,6 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-const-assign
 		'no-const-assign': 2,
 
-		// http://eslint.org/docs/rules/no-var
-		'no-var': 2,
-
 		/*+++++++++
 		 + Legacy +
 		 +++++++++*/
