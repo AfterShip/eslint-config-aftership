@@ -92,15 +92,16 @@ Z for removing rules/options (more loose)
 4. For `Sublime Text 3`:
 	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv`
 
-		**(you may need to modify the code a bit to point to your nvm)**
-
 		```bash
-		if [[ "$OSTYPE" == "darwin"* ]]; then
-			export NVM_DIR="$(brew --prefix nvm)"
+		if hash brew 2> /dev/null && [ -d "$(brew --prefix nvm)" ]; then
+		  export NVM_DIR="$(brew --prefix nvm)"
 		else
-			export NVM_DIR="$HOME/.nvm"
+		  export NVM_DIR="$HOME/.nvm"
 		fi
-		[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+		if [ -s "$NVM_DIR/nvm.sh" ]; then
+		  source "$NVM_DIR/nvm.sh"
+		fi
 		```
 
 		remove the corresponding `nvm` loading script in `.bashrc` or `.zshrc`
