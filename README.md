@@ -92,7 +92,7 @@ Z for removing rules/options (more loose)
 	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
 
 4. For `Sublime Text 3`:
-	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv`
+	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv` (check which shell you are using by `echo $SHELL`)
 
 		```bash
 		if hash brew 2> /dev/null && [ -d "$(brew --prefix nvm)" ]; then
@@ -111,6 +111,7 @@ Z for removing rules/options (more loose)
 	- Install [Package Control](https://packagecontrol.io/installation)
 	- Install `SublimeLinter` and `SublimeLinter-contrib-eslint` by `Package Control`
 	- Restart `Sublime Text 3`
+	- Restart computer if ESLint is not working
 
 5. For `vim`:
 	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
