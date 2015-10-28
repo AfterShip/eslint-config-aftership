@@ -117,11 +117,16 @@ Z for removing rules/options (more loose)
 	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
 	- Add the following lines to `.vimrc`
 
-		```vimrc
+		```
 		let g:syntastic_always_populate_loc_list = 1
 		let g:syntastic_auto_loc_list = 1
 		let g:syntastic_check_on_open = 0
 		let g:syntastic_javascript_checkers = ['eslint']
+
+		" load local eslint in the project root
+		" https://github.com/mtscout6/syntastic-local-eslint.vim
+		let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+		let b:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 		```
 
 ## License
