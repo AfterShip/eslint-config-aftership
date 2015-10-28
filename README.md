@@ -22,12 +22,10 @@ Z for removing rules/options (more loose)
 
 - If you are not or you want to install in the existing repository:
 	1. `npm install --save-dev eslint@1.6.0 eslint-config-aftership`
-	
-	2. for users of `aftership/react`, do `npm install --save-dev babel-eslint eslint-plugin-react` too
 
-	3. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
+	2. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
 
-	4. Create a `.eslintrc` in the project root
+	3. Create a `.eslintrc` in the project root
 
 		```json
 		{
@@ -43,7 +41,7 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo use `React`, you should extends `aftership/react` instead, you will need to `npm install --save-dev babel-eslint eslint-plugin-react` too
+		If your repo use `React`, you should extends `aftership/react` instead, you also need to `npm install --save-dev babel-eslint eslint-plugin-react`
 
 		```json
 		{
@@ -51,7 +49,7 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-	5. Add it to `npm test` so `travis` can test it for us, for example:
+	4. Add it to `npm test` so that  `travis` can test it for us, for example:
 
 		`package.json`:
 		```json
@@ -74,7 +72,7 @@ Z for removing rules/options (more loose)
 ### on your editor:
 1. If the repository doesn't have `eslint` installed, you can install it as global package
 	- `npm install -g eslint@1.6.0 eslint-config-aftership`
-	- for users of `aftership/react`, do `npm install -g babel-eslint eslint-plugin-react` too
+	- For users of `aftership/react`, do `npm install -g babel-eslint eslint-plugin-react`
 	- Create a `.eslintrc` in `$HOME`
 
 		```json
@@ -85,7 +83,7 @@ Z for removing rules/options (more loose)
 
 2. For `Atom`:
 	- Install in terminal by `apm install linter linter-eslint`
-	- If you wish to use global eslint, `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
+	- If you want to use global eslint, `Preference` -> `Packages` -> `linter-eslint` -> check `Use Global ESLint`
 
 3. For `PhpStorm`:
 	- `Preference` -> `Plugins` -> click `Browse repositories...` -> search `ESLint` -> click `Install plugin`
