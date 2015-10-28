@@ -92,16 +92,16 @@ Z for removing rules/options (more loose)
 	- `Preference` -> `Languages & Frameworks` -> `JavaScript` -> `Code Quality Tools` -> `ESLint` -> check `Enable`
 
 4. For `Sublime Text 3`:
-	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv` (check which shell you are using by `echo $SHELL`)
+	- if you are using `nvm`, add the following script to `~/.bash_profile` or `~/.zshenv` (check which shell you are using in **SYSTEM DEFAULT (not the same as terminal default)** by `echo $SHELL`)
 
 		```bash
-		if hash brew 2> /dev/null && [ -d "$(brew --prefix nvm)" ]; then
+		if hash brew 2> /dev/null && [[ -d "$(brew --prefix nvm)" ]]; then
 		  export NVM_DIR="$(brew --prefix nvm)"
 		else
 		  export NVM_DIR="$HOME/.nvm"
 		fi
 
-		if [ -s "$NVM_DIR/nvm.sh" ]; then
+		if [[ -s "$NVM_DIR/nvm.sh" ]]; then
 		  source "$NVM_DIR/nvm.sh"
 		fi
 		```
