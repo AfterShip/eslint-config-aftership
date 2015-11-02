@@ -111,20 +111,20 @@ Z for removing rules/options (more loose)
 	- Restart `Sublime Text 3`
 	- Restart computer if ESLint is not working
 
-5. For `vim`:
-	- Install [scrooloose/syntastic](https://github.com/scrooloose/syntastic) by any plugin manager
-	- Add the following lines to `.vimrc`
+5. For `vim` or `neovim`:
+	- `neovim` is preferred over `vim`, as `neovim` can load plugin asynchronously, which highly improve performance when linting with ESLint
+	- Install [benekastah/neomake](https://github.com/benekastah/neomake) by any plugin manager, such as [vim-plug](https://github.com/junegunn/vim-plug)
+	- Add the following lines to `~/.vimrc` (`vim`) or `~/.config/nvim/init.vim` (`neovim`)
 
 		```
-		let g:syntastic_always_populate_loc_list = 1
-		let g:syntastic_auto_loc_list = 1
-		let g:syntastic_check_on_open = 0
-		let g:syntastic_javascript_checkers = ['eslint']
+		autocmd BufWrite * :Neomake
+
+		let g:neomake_javascript_enabled_makers= ['eslint']
 
 		" load local eslint in the project root
-		" https://github.com/mtscout6/syntastic-local-eslint.vim
+		" modified from https://github.com/mtscout6/syntastic-local-eslint.vim
 		let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-		let b:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+		let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 		```
 
 ## License
