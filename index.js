@@ -7,7 +7,6 @@ module.exports = extendConfig({
 		'eslint-config-airbnb/base',
 		'eslint-config-aftership/aftership'
 	],
-	parser: null,
 	ecmaFeatures: {
 		// not stable and require harmony flag to enable
 		destructuring: false,

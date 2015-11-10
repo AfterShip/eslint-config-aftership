@@ -91,9 +91,6 @@ module.exports = {
 		// http://eslint.org/docs/rules/func-names
 		'func-names': 0,
 
-		// http://eslint.org/docs/rules/id-length
-		'id-length': 0,
-
 		// we use tab and prefer to indent inside the `switch`
 		// http://eslint.org/docs/rules/indent
 		indent: [2, 'tab', {
@@ -137,9 +134,6 @@ module.exports = {
 
 		// http://eslint.org/docs/rules/prefer-const
 		'prefer-const': 0,
-
-		// http://eslint.org/docs/rules/no-const-assign
-		'no-const-assign': 2,
 
 		/*+++++++++
 		 + Legacy +

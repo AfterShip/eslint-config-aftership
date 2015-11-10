@@ -41,7 +41,7 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo use `React`, you should extends `aftership/react` instead, you also need to `npm install --save-dev babel-eslint eslint-plugin-react`
+		If your repo use `React`, you should extends `aftership/react` instead, you also need to `npm install --save-dev eslint-plugin-react`
 
 		```json
 		{
@@ -72,7 +72,7 @@ Z for removing rules/options (more loose)
 ### on your editor:
 1. If the repository doesn't have `eslint` installed, you can install it as global package
 	- `npm install -g eslint@1.6.0 eslint-config-aftership`
-	- For users of `aftership/react`, do `npm install -g babel-eslint eslint-plugin-react`
+	- For users of `aftership/react`, do `npm install -g eslint-plugin-react`
 	- Create a `.eslintrc` in `$HOME`
 
 		```json
