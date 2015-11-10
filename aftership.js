@@ -117,6 +117,9 @@ module.exports = {
 			named: 'never'
 		}],
 
+		// http://eslint.org/docs/rules/space-before-keywords
+		'space-before-keywords': 0,
+
 		// http://eslint.org/docs/rules/space-in-parens
 		'space-in-parens': 2,
 
