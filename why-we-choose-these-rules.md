@@ -11,14 +11,15 @@
 	4. [valid-typeof](#valid-typeof)
 2. [Best Practices](#best-practices)
 	1. [no-alert](#no-alert)
-	2. [dot-location](#dot-location)
-	3. [no-implicit-coercion](#no-implicit-coercion)
-	4. [no-loop-func](#no-loop-func)
-	5. [no-multi-spaces](#no-multi-spaces)
-	6. [no-param-reassign](#no-param-reassign)
-	7. [no-unused-expressions](#no-unused-expressions)
-	8. [vars-on-top](#vars-on-top)
-	9. [yoda](#yoda)
+	2. [no-else-return](#no-else-return)
+	3. [dot-location](#dot-location)
+	4. [no-implicit-coercion](#no-implicit-coercion)
+	5. [no-loop-func](#no-loop-func)
+	6. [no-multi-spaces](#no-multi-spaces)
+	7. [no-param-reassign](#no-param-reassign)
+	8. [no-unused-expressions](#no-unused-expressions)
+	9. [vars-on-top](#vars-on-top)
+	10. [yoda](#yoda)
 3. [Strict Mode](#strict-mode)
 	1. [strict](#strict)
 4. [Variables](#variables)
@@ -99,6 +100,16 @@ Allow `alert`
 Example: http://eslint.org/docs/rules/no-alert
 
 Front end guys may need it
+
+### no-else-return
+No `else` if the `if` condition has `return`
+```
+'no-else-return': 0
+```
+Example: http://eslint.org/docs/rules/no-else-return
+
+Although `else` after `return` is useless, it shows the relationship between code and improves readability of the code
+If we have `else if` condition (without `return`) later, with this rule on, developers will need to read through the codes and find out which part is `else` code and put it back to `else` scope again, which is easy to make mistake
 
 ### dot-location
 Stick dot `.` with the `property` instead of `object`

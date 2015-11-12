@@ -32,6 +32,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-alert
 		'no-alert': 0,
 
+		// http://eslint.org/docs/rules/no-else-return
+		'no-else-return': 0,
+
 		// http://eslint.org/docs/rules/dot-location
 		'dot-location': [2, 'property'],
 
