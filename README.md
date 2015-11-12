@@ -21,7 +21,7 @@ Z for removing rules/options (more loose)
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
 - If you are not or you want to install in the existing repository:
-	1. `npm install --save-dev eslint@1.6.0 eslint-config-aftership`
+	1. `npm install --save-dev eslint@^1.9.0 eslint-config-aftership`
 
 	2. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
 
@@ -71,7 +71,7 @@ Z for removing rules/options (more loose)
 
 ### on your editor:
 1. If the repository doesn't have `eslint` installed, you can install it as global package
-	- `npm install -g eslint@1.6.0 eslint-config-aftership`
+	- `npm install -g eslint@^1.9.0 eslint-config-aftership`
 	- For users of `aftership/react`, do `npm install -g eslint-plugin-react`
 	- Create a `.eslintrc` in `$HOME`
 
