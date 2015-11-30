@@ -2,7 +2,7 @@
 
 AfterShip ESLint config (modified from eslint-config-airbnb)
 
-following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [89d1e07882cbcab91c3f51be3d58c77342193909](https://github.com/airbnb/javascript/blob/89d1e07882cbcab91c3f51be3d58c77342193909/README.md)
+following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a3495e07f484513db203e5d5654e47b221c19f4a](https://github.com/airbnb/javascript/blob/a3495e07f484513db203e5d5654e47b221c19f4a/README.md)
 
 ## Why we choose these rule(s)?
 See [here](https://github.com/AfterShip/eslint-config-aftership/blob/master/why-we-choose-these-rules.md)
