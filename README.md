@@ -4,7 +4,47 @@ AfterShip ESLint config (modified from eslint-config-airbnb)
 
 following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a3495e07f484513db203e5d5654e47b221c19f4a](https://github.com/airbnb/javascript/blob/a3495e07f484513db203e5d5654e47b221c19f4a/README.md)
 
-## Why we choose these rule(s)?
+## Rules that cannot be checked by ESLint
+* Use `snake_case` for files and folders
+* Use `camelCase` when naming `functions`
+* Use `UpperCamelCase` when naming `class variables`
+* Use `snake_case` when naming `variables`
+
+	`let name = 'John'`, `let email_address = 'john@gmail.com'`
+
+* Use `UPPERCASE` when naming `constant variables` but no need for `required module`
+
+	`const USER = 'John'`, `const DEFAULT_EMAIL = 'john@gmail.com'`
+
+* Use `const` for `required module`
+
+	`const fs = require('fs')`
+
+* Use [JSDoc](http://usejsdoc.org/) for documentation. [Guidelines Here](https://github.com/AfterShip/jsdoc)
+* When constructing class for `module.exports`, create it as follows:
+
+	```javascript
+	'use strict';
+
+	// Declare imports
+
+	// Class
+	class Example {
+		constructor() {
+
+		}
+
+		example_function1() {
+
+		}
+
+		...
+	}
+
+	module.exports = Example;
+	```
+
+## Why we choose these ESLint rules?
 See [here](https://github.com/AfterShip/eslint-config-aftership/blob/master/why-we-choose-these-rules.md)
 
 ## Versioning
@@ -54,9 +94,9 @@ Z for removing rules/options (more loose)
 		`package.json`:
 		```json
 		{
-			"scripts": {
-				"test": "grunt lint"
-			}
+		  "scripts": {
+		    "test": "grunt lint"
+		  }
 		}
 		```
 
@@ -95,13 +135,13 @@ Z for removing rules/options (more loose)
 
 		```bash
 		if hash brew 2> /dev/null && [[ -d "$(brew --prefix nvm)" ]]; then
-		  export NVM_DIR="$(brew --prefix nvm)"
+			export NVM_DIR="$(brew --prefix nvm)"
 		else
-		  export NVM_DIR="$HOME/.nvm"
+			export NVM_DIR="$HOME/.nvm"
 		fi
 
 		if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-		  source "$NVM_DIR/nvm.sh"
+			source "$NVM_DIR/nvm.sh"
 		fi
 		```
 
@@ -129,5 +169,6 @@ Z for removing rules/options (more loose)
 		```
 
 ## License
-Copyright (c) 2015 AfterShip  
+Copyright (c) 2015 AfterShip
+
 Licensed under the MIT license.
