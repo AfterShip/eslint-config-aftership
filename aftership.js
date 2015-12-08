@@ -83,9 +83,6 @@ module.exports = {
 		/*+++++++++++++++++++
 		 + Stylistic Issues +
 		 +++++++++++++++++++*/
-		// http://eslint.org/docs/rules/array-bracket-spacing
-		'array-bracket-spacing': 2,
-
 		// we use snake case
 		// http://eslint.org/docs/rules/camelcase
 		camelcase: 0,
@@ -113,27 +110,14 @@ module.exports = {
 		// http://eslint.org/docs/rules/operator-linebreak
 		'operator-linebreak': [2, 'after'],
 
-		// add space in anonymous function
-		// http://eslint.org/docs/rules/space-before-function-paren
-		'space-before-function-paren': [2, {
-			anonymous: 'always',
-			named: 'never'
-		}],
-
 		// http://eslint.org/docs/rules/space-before-keywords
 		'space-before-keywords': 0,
-
-		// http://eslint.org/docs/rules/space-in-parens
-		'space-in-parens': 2,
 
 		/*+++++++++++++++
 		 + ECMAScript 6 +
 		 +++++++++++++++*/
 		// http://eslint.org/docs/rules/constructor-super
 		'constructor-super': 2,
-
-		// http://eslint.org/docs/rules/computed-property-spacing
-		'computed-property-spacing': 2,
 
 		// http://eslint.org/docs/rules/generator-star-spacing
 		'generator-star-spacing': [2, 'after'],
