@@ -58,8 +58,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-throw-literal
 		'no-throw-literal': 0,
 
+		// syntax of `chai` will throw this error
 		// http://eslint.org/docs/rules/no-unused-expressions
-		'no-unused-expressions': 2,
+		'no-unused-expressions': 0,
 
 		// http://eslint.org/docs/rules/vars-on-top
 		'vars-on-top': 0,
