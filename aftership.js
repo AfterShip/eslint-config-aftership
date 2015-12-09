@@ -51,6 +51,10 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-param-reassign
 		'no-param-reassign': 0,
 
+		// we want to preserve the semantic meaning of link, such as `<a href="javascript:void(0)"></a>`
+		// http://eslint.org/docs/rules/no-script-url
+		'no-script-url': 0,
+
 		// http://eslint.org/docs/rules/no-throw-literal
 		'no-throw-literal': 0,
 
