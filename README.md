@@ -10,15 +10,15 @@ following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 
 * Use `UpperCamelCase` when naming `class variables`
 * Use `snake_case` when naming `variables`
 
-	`let name = 'John'`, `let email_address = 'john@gmail.com'`
+	`let name = 'John';`, `let email_address = 'john@gmail.com';`
 
 * Use `UPPERCASE` when naming `constant variables` but no need for `required module`
 
-	`const USER = 'John'`, `const DEFAULT_EMAIL = 'john@gmail.com'`
+	`const USER = 'John';`, `const DEFAULT_EMAIL = 'john@gmail.com';`
 
 * Use `const` for `required module`
 
-	`const fs = require('fs')`
+	`const fs = require('fs');`
 
 * Use [JSDoc](http://usejsdoc.org/) for documentation. [Guidelines Here](https://github.com/AfterShip/jsdoc)
 * When constructing class for `module.exports`, create it as follows:
