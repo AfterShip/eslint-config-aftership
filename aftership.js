@@ -115,9 +115,6 @@ module.exports = {
 		// http://eslint.org/docs/rules/operator-linebreak
 		'operator-linebreak': [2, 'after'],
 
-		// http://eslint.org/docs/rules/space-before-keywords
-		'space-before-keywords': 0,
-
 		/*+++++++++++++++
 		 + ECMAScript 6 +
 		 +++++++++++++++*/
