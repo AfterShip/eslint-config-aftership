@@ -1,5 +1,12 @@
 # eslint-config-aftership
 
+[![Dependency Status](https://gemnasium.com/AfterShip/eslint-config-aftership.svg)](https://gemnasium.com/AfterShip/eslint-config-aftership)
+
+[![node](https://img.shields.io/node/v/eslint-config-aftership.svg)]()
+[![npm](https://img.shields.io/npm/v/eslint-config-aftership.svg)]()
+[![npm](https://img.shields.io/npm/dm/eslint-config-aftership.svg)]()
+[![npm](https://img.shields.io/npm/l/eslint-config-aftership.svg)]()
+
 AfterShip ESLint config (modified from eslint-config-airbnb)
 
 following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a3495e07f484513db203e5d5654e47b221c19f4a](https://github.com/airbnb/javascript/blob/a3495e07f484513db203e5d5654e47b221c19f4a/README.md)
@@ -55,7 +62,7 @@ Y for adding rules/options (more strict)
 
 Z for removing rules/options (more loose)
 
-## How to install
+## Installation
 
 ### on your repository:
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
@@ -168,7 +175,13 @@ Z for removing rules/options (more loose)
 		let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 		```
 
+## Change Log
+Please check [details here](CHANGELOG.md)
+
+## Known Issues
+- NA
+
 ## License
 Copyright (c) 2015 AfterShip
-
+ 
 Licensed under the MIT license.
