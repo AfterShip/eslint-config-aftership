@@ -334,11 +334,11 @@ Example: http://eslint.org/docs/rules/generator-star-spacing
 
 ### object-shorthand
 ```
-'object-shorthand': [2, 'methods']
+'object-shorthand': 0
 ```
 Example: http://eslint.org/docs/rules/prefer-const
 
-We don't prefer to force shorthand in properties, since it may be hard to read when mix up with non-shorthand properties
+We just leave it to developers, sometime it is clearer to not use the shorthand
 
 ### prefer-const
 ```

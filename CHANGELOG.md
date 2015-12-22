@@ -3,6 +3,10 @@
 ### PENDING
 * NA
 
+### 1.7.2 (2015-12-22)
+* `'object-shorthand': 0`
+	- Disable forcing shorthand in object function and leave it to developers
+
 ### 1.7.1 (2015-12-22)
 * Fix wrong path due to eslint-config-airbnb now returning absolute path
 
