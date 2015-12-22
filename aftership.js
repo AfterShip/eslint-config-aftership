@@ -124,6 +124,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/generator-star-spacing
 		'generator-star-spacing': [2, 'after'],
 
+		// http://eslint.org/docs/rules/object-shorthand
+		'object-shorthand': [2, 'methods'],
+
 		// http://eslint.org/docs/rules/prefer-const
 		'prefer-const': 0,
 
