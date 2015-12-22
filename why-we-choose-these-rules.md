@@ -40,8 +40,8 @@
 	11. [space-in-parens](#space-in-parens)
 6. [ECMAScript 6](#ecmascript-6)
 	1. [constructor-super](#constructor-super)
-	2. [computed-property-spacing](#computed-property-spacing)
-	3. [generator-star-spacing](#generator-star-spacing)
+	2. [generator-star-spacing](#generator-star-spacing)
+	3. [object-shorthand](#object-shorthand)
 	4. [prefer-const](#prefer-const)
 	5. [no-const-assign](#no-const-assign)
 	6. [no-var](#no-var)
@@ -326,17 +326,19 @@ Only call `super` when the class is inheriting others
 ```
 Example: http://eslint.org/docs/rules/constructor-super
 
-### computed-property-spacing
-```
-'computed-property-spacing': 2
-```
-Example: http://eslint.org/docs/rules/computed-property-spacing
-
 ### generator-star-spacing
 ```
 'generator-star-spacing': [2, 'after']
 ```
 Example: http://eslint.org/docs/rules/generator-star-spacing
+
+### object-shorthand
+```
+'object-shorthand': [2, 'methods']
+```
+Example: http://eslint.org/docs/rules/prefer-const
+
+We don't prefer to force shorthand in properties, since it may be hard to read when mix up with non-shorthand properties
 
 ### prefer-const
 ```
