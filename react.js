@@ -8,6 +8,10 @@ module.exports = extendConfig({
 		'eslint-config-aftership/aftership'
 	],
 	rules: {
+		// Use tab instead of 2 space when indenting jsx properties
+		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
+		'react/jsx-indent-props': [2, 'tab'],
+
 		// we want to define multiple components within one file
 		// for example, for table.jsx, define header component and footer component in the same file
 		'react/no-multi-comp': 0,

@@ -3,6 +3,10 @@
 ### PENDING
 * NA
 
+### 1.7.4 (2015-12-23)
+* `'react/jsx-indent-props': [2, 'tab']`
+	- Use tab instead of 2 space when indenting jsx properties
+
 ### 1.7.3 (2015-12-22)
 * `'object-shorthand': 0`
 	- Disable forcing shorthand in object function and leave it to developers
