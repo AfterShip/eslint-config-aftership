@@ -134,7 +134,10 @@ module.exports = {
 		 + Legacy +
 		 +++++++++*/
 		// http://eslint.org/docs/rules/max-len
-		'max-len': [2, 200],
+		'max-len': [2, 200, 2, {
+			ignoreUrls: false,
+			ignoreComments: false
+		}],
 
 		// http://eslint.org/docs/rules/no-bitwise
 		'no-bitwise': 2
