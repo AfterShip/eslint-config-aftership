@@ -115,6 +115,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/operator-linebreak
 		'operator-linebreak': [2, 'after'],
 
+		// http://eslint.org/docs/rules/quote-props
+		'quote-props': 0,
+
 		/*+++++++++++++++
 		 + ECMAScript 6 +
 		 +++++++++++++++*/
