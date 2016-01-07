@@ -12,9 +12,13 @@ module.exports = extendConfig({
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
 		'react/jsx-indent-props': [2, 'tab'],
 
+		// We found it is not practical when we need to bind `props` to function
+		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
+		'react/jsx-no-bind': 0,
+
 		// Will move to `error` when `isMounted` is deprecated
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md
-		'react/no-is-mounted': 1,
+		'react/no-is-mounted': 2,
 
 		// We want to define multiple components within one file
 		// for example, for table.jsx, define header component and footer component in the same file
