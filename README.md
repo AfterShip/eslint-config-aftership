@@ -88,7 +88,7 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo use `React`, you should extends `aftership/react` instead, you also need to `npm install --save-dev eslint-plugin-react`
+		If your repo is a front-end project using babel.js, you should extends `aftership/react` instead, you also need to `npm install --save-dev eslint-plugin-react`
 
 		```json
 		{
