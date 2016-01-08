@@ -2,6 +2,9 @@
 
 module.exports = {
 	env: {
+		// most of our project is back-end project
+		browser: false,
+
 		// recognize the predefined variables of mocha
 		mocha: true
 	},
