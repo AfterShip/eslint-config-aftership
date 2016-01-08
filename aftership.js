@@ -71,6 +71,9 @@ module.exports = {
 		/*++++++++++++
 		 + Variables +
 		 ++++++++++++*/
+		// http://eslint.org/docs/rules/no-shadow
+		'no-shadow': [2, {builtinGlobals: true}],
+
 		// http://eslint.org/docs/rules/no-undef
 		'no-undef': 2,
 
