@@ -153,8 +153,8 @@ module.exports = {
 		 +++++++++*/
 		// http://eslint.org/docs/rules/max-len
 		'max-len': [2, 200, 2, {
-			ignoreUrls: true,
-			ignoreComments: true
+			ignoreUrls: false,
+			ignoreComments: false
 		}],
 
 		// http://eslint.org/docs/rules/no-bitwise
