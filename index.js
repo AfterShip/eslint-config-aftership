@@ -5,7 +5,7 @@ var extendConfig = require('./lib/extend_config');
 module.exports = extendConfig({
 	extends: [
 		'eslint-config-airbnb/base',
-		'eslint-config-aftership/aftership'
+		'eslint-config-aftership/rules/main'
 	],
 	ecmaFeatures: {
 		// not stable and require harmony flag to enable

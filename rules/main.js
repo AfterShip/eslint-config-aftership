@@ -127,6 +127,9 @@ module.exports = {
 		/*+++++++++++++++
 		 + ECMAScript 6 +
 		 +++++++++++++++*/
+		// http://eslint.org/docs/rules/arrow-body-style
+		'arrow-body-style': 0,
+
 		// http://eslint.org/docs/rules/constructor-super
 		'constructor-super': 2,
 
@@ -136,16 +139,22 @@ module.exports = {
 		// http://eslint.org/docs/rules/object-shorthand
 		'object-shorthand': 0,
 
+		// http://eslint.org/docs/rules/prefer-arrow-callback
+		'prefer-arrow-callback': 0,
+
 		// http://eslint.org/docs/rules/prefer-const
 		'prefer-const': 0,
+
+		// http://eslint.org/docs/rules/prefer-template
+		'prefer-template': 0,
 
 		/*+++++++++
 		 + Legacy +
 		 +++++++++*/
 		// http://eslint.org/docs/rules/max-len
 		'max-len': [2, 200, 2, {
-			ignoreUrls: false,
-			ignoreComments: false
+			ignoreUrls: true,
+			ignoreComments: true
 		}],
 
 		// http://eslint.org/docs/rules/no-bitwise

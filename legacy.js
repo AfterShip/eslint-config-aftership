@@ -5,7 +5,7 @@ var extendConfig = require('./lib/extend_config');
 module.exports = extendConfig({
 	extends: [
 		'eslint-config-airbnb/legacy',
-		'eslint-config-aftership/aftership'
+		'eslint-config-aftership/rules/main'
 	],
 	ecmaFeatures: {
 		// ES5 or below don't support `generators`
