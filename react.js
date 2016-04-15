@@ -32,6 +32,9 @@ module.exports = extendConfig({
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prefer-es6-class.md
 		'react/prefer-es6-class': 0,
 
+		// we should aim to write stateless components, but we should not enforce now because it breaks a lot of code
+		'react/prefer-stateless-function': 1,
+
 		// Don't want to check default props
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
 		'react/prop-types': [2, {ignore: ['children']}]
