@@ -7,15 +7,13 @@ module.exports = extendConfig({
 		'eslint-config-airbnb/base',
 		'eslint-config-aftership/rules/main'
 	],
-	ecmaFeatures: {
-		// not stable and require harmony flag to enable
-		destructuring: false,
-
-		// if you want to use jsx, extends "aftership/react"
-		jsx: false,
-
+	parserOptions: {
+		ecmaFeatures: {
+			// if you want to use jsx, extends "aftership/react"
+			jsx: false
+		},
 		// we use require() instead of `import ... from ...`
-		modules: false
+		sourceType: 'script'
 	},
 	rules: {
 		/*++++++++++++++

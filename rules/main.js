@@ -8,10 +8,6 @@ module.exports = {
 		// recognize the predefined variables of mocha
 		mocha: true
 	},
-	ecmaFeatures: {
-		// we use generator, a lot
-		generators: true
-	},
 	rules: {
 		/*++++++++++++++++++
 		 + Possible Errors +

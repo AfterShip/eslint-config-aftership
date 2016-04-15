@@ -7,10 +7,6 @@ module.exports = extendConfig({
 		'eslint-config-airbnb/legacy',
 		'eslint-config-aftership/rules/main'
 	],
-	ecmaFeatures: {
-		// ES5 or below don't support `generators`
-		generators: false
-	},
 	rules: {
 		/*++++++++++++++
 		 + Strict Mode +
