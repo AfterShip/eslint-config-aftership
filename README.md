@@ -58,6 +58,8 @@ See [here](https://github.com/AfterShip/eslint-config-aftership/blob/master/why-
 
 ### X.Y.Z
 
+X for the eslint major version
+
 Y for adding rules/options (more strict)
 
 Z for removing rules/options (more loose)
