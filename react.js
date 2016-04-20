@@ -7,15 +7,18 @@ module.exports = extendConfig({
 		'eslint-config-airbnb',
 		'eslint-config-aftership/rules/main'
 	],
-	env: {
-		browser: true
-	},
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true
 		}
 	},
+	globals: {
+		window: false
+	},
 	rules: {
+		// Requested by front-end team
+		// camelcase: [2, {properties: 'never'}],
+
 		// Use tab instead of 2 space when indenting jsx properties
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
 		'react/jsx-indent-props': [2, 'tab'],
