@@ -13,6 +13,7 @@ module.exports = extendConfig({
 		}
 	},
 	env: {
+		commonjs: true,
 		node: false
 	},
 	globals: {
