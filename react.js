@@ -17,11 +17,20 @@ module.exports = extendConfig({
 		node: false
 	},
 	globals: {
+		process: false, // for process.env.NODE_ENV
 		window: false
 	},
 	rules: {
 		// Requested by front-end team
 		// camelcase: [2, {properties: 'never'}],
+
+		// it fails with inject-loader
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
+		'import/no-unresolved': 0,
+
+		// Use tab instead of 2 space when indenting jsx elements
+		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+		'react/jsx-indent': [2, 'tab'],
 
 		// Use tab instead of 2 space when indenting jsx properties
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
