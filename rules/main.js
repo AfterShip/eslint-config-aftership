@@ -87,6 +87,14 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-use-before-define
 		'no-use-before-define': 0,
 
+		/*+++++++++++++++++++++++
+		 + Node.js and CommonJS +
+		 +++++++++++++++++++++++*/
+		// backend code needs more dynamic structure
+		// frontend need to use require.ensure which need to require inside a function
+		// http://eslint.org/docs/rules/global-require
+		'global-require': 0,
+
 		/*+++++++++++++++++++
 		 + Stylistic Issues +
 		 +++++++++++++++++++*/
