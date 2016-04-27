@@ -17,6 +17,7 @@ module.exports = extendConfig({
 		node: false
 	},
 	globals: {
+		console: false, // for console.log
 		process: false, // for process.env.NODE_ENV
 		window: false
 	},
