@@ -12,6 +12,9 @@ module.exports = extendConfig({
 			jsx: true
 		}
 	},
+	env: {
+		node: false
+	},
 	globals: {
 		window: false
 	},

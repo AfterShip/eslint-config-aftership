@@ -20,6 +20,13 @@ module.exports = extendConfig({
 		 + Strict Mode +
 		 ++++++++++++++*/
 		// http://eslint.org/docs/rules/strict
-		strict: [2, 'global']
+		strict: [2, 'global'],
+
+		/*+++++++++++++++++++++++
+		 + Node.js and CommonJS +
+		 +++++++++++++++++++++++*/
+		// backend code needs more dynamic structure
+		// http://eslint.org/docs/rules/global-require
+		'global-require': 0
 	}
 });

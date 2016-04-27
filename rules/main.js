@@ -111,6 +111,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/new-parens
 		'new-parens': 2,
 
+		// http://eslint.org/docs/rules/no-underscore-dangle
+		'no-underscore-dangle': 0,
+
 		// http://eslint.org/docs/rules/object-curly-spacing
 		'object-curly-spacing': 2,
 
