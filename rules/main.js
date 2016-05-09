@@ -152,6 +152,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/prefer-const
 		'prefer-const': 0,
 
+		// http://eslint.org/docs/rules/prefer-rest-params
+		'prefer-rest-params': 0,
+
 		// http://eslint.org/docs/rules/prefer-template
 		'prefer-template': 0,
 
