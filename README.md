@@ -176,9 +176,6 @@ Z for removing rules/options (more loose)
 		let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 		```
 
-## Change Log
-Please check [details here](CHANGELOG.md)
-
 ## Known Issues
 - NA
 
