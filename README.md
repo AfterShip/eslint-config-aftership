@@ -104,7 +104,7 @@ Z for removing rules/options (more loose)
 		```json
 		{
 		  "scripts": {
-		    "test": "grunt lint"
+		    "lint": "eslint --ext .jsx,.js ."
 		  }
 		}
 		```
@@ -112,10 +112,9 @@ Z for removing rules/options (more loose)
 		`travis.yml`:
 		```yml
 		install:
-		  - npm install -g grunt-cli
 		  - npm install
 		script:
-		  - npm test
+		  - npm run lint
 		```
 
 ### on your editor:
