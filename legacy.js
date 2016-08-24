@@ -1,6 +1,6 @@
 'use strict';
 
-var extendConfig = require('./lib/extend_config');
+const extendConfig = require('./lib/extend_config');
 
 module.exports = extendConfig({
 	extends: [
@@ -17,6 +17,8 @@ module.exports = extendConfig({
 		/*+++++++++++++++
 		 + ECMAScript 6 +
 		 +++++++++++++++*/
+		// http://eslint.org/docs/rules/no-var
+		'no-var': 0,
 		// http://eslint.org/docs/rules/object-shorthand
 		'object-shorthand': [2, 'never']
 	}

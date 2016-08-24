@@ -1,6 +1,6 @@
 'use strict';
 
-var extendConfig = require('./lib/extend_config');
+const extendConfig = require('./lib/extend_config');
 
 module.exports = extendConfig({
 	extends: [
