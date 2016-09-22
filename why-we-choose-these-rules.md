@@ -7,40 +7,59 @@
 - [Possible Errors](#possible-errors)
 	- [comma-dangle](#comma-dangle)
 	- [no-console](#no-console)
+	- [valid-typeof](#valid-typeof)
 - [Best Practices](#best-practices)
+	- [class-methods-use-this](#class-methods-use-this)
 	- [no-alert](#no-alert)
 	- [no-else-return](#no-else-return)
 	- [no-implicit-coercion](#no-implicit-coercion)
 	- [no-loop-func](#no-loop-func)
+	- [no-new](#no-new)
 	- [no-param-reassign](#no-param-reassign)
+	- [no-script-url](#no-script-url)
+	- [no-throw-literal](#no-throw-literal)
 	- [no-unused-expressions](#no-unused-expressions)
 	- [vars-on-top](#vars-on-top)
 - [Variables](#variables)
-	- [no-undef](#no-undef)
+	- [no-shadow](#no-shadow)
 	- [no-unused-vars](#no-unused-vars)
 	- [no-use-before-define](#no-use-before-define)
+- [Variables](#variables-1)
+	- [global-require](#global-require)
+	- [no-mixed-requires](#no-mixed-requires)
 - [Stylistic Issues](#stylistic-issues)
 	- [camelcase](#camelcase)
 	- [func-names](#func-names)
 	- [indent](#indent)
+	- [no-tabs](#no-tabs)
 	- [new-cap](#new-cap)
+	- [no-continue](#no-continue)
+	- [no-lonely-if](#no-lonely-if)
+	- [no-mixed-operators](#no-mixed-operators)
+	- [no-underscore-dangle](#no-underscore-dangle)
 	- [object-curly-spacing](#object-curly-spacing)
+	- [quote-props](#quote-props)
 - [ECMAScript 6](#ecmascript-6)
+	- [arrow-body-style](#arrow-body-style)
 	- [object-shorthand](#object-shorthand)
+	- [prefer-arrow-callback](#prefer-arrow-callback)
 	- [prefer-const](#prefer-const)
-	- [no-const-assign](#no-const-assign)
-	- [no-var](#no-var)
+	- [prefer-rest-params](#prefer-rest-params)
+	- [prefer-template](#prefer-template)
+	- [require-yield](#require-yield)
 - [Legacy](#legacy)
 	- [max-len](#max-len)
+- [Other plugins](#other-plugins)
+	- [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
 
 <!-- /MarkdownTOC -->
 
 ## Possible Errors
 
 ### comma-dangle
-Don't put comma in the last item of object/array, looks very weird
+Don't put comma in the last item of object/array
 ```
-'comma-dangle': [2, 'never']
+'comma-dangle': ['error', 'never']
 ```
 Example: http://eslint.org/docs/rules/comma-dangle
 
@@ -50,18 +69,36 @@ Example: http://eslint.org/docs/rules/comma-dangle
 ### no-console
 Allow `console`
 ```
-'no-console': 0
+'no-console': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-console
 
 We use it a lot, it is difficult for us to enable this rules
 
+### valid-typeof
+```
+'valid-typeof': ['error', {
+	requireStringLiterals: false
+}],
+```
+Example: http://eslint.org/docs/rules/valid-typeof
+
+if requireStringLiterals is true, it doesn't allow using variable to compare with `typeof another_variable`, which we do it often when creating library
+
 ## Best Practices
+
+### class-methods-use-this
+```
+'class-methods-use-this': 'off'
+```
+Example: http://eslint.org/docs/rules/class-methods-use-this
+
+don't force every class methods to use `this`
 
 ### no-alert
 Allow `alert`
 ```
-'no-alert': 0
+'no-alert': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-alert
 
@@ -70,7 +107,7 @@ Front end guys may need it
 ### no-else-return
 No `else` if the `if` condition has `return`
 ```
-'no-else-return': 0
+'no-else-return': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-else-return
 
@@ -80,7 +117,7 @@ If we have `else if` condition (without `return`) later, with this rule on, deve
 ### no-implicit-coercion
 Change variable type explicitly using `Boolean`, `Number`, `String`, etc.
 ```
-'no-implicit-coercion': 2
+'no-implicit-coercion': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-implicit-coercion
 
@@ -89,7 +126,7 @@ We all agree that help improving the readability of code
 ### no-loop-func
 Allow define function inside loop
 ```
-'no-loop-func': 0
+'no-loop-func': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-loop-func
 
@@ -103,28 +140,49 @@ for (let results of data) {
 }
 ```
 
+### no-new
+```
+'no-new': 'off'
+```
+Example: http://eslint.org/docs/rules/no-new
+
+prefer always use new to create class instance for better readability
+
 ### no-param-reassign
 Allow resign the parameter's value of function
 ```
-'no-param-reassign': 0
+'no-param-reassign': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-param-reassign
 
 We prefer `options = options || {}`
 
-### no-unused-expressions
-Disallow expression that is never used
+### no-script-url
 ```
-'no-unused-expressions': 2
+'no-script-url': 'off'
+```
+Example: http://eslint.org/docs/rules/no-script-url
+
+we want to preserve the semantic meaning of link, such as `<a href="javascript:void(0)"></a>`
+
+### no-throw-literal
+```
+'no-throw-literal': 'off'
+```
+Example: http://eslint.org/docs/rules/no-throw-literal
+
+### no-unused-expressions
+```
+'no-unused-expressions': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-unused-expressions
 
-For clearer code, there are much more better way than doing `a() || (b = c)` or `a || b()`
+syntax of `chai` will throw error for this rule
 
 ### vars-on-top
 Allow NOT defining variables on the top of function scope
 ```
-'vars-on-top': 0
+'vars-on-top': 'off'
 ```
 Example: http://eslint.org/docs/rules/vars-on-top
 
@@ -132,14 +190,15 @@ That will be too strict to enable it, plus we are planning to move on to `let` o
 
 ## Variables
 
-### no-undef
+### no-shadow
 ```
-'no-undef': 2
+'no-shadow': ['error', {
+	builtinGlobals: true
+}]
 ```
-Example: http://eslint.org/docs/rules/no-undef
+Example: http://eslint.org/docs/rules/no-shadow
 
-1. It is important for us to check if the variable is not defined as we are using `strict` mode
-2. We usually do not declare global variables, so it is not very painful for us to add the predefined global variables in `.eslintrc`
+prevents shadowing of built-in global variables
 
 ### no-unused-vars
 Only check if local variables (name without `_` prefix) are used
@@ -157,18 +216,37 @@ Example: http://eslint.org/docs/rules/no-unused-vars
 
 ### no-use-before-define
 ```
-'no-use-before-define': 0
+'no-use-before-define': 'off'
 ```
 Example: http://eslint.org/docs/rules/no-use-before-define
 
 We may need to use the function before we define it, check `js hoisting`
+
+## Variables
+
+### global-require
+```
+'global-require': 'off'
+```
+Example: http://eslint.org/docs/rules/global-require
+
+1. backend code needs more dynamic structure
+2. frontend need to use require.ensure which need to require inside a function
+
+### no-mixed-requires
+```
+'no-mixed-requires': 'error'
+```
+Example: http://eslint.org/docs/rules/no-mixed-requires
+
+to group require together for better readability
 
 ## Stylistic Issues
 
 ### camelcase
 Don't check if variables are camel case
 ```
-camelcase: 0
+camelcase: 'off'
 ```
 Example: http://eslint.org/docs/rules/camelcase
 
@@ -177,13 +255,13 @@ We use snake case
 ### func-names
 Don't force to add function name in anonymous function
 ```
-'func-names': 0
+'func-names': 'off'
 ```
 Example: http://eslint.org/docs/rules/func-names
 
 ### indent
 ```
-indent: [2, 'tab', {
+indent: ['error', 'tab', {
 	SwitchCase: 1
 }]
 ```
@@ -191,60 +269,145 @@ Example: http://eslint.org/docs/rules/indent
 
 We use tab and prefer to indent inside the `switch`
 
+### no-tabs
+```
+'no-tabs': 'off'
+```
+Example: http://eslint.org/docs/rules/no-tabs
+
+We use tab
+
 ### new-cap
 ```
-'new-cap': 0
+'new-cap': 'off'
 ```
 Example: http://eslint.org/docs/rules/new-cap
 
 There are some codes, such as `new Bunyan.createLogger`, cannot pass, so disable it
 
+### no-continue
+```
+'no-continue': 'off'
+```
+Example: http://eslint.org/docs/rules/no-continue
+
+we don't want to remove support of `continue` in loop
+
+### no-lonely-if
+```
+'no-lonely-if': 'off'
+```
+Example: http://eslint.org/docs/rules/no-lonely-if
+
+disable it allow better readability
+
+### no-mixed-operators
+```
+'no-mixed-operators': 'off'
+```
+Example: http://eslint.org/docs/rules/no-mixed-operators
+
+let developers decide when to use bracket to explicitly state the priority of operators
+
+### no-underscore-dangle
+```
+'no-underscore-dangle': 'off'
+```
+Example: http://eslint.org/docs/rules/no-underscore-dangle
+
+We use undercore for private variable or function
+
 ### object-curly-spacing
 ```
-'object-curly-spacing': 2
+'object-curly-spacing': ['error', 'never']
 ```
 Example: http://eslint.org/docs/rules/object-curly-spacing
 
+### quote-props
+```
+'quote-props': 'off'
+```
+Example: http://eslint.org/docs/rules/quote-props
+
+sometime it is faster to all quote when we copy object from JSON directly
+
 ## ECMAScript 6
+
+### arrow-body-style
+```
+'arrow-body-style': 'off'
+```
+Example: http://eslint.org/docs/rules/arrow-body-style
+
+should not force developer to remove the scope for arrow function because sometime we do it for clearer code
 
 ### object-shorthand
 ```
-'object-shorthand': 0
+'object-shorthand': 'off'
 ```
-Example: http://eslint.org/docs/rules/prefer-const
+Example: http://eslint.org/docs/rules/object-shorthand
 
 We just leave it to developers, sometime it is clearer to not use the shorthand
 
+### prefer-arrow-callback
+```
+'prefer-arrow-callback': 'off'
+```
+Example: http://eslint.org/docs/rules/prefer-arrow-callback
+
 ### prefer-const
 ```
-'prefer-const': 0
+'prefer-const': 'off'
 ```
 Example: http://eslint.org/docs/rules/prefer-const
 
 We want to define constant only when it is **REALLY** a constant
 
-### no-const-assign
+### prefer-rest-params
 ```
-'no-const-assign': 2
+'prefer-rest-params': 'off'
 ```
-Example: http://eslint.org/docs/rules/no-const-assign
+Example: http://eslint.org/docs/rules/prefer-rest-params
 
-Of course
+node 4.2 doesn't support rest params yet
 
-### no-var
+### prefer-template
 ```
-'no-var': 2
+'prefer-template': 'off'
 ```
-Example: http://eslint.org/docs/rules/no-var
+Example: http://eslint.org/docs/rules/prefer-template
 
-We are moving on to `let` and `const`
+sometime not using template string is more readable
+
+### require-yield
+```
+'require-yield': 'off'
+```
+Example: http://eslint.org/docs/rules/require-yield
+
+need to use generator function in koa even if we don't use yield
 
 ## Legacy
 
 ### max-len
 ```
-'max-len': [2, 200]
+'max-len': ['error', 200, 2, {
+	ignoreUrls: true,
+	ignoreComments: false,
+	ignoreStrings: true,
+	ignoreTemplateLiterals: true
+}]
 ```
 Example: http://eslint.org/docs/rules/max-len
 
 We all have a large iMac screen, so setting 200 as max length is fair
+
+## Other plugins
+
+### import/no-extraneous-dependencies
+```
+'import/no-extraneous-dependencies': 'off'
+```
+Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
+
+we need to import devDependencies in test files
