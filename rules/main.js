@@ -13,10 +13,10 @@ module.exports = {
 		 + Possible Errors +
 		 ++++++++++++++++++*/
 		// http://eslint.org/docs/rules/comma-dangle
-		'comma-dangle': [2, 'never'],
+		'comma-dangle': ['error', 'never'],
 
 		// http://eslint.org/docs/rules/no-console
-		'no-console': 0,
+		'no-console': 'off',
 
 		// if requireStringLiterals is true, it doesn't allow using variable to compare
 		// with `typeof another_variable`, which we do it often when creating library
@@ -33,50 +33,50 @@ module.exports = {
 		'class-methods-use-this': 'off',
 
 		// http://eslint.org/docs/rules/no-alert
-		'no-alert': 0,
+		'no-alert': 'off',
 
 		// http://eslint.org/docs/rules/no-else-return
-		'no-else-return': 0,
+		'no-else-return': 'off',
 
 		// http://eslint.org/docs/rules/no-implicit-coercion
-		'no-implicit-coercion': 2,
+		'no-implicit-coercion': 'error',
 
 		// http://eslint.org/docs/rules/no-loop-func
-		'no-loop-func': 0,
+		'no-loop-func': 'off',
 
 		// http://eslint.org/docs/rules/no-new
 		'no-new': 'off',
 
 		// Allow resign the parameter's value of function
 		// http://eslint.org/docs/rules/no-param-reassign
-		'no-param-reassign': 0,
+		'no-param-reassign': 'off',
 
 		// we want to preserve the semantic meaning of link, such as `<a href="javascript:void(0)"></a>`
 		// http://eslint.org/docs/rules/no-script-url
-		'no-script-url': 0,
+		'no-script-url': 'off',
 
 		// http://eslint.org/docs/rules/no-throw-literal
-		'no-throw-literal': 0,
+		'no-throw-literal': 'off',
 
 		// syntax of `chai` will throw this error
 		// http://eslint.org/docs/rules/no-unused-expressions
-		'no-unused-expressions': 0,
+		'no-unused-expressions': 'off',
 
 		// http://eslint.org/docs/rules/vars-on-top
-		'vars-on-top': 0,
+		'vars-on-top': 'off',
 
 		/*++++++++++++
 		 + Variables +
 		 ++++++++++++*/
 		// prevents shadowing of built-in global variables
 		// http://eslint.org/docs/rules/no-shadow
-		'no-shadow': [2, {
+		'no-shadow': ['error', {
 			builtinGlobals: true
 		}],
 
 		// allow used var in arguments, and ignore all variable that start with `_` such as `_this`
 		// http://eslint.org/docs/rules/no-unused-vars
-		'no-unused-vars': [2, {
+		'no-unused-vars': ['error', {
 			args: 'none',
 			vars: 'local',
 			varsIgnorePattern: '^_'
@@ -84,7 +84,7 @@ module.exports = {
 
 		// we may need to use the function before we define it, check `js hoisting`
 		// http://eslint.org/docs/rules/no-use-before-define
-		'no-use-before-define': 0,
+		'no-use-before-define': 'off',
 
 		/*+++++++++++++++++++++++
 		 + Node.js and CommonJS +
@@ -92,7 +92,7 @@ module.exports = {
 		// backend code needs more dynamic structure
 		// frontend need to use require.ensure which need to require inside a function
 		// http://eslint.org/docs/rules/global-require
-		'global-require': 0,
+		'global-require': 'off',
 
 		// to group require together for better readability
 		'no-mixed-requires': 'error',
@@ -102,15 +102,15 @@ module.exports = {
 		 +++++++++++++++++++*/
 		// we use snake case
 		// http://eslint.org/docs/rules/camelcase
-		camelcase: 0,
+		camelcase: 'off',
 
 		// don't force to add function name in anonymous function
 		// http://eslint.org/docs/rules/func-names
-		'func-names': 0,
+		'func-names': 'off',
 
 		// we use tab and prefer to indent inside the `switch`
 		// http://eslint.org/docs/rules/indent
-		indent: [2, 'tab', {
+		indent: ['error', 'tab', {
 			SwitchCase: 1
 		}],
 
@@ -119,7 +119,7 @@ module.exports = {
 
 		// there are some codes such as `new Bunyan.createLogger` cannot pass, so disable it
 		// http://eslint.org/docs/rules/new-cap
-		'new-cap': 0,
+		'new-cap': 'off',
 
 		// we don't want to remove support of `continue` in loop
 		'no-continue': 'off',
@@ -131,34 +131,34 @@ module.exports = {
 		'no-mixed-operators': 'off',
 
 		// http://eslint.org/docs/rules/no-underscore-dangle
-		'no-underscore-dangle': 0,
+		'no-underscore-dangle': 'off',
 
 		// http://eslint.org/docs/rules/object-curly-spacing
 		'object-curly-spacing': ['error', 'never'],
 
 		// http://eslint.org/docs/rules/quote-props
-		'quote-props': 0,
+		'quote-props': 'off',
 
 		/*+++++++++++++++
 		 + ECMAScript 6 +
 		 +++++++++++++++*/
 		// http://eslint.org/docs/rules/arrow-body-style
-		'arrow-body-style': 0,
+		'arrow-body-style': 'off',
 
 		// http://eslint.org/docs/rules/object-shorthand
-		'object-shorthand': 0,
+		'object-shorthand': 'off',
 
 		// http://eslint.org/docs/rules/prefer-arrow-callback
-		'prefer-arrow-callback': 0,
+		'prefer-arrow-callback': 'off',
 
 		// http://eslint.org/docs/rules/prefer-const
-		'prefer-const': 0,
+		'prefer-const': 'off',
 
 		// http://eslint.org/docs/rules/prefer-rest-params
-		'prefer-rest-params': 0,
+		'prefer-rest-params': 'off',
 
 		// http://eslint.org/docs/rules/prefer-template
-		'prefer-template': 0,
+		'prefer-template': 'off',
 
 		// need to use generator function in koa even if we don't use yield
 		'require-yield': 'off',
@@ -167,7 +167,7 @@ module.exports = {
 		 + Legacy +
 		 +++++++++*/
 		// http://eslint.org/docs/rules/max-len
-		'max-len': [2, 200, 2, {
+		'max-len': ['error', 200, 2, {
 			ignoreUrls: true,
 			ignoreComments: false,
 			ignoreStrings: true,
