@@ -5,7 +5,8 @@ const extendConfig = require('./lib/extend_config');
 module.exports = extendConfig({
 	extends: [
 		'eslint-config-airbnb',
-		'eslint-config-aftership/rules/main'
+		'eslint-config-aftership/rules/main',
+		'eslint-config-aftership/rules/camelcase'
 	],
 	parserOptions: {
 		ecmaFeatures: {
@@ -14,7 +15,8 @@ module.exports = extendConfig({
 	},
 	env: {
 		commonjs: true,
-		node: false
+		node: false,
+		webextensions: true
 	},
 	globals: {
 		console: false, // for console.log
@@ -22,9 +24,6 @@ module.exports = extendConfig({
 		window: false
 	},
 	rules: {
-		// Requested by front-end team
-		// camelcase: ['error', {properties: 'never'}],
-
 		// it fails with inject-loader
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
 		'import/no-unresolved': 'off',

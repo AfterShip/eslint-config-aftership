@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-aftership",
   "description": "AfterShip ESLint config (modified from Airbnb)",
-  "version": "3.0.1",
+  "version": "3.1.0",
   "homepage": "https://github.com/AfterShip/eslint-config-aftership",
   "author": {
     "name": "AfterShip",
