@@ -19,18 +19,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-console
 		'no-console': 0,
 
-		// http://eslint.org/docs/rules/no-empty-character-class
-		'no-empty-character-class': 2,
-
-		// http://eslint.org/docs/rules/valid-typeof
-		'valid-typeof': 2,
-
 		/*+++++++++++++++++
 		 + Best Practices +
 		 +++++++++++++++++*/
-		// http://eslint.org/docs/rules/dot-location
-		'dot-location': [2, 'property'],
-
 		// http://eslint.org/docs/rules/no-alert
 		'no-alert': 0,
 
@@ -42,9 +33,6 @@ module.exports = {
 
 		// http://eslint.org/docs/rules/no-loop-func
 		'no-loop-func': 0,
-
-		// http://eslint.org/docs/rules/no-multi-spaces
-		'no-multi-spaces': 2,
 
 		// Allow resign the parameter's value of function
 		// http://eslint.org/docs/rules/no-param-reassign
@@ -64,18 +52,14 @@ module.exports = {
 		// http://eslint.org/docs/rules/vars-on-top
 		'vars-on-top': 0,
 
-		// http://eslint.org/docs/rules/yoda
-		yoda: 2,
-
 		/*++++++++++++
 		 + Variables +
 		 ++++++++++++*/
+		// prevents shadowing of built-in global variables
 		// http://eslint.org/docs/rules/no-shadow
 		'no-shadow': [2, {builtinGlobals: true}],
 
-		// http://eslint.org/docs/rules/no-undef
-		'no-undef': 2,
-
+		// allow used var in arguments, and ignore all variable that start with `_` such as `_this`
 		// http://eslint.org/docs/rules/no-unused-vars
 		'no-unused-vars': [2, {
 			args: 'none',
@@ -116,17 +100,11 @@ module.exports = {
 		// http://eslint.org/docs/rules/new-cap
 		'new-cap': 0,
 
-		// http://eslint.org/docs/rules/new-parens
-		'new-parens': 2,
-
 		// http://eslint.org/docs/rules/no-underscore-dangle
 		'no-underscore-dangle': 0,
 
 		// http://eslint.org/docs/rules/object-curly-spacing
 		'object-curly-spacing': 2,
-
-		// http://eslint.org/docs/rules/operator-linebreak
-		'operator-linebreak': [2, 'after'],
 
 		// http://eslint.org/docs/rules/quote-props
 		'quote-props': 0,
@@ -136,12 +114,6 @@ module.exports = {
 		 +++++++++++++++*/
 		// http://eslint.org/docs/rules/arrow-body-style
 		'arrow-body-style': 0,
-
-		// http://eslint.org/docs/rules/constructor-super
-		'constructor-super': 2,
-
-		// http://eslint.org/docs/rules/generator-star-spacing
-		'generator-star-spacing': [2, 'after'],
 
 		// http://eslint.org/docs/rules/object-shorthand
 		'object-shorthand': 0,
@@ -163,11 +135,17 @@ module.exports = {
 		 +++++++++*/
 		// http://eslint.org/docs/rules/max-len
 		'max-len': [2, 200, 2, {
-			ignoreUrls: false,
-			ignoreComments: false
+			ignoreUrls: true,
+			ignoreComments: false,
+			ignoreStrings: true,
+			ignoreTemplateLiterals: true
 		}],
 
-		// http://eslint.org/docs/rules/no-bitwise
-		'no-bitwise': 2
+    /*++++++++++++++++
+     + Other plugins +
+     ++++++++++++++++*/
+    // we need to import devDependencies in test files
+    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
+    'import/no-extraneous-dependencies': 'off'
 	}
 };
