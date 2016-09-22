@@ -18,17 +18,19 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-console
 		'no-console': 0,
 
-    // if requireStringLiterals is true, it doesn't allow using variable to compare
-    // with `typeof another_variable`, which we do it often when creating library
+		// if requireStringLiterals is true, it doesn't allow using variable to compare
+		// with `typeof another_variable`, which we do it often when creating library
 		// http://eslint.org/docs/rules/valid-typeof
-    'valid-typeof': ['error', {requireStringLiterals: false}],
+		'valid-typeof': ['error', {
+			requireStringLiterals: false
+		}],
 
 		/*+++++++++++++++++
 		 + Best Practices +
 		 +++++++++++++++++*/
-    // don't force every class methods to use `this`
+		// don't force every class methods to use `this`
 		// http://eslint.org/docs/rules/class-methods-use-this
-    'class-methods-use-this': 'off',
+		'class-methods-use-this': 'off',
 
 		// http://eslint.org/docs/rules/no-alert
 		'no-alert': 0,
@@ -42,8 +44,8 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-loop-func
 		'no-loop-func': 0,
 
-    // http://eslint.org/docs/rules/no-new
-    'no-new': 'off',
+		// http://eslint.org/docs/rules/no-new
+		'no-new': 'off',
 
 		// Allow resign the parameter's value of function
 		// http://eslint.org/docs/rules/no-param-reassign
@@ -68,7 +70,9 @@ module.exports = {
 		 ++++++++++++*/
 		// prevents shadowing of built-in global variables
 		// http://eslint.org/docs/rules/no-shadow
-		'no-shadow': [2, {builtinGlobals: true}],
+		'no-shadow': [2, {
+			builtinGlobals: true
+		}],
 
 		// allow used var in arguments, and ignore all variable that start with `_` such as `_this`
 		// http://eslint.org/docs/rules/no-unused-vars
@@ -90,8 +94,8 @@ module.exports = {
 		// http://eslint.org/docs/rules/global-require
 		'global-require': 0,
 
-    // to group require together for better readability
-    'no-mixed-requires': 'error',
+		// to group require together for better readability
+		'no-mixed-requires': 'error',
 
 		/*+++++++++++++++++++
 		 + Stylistic Issues +
@@ -110,18 +114,21 @@ module.exports = {
 			SwitchCase: 1
 		}],
 
+		// http://eslint.org/docs/rules/no-tabs
+		'no-tabs': 'off',
+
 		// there are some codes such as `new Bunyan.createLogger` cannot pass, so disable it
 		// http://eslint.org/docs/rules/new-cap
 		'new-cap': 0,
 
-    // we don't want to remove support of `continue` in loop
-    'no-continue': 'off',
+		// we don't want to remove support of `continue` in loop
+		'no-continue': 'off',
 
-    // disable it allow better readability
-    'no-lonely-if': 'off',
+		// disable it allow better readability
+		'no-lonely-if': 'off',
 
-    // let developers decide when to use bracket to explicitly state the priority of operators
-    'no-mixed-operators': 'off',
+		// let developers decide when to use bracket to explicitly state the priority of operators
+		'no-mixed-operators': 'off',
 
 		// http://eslint.org/docs/rules/no-underscore-dangle
 		'no-underscore-dangle': 0,
@@ -153,8 +160,8 @@ module.exports = {
 		// http://eslint.org/docs/rules/prefer-template
 		'prefer-template': 0,
 
-    // need to use generator function in koa even if we don't use yield
-    'require-yield': 'off',
+		// need to use generator function in koa even if we don't use yield
+		'require-yield': 'off',
 
 		/*+++++++++
 		 + Legacy +
@@ -167,11 +174,11 @@ module.exports = {
 			ignoreTemplateLiterals: true
 		}],
 
-    /*++++++++++++++++
-     + Other plugins +
-     ++++++++++++++++*/
-    // we need to import devDependencies in test files
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-    'import/no-extraneous-dependencies': 'off'
+		/*++++++++++++++++
+		 + Other plugins +
+		 ++++++++++++++++*/
+		// we need to import devDependencies in test files
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
+		'import/no-extraneous-dependencies': 'off'
 	}
 };
