@@ -103,7 +103,6 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-tabs
 		'no-tabs': 'off',
 
-		// there are some codes such as `new Bunyan.createLogger` cannot pass, so disable it
 		// http://eslint.org/docs/rules/new-cap
 		'new-cap': 'off',
 
