@@ -12,16 +12,24 @@ module.exports = {
 		/*++++++++++++++++++
 		 + Possible Errors +
 		 ++++++++++++++++++*/
-		// Don't put comma in the last item of object/array
 		// http://eslint.org/docs/rules/comma-dangle
 		'comma-dangle': [2, 'never'],
 
 		// http://eslint.org/docs/rules/no-console
 		'no-console': 0,
 
+    // if requireStringLiterals is true, it doesn't allow using variable to compare
+    // with `typeof another_variable`, which we do it often when creating library
+		// http://eslint.org/docs/rules/valid-typeof
+    'valid-typeof': ['error', {requireStringLiterals: false}],
+
 		/*+++++++++++++++++
 		 + Best Practices +
 		 +++++++++++++++++*/
+    // don't force every class methods to use `this`
+		// http://eslint.org/docs/rules/class-methods-use-this
+    'class-methods-use-this': 'off',
+
 		// http://eslint.org/docs/rules/no-alert
 		'no-alert': 0,
 
@@ -33,6 +41,9 @@ module.exports = {
 
 		// http://eslint.org/docs/rules/no-loop-func
 		'no-loop-func': 0,
+
+    // http://eslint.org/docs/rules/no-new
+    'no-new': 'off',
 
 		// Allow resign the parameter's value of function
 		// http://eslint.org/docs/rules/no-param-reassign
@@ -79,6 +90,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/global-require
 		'global-require': 0,
 
+    // to group require together for better readability
+    'no-mixed-requires': 'error',
+
 		/*+++++++++++++++++++
 		 + Stylistic Issues +
 		 +++++++++++++++++++*/
@@ -100,11 +114,20 @@ module.exports = {
 		// http://eslint.org/docs/rules/new-cap
 		'new-cap': 0,
 
+    // we don't want to remove support of `continue` in loop
+    'no-continue': 'off',
+
+    // disable it allow better readability
+    'no-lonely-if': 'off',
+
+    // let developers decide when to use bracket to explicitly state the priority of operators
+    'no-mixed-operators': 'off',
+
 		// http://eslint.org/docs/rules/no-underscore-dangle
 		'no-underscore-dangle': 0,
 
 		// http://eslint.org/docs/rules/object-curly-spacing
-		'object-curly-spacing': 2,
+		'object-curly-spacing': ['error', 'never'],
 
 		// http://eslint.org/docs/rules/quote-props
 		'quote-props': 0,
@@ -129,6 +152,9 @@ module.exports = {
 
 		// http://eslint.org/docs/rules/prefer-template
 		'prefer-template': 0,
+
+    // need to use generator function in koa even if we don't use yield
+    'require-yield': 'off',
 
 		/*+++++++++
 		 + Legacy +

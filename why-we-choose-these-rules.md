@@ -38,7 +38,7 @@
 ## Possible Errors
 
 ### comma-dangle
-Don't put comma in the last item of object/array
+Don't put comma in the last item of object/array, looks very weird
 ```
 'comma-dangle': [2, 'never']
 ```
