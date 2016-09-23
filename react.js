@@ -71,6 +71,10 @@ module.exports = extendConfig({
 
 		// Don't want to check default props
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
-		'react/prop-types': ['error', {ignore: ['children']}]
+		'react/prop-types': ['error', {ignore: ['children']}],
+
+		// this rule is deprecated
+		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-extension.md
+		'react/require-extension': 'off'
 	}
 });
