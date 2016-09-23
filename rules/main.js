@@ -18,6 +18,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-console
 		'no-console': 'off',
 
+		// http://eslint.org/docs/rules/no-prototype-builtins
+		'no-prototype-builtins': 'off',
+
 		// http://eslint.org/docs/rules/valid-typeof
 		'valid-typeof': ['error', {
 			requireStringLiterals: false
@@ -86,6 +89,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/no-mixed-requires
 		'no-mixed-requires': 'error',
 
+		// http://eslint.org/docs/rules/no-path-concat
+		'no-path-concat': 'off',
+
 		/*+++++++++++++++++++
 		 + Stylistic Issues +
 		 +++++++++++++++++++*/
@@ -130,6 +136,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/arrow-body-style
 		'arrow-body-style': 'off',
 
+		// http://eslint.org/docs/rules/arrow-parens
+		'arrow-parens': 'off',
+
 		// http://eslint.org/docs/rules/object-shorthand
 		'object-shorthand': 'off',
 
@@ -162,6 +171,9 @@ module.exports = {
 		/*++++++++++++++++
 		 + Other plugins +
 		 ++++++++++++++++*/
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
+		'import/newline-after-import': 'off',
+
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
 		'import/no-extraneous-dependencies': 'off'
 	}

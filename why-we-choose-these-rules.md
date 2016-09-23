@@ -7,6 +7,7 @@
 - [Possible Errors](#possible-errors)
 	- [comma-dangle](#comma-dangle)
 	- [no-console](#no-console)
+	- [no-prototype-builtins](#no-prototype-builtins)
 	- [valid-typeof](#valid-typeof)
 - [Best Practices](#best-practices)
 	- [class-methods-use-this](#class-methods-use-this)
@@ -24,9 +25,10 @@
 	- [no-shadow](#no-shadow)
 	- [no-unused-vars](#no-unused-vars)
 	- [no-use-before-define](#no-use-before-define)
-- [Variables](#variables-1)
+- [Node.js and CommonJS](#nodejs-and-commonjs)
 	- [global-require](#global-require)
 	- [no-mixed-requires](#no-mixed-requires)
+	- [no-path-concat](#no-path-concat)
 - [Stylistic Issues](#stylistic-issues)
 	- [camelcase](#camelcase)
 	- [func-names](#func-names)
@@ -41,6 +43,7 @@
 	- [quote-props](#quote-props)
 - [ECMAScript 6](#ecmascript-6)
 	- [arrow-body-style](#arrow-body-style)
+	- [arrow-parens](#arrow-parens)
 	- [object-shorthand](#object-shorthand)
 	- [prefer-arrow-callback](#prefer-arrow-callback)
 	- [prefer-const](#prefer-const)
@@ -50,6 +53,7 @@
 - [Legacy](#legacy)
 	- [max-len](#max-len)
 - [Other plugins](#other-plugins)
+	- [import/newline-after-import](#importnewline-after-import)
 	- [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
 
 <!-- /MarkdownTOC -->
@@ -74,6 +78,14 @@ Allow `console`
 Example: http://eslint.org/docs/rules/no-console
 
 We use it a lot, it is difficult for us to enable this rules
+
+### no-prototype-builtins
+```
+'no-prototype-builtins': 'off'
+```
+Example: http://eslint.org/docs/rules/no-prototype-builtins
+
+we never use an object that shadows an Object.prototype method or which does not inherit from Object.prototype
 
 ### valid-typeof
 ```
@@ -222,7 +234,7 @@ Example: http://eslint.org/docs/rules/no-use-before-define
 
 We may need to use the function before we define it, check `js hoisting`
 
-## Variables
+## Node.js and CommonJS
 
 ### global-require
 ```
@@ -240,6 +252,15 @@ Example: http://eslint.org/docs/rules/global-require
 Example: http://eslint.org/docs/rules/no-mixed-requires
 
 to group require together for better readability
+
+### no-path-concat
+```
+'no-path-concat': 'error'
+```
+Example: http://eslint.org/docs/rules/no-path-concat
+
+1. frontend doesn't have `path` module
+2. we don't use `Windows`, we don't care about `Windows`
 
 ## Stylistic Issues
 
@@ -341,6 +362,14 @@ Example: http://eslint.org/docs/rules/arrow-body-style
 
 should not force developer to remove the scope for arrow function because sometime we do it for clearer code
 
+### arrow-parens
+```
+'arrow-parens': 'off'
+```
+Example: http://eslint.org/docs/rules/arrow-parens
+
+let developer decide when to add bracket
+
 ### object-shorthand
 ```
 'object-shorthand': 'off'
@@ -403,6 +432,18 @@ Example: http://eslint.org/docs/rules/max-len
 We all have a large iMac screen, so setting 200 as max length is fair
 
 ## Other plugins
+
+### import/newline-after-import
+```
+'import/newline-after-import': 'off'
+```
+Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
+
+it breaks a lot of our code because we may group like:
+```js
+const AftershipError = require('aftership-error');
+const AftershipPrivateError = AftershipError.PrivateError;
+```
 
 ### import/no-extraneous-dependencies
 ```

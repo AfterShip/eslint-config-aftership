@@ -24,9 +24,18 @@ module.exports = extendConfig({
 		window: false
 	},
 	rules: {
+		// we alias some local folders to modules, for example `project-root/src/app` => `app`
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md
+		'import/imports-first': 'off',
+
 		// it fails with inject-loader
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
 		'import/no-unresolved': 'off',
+
+		// for array, sometime it is not all the same type
+		// for object, it is very painful to define the object structure every time
+		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
+		'react/forbid-prop-types': 'off',
 
 		// Use tab instead of 2 space when indenting jsx elements
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
@@ -39,6 +48,10 @@ module.exports = extendConfig({
 		// We found it is not practical when we need to bind `props` to function
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
 		'react/jsx-no-bind': 'off',
+
+		// we need to use dangerouslySetInnerHTML sometime
+		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md
+		'react/no-danger': 'off',
 
 		// Will move to `error` when `isMounted` is deprecated
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-is-mounted.md
