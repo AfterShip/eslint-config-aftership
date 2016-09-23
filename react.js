@@ -10,6 +10,7 @@ module.exports = extendConfig({
 	],
 	parserOptions: {
 		ecmaFeatures: {
+			experimentalObjectRestSpread: true,
 			jsx: true
 		}
 	},
