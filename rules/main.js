@@ -106,9 +106,6 @@ module.exports = {
 			SwitchCase: 1
 		}],
 
-		// http://eslint.org/docs/rules/no-tabs
-		'no-tabs': 'off',
-
 		// http://eslint.org/docs/rules/new-cap
 		'new-cap': 'off',
 
@@ -120,6 +117,12 @@ module.exports = {
 
 		// http://eslint.org/docs/rules/no-mixed-operators
 		'no-mixed-operators': 'off',
+
+		// http://eslint.org/docs/rules/no-plusplus
+		'no-plusplus': 'off',
+
+		// http://eslint.org/docs/rules/no-tabs
+		'no-tabs': 'off',
 
 		// http://eslint.org/docs/rules/no-underscore-dangle
 		'no-underscore-dangle': 'off',
@@ -151,6 +154,9 @@ module.exports = {
 		// http://eslint.org/docs/rules/prefer-rest-params
 		'prefer-rest-params': 'off',
 
+		// http://eslint.org/docs/rules/prefer-spread
+		'prefer-spread': 'off',
+
 		// http://eslint.org/docs/rules/prefer-template
 		'prefer-template': 'off',
 
@@ -175,6 +181,9 @@ module.exports = {
 		'import/newline-after-import': 'off',
 
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
-		'import/no-extraneous-dependencies': 'off'
+		'import/no-extraneous-dependencies': 'off',
+
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
+		'import/prefer-default-export': 'off'
 	}
 };

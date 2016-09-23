@@ -33,11 +33,12 @@
 	- [camelcase](#camelcase)
 	- [func-names](#func-names)
 	- [indent](#indent)
-	- [no-tabs](#no-tabs)
 	- [new-cap](#new-cap)
 	- [no-continue](#no-continue)
 	- [no-lonely-if](#no-lonely-if)
 	- [no-mixed-operators](#no-mixed-operators)
+	- [no-plusplus](#no-plusplus)
+	- [no-tabs](#no-tabs)
 	- [no-underscore-dangle](#no-underscore-dangle)
 	- [object-curly-spacing](#object-curly-spacing)
 	- [quote-props](#quote-props)
@@ -48,6 +49,7 @@
 	- [prefer-arrow-callback](#prefer-arrow-callback)
 	- [prefer-const](#prefer-const)
 	- [prefer-rest-params](#prefer-rest-params)
+	- [prefer-spread](#prefer-spread)
 	- [prefer-template](#prefer-template)
 	- [require-yield](#require-yield)
 - [Legacy](#legacy)
@@ -55,6 +57,7 @@
 - [Other plugins](#other-plugins)
 	- [import/newline-after-import](#importnewline-after-import)
 	- [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
+	- [import/prefer-default-export](#importprefer-default-export)
 
 <!-- /MarkdownTOC -->
 
@@ -290,12 +293,6 @@ Example: http://eslint.org/docs/rules/indent
 
 We use tab and prefer to indent inside the `switch`
 
-### no-tabs
-```
-'no-tabs': 'off'
-```
-Example: http://eslint.org/docs/rules/no-tabs
-
 We use tab
 
 ### new-cap
@@ -329,6 +326,20 @@ disable it allow better readability
 Example: http://eslint.org/docs/rules/no-mixed-operators
 
 let developers decide when to use bracket to explicitly state the priority of operators
+
+### no-plusplus
+```
+'no-plusplus': 'off'
+```
+Example: http://eslint.org/docs/rules/no-plusplus
+
+we use semi colon, so `++` or `--` won't affect us much
+
+### no-tabs
+```
+'no-tabs': 'off'
+```
+Example: http://eslint.org/docs/rules/no-tabs
 
 ### no-underscore-dangle
 ```
@@ -400,6 +411,14 @@ Example: http://eslint.org/docs/rules/prefer-rest-params
 
 node 4.2 doesn't support rest params yet
 
+### prefer-spread
+```
+'prefer-spread': 'off'
+```
+Example: http://eslint.org/docs/rules/prefer-spread
+
+node 4.2 doesn't have full support on spread
+
 ### prefer-template
 ```
 'prefer-template': 'off'
@@ -452,3 +471,11 @@ const AftershipPrivateError = AftershipError.PrivateError;
 Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
 
 we need to import devDependencies in test files
+
+### import/prefer-default-export
+```
+'import/prefer-default-export': 'off'
+```
+Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
+
+sometime we don't export default because we can foresee we need to export other item in the future
