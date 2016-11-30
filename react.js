@@ -68,7 +68,10 @@ module.exports = extendConfig({
 		'react/prefer-es6-class': 'off',
 
 		// we should aim to write stateless components, but we should not enforce now because it breaks a lot of code
-		'react/prefer-stateless-function': 'warn',
+		// ignorePureComponents because PureComponents helps improving performance and make the flow easier to understand
+		'react/prefer-stateless-function': ['warn', {
+			ignorePureComponents: true
+		}],
 
 		// Don't want to check default props
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
