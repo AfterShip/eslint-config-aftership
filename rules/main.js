@@ -1,5 +1,15 @@
 'use strict';
 
+const _ = require('lodash');
+
+const extendConfig = require('../lib/extend_config');
+
+const airbnb_rules = extendConfig({
+	extends: [
+		'eslint-config-airbnb'
+	]
+});
+
 module.exports = {
 	env: {
 		// most of our project is back-end project
@@ -49,6 +59,17 @@ module.exports = {
 
 		// http://eslint.org/docs/rules/no-param-reassign
 		'no-param-reassign': 'off',
+
+		// allow Math.pow because node 4.2/6.9 doesn't support ** operator
+		// http://eslint.org/docs/rules/no-restricted-properties
+		'no-restricted-properties': (() => {
+			const airbnb_rule = _.get(airbnb_rules, 'rules.no-restricted-properties');
+			return airbnb_rule.filter((arg) => {
+				if (!_.isPlainObject(arg)) return true;
+
+				return !(arg.object === 'Math' && arg.property === 'pow');
+			});
+		})(),
 
 		// http://eslint.org/docs/rules/no-script-url
 		'no-script-url': 'off',
@@ -105,6 +126,15 @@ module.exports = {
 		indent: ['error', 'tab', {
 			SwitchCase: 1
 		}],
+
+		// allow for-of because we want to do async operation (yield/await) one by one
+		// http://eslint.org/docs/rules/no-restricted-syntax
+		'no-restricted-syntax': (() => {
+			const airbnb_rule = _.get(airbnb_rules, 'rules.no-restricted-syntax');
+			return airbnb_rule.filter((arg) => {
+				return arg !== 'ForOfStatement';
+			});
+		})(),
 
 		// http://eslint.org/docs/rules/new-cap
 		'new-cap': 'off',
@@ -179,6 +209,10 @@ module.exports = {
 		 ++++++++++++++++*/
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
 		'import/newline-after-import': 'off',
+
+		// we use app-root-path/pkg-dir a lot in backend
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md
+		'import/no-dynamic-require': 'off',
 
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
 		'import/no-extraneous-dependencies': 'off',
