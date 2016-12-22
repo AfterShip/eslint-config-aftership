@@ -207,6 +207,10 @@ module.exports = {
 		/*++++++++++++++++
 		 + Other plugins +
 		 ++++++++++++++++*/
+		// Disable it because it will throw errors when cannot resolve the path (like using resolve.alias in webpack)
+		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
+		'import/extensions': 'off',
+
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
 		'import/newline-after-import': 'off',
 
