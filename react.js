@@ -6,6 +6,7 @@ module.exports = extendConfig({
 	extends: [
 		'eslint-config-airbnb',
 		'eslint-config-aftership/rules/main',
+		'eslint-config-aftership/rules/frontend',
 		'eslint-config-aftership/rules/camelcase'
 	],
 	parserOptions: {
@@ -14,25 +15,7 @@ module.exports = extendConfig({
 			jsx: true
 		}
 	},
-	env: {
-		commonjs: true,
-		node: false,
-		webextensions: true
-	},
-	globals: {
-		console: false, // for console.log
-		process: false, // for process.env.NODE_ENV
-		window: false
-	},
 	rules: {
-		// we alias some local folders to modules, for example `project-root/src/app` => `app`
-		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md
-		'import/imports-first': 'off',
-
-		// it fails with inject-loader
-		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
-		'import/no-unresolved': 'off',
-
 		// for array, sometime it is not all the same type
 		// for object, it is very painful to define the object structure every time
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
