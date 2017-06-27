@@ -5,6 +5,7 @@ module.exports = {
 		'./index'
 	].map(require.resolve),
 	parserOptions: {
+		sourceType: 'module',
 		ecmaFeatures: {
 			experimentalObjectRestSpread: true
 		}

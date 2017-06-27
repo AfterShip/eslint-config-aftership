@@ -23,12 +23,14 @@
     "prepush": "npm run lint"
   },
   "optionalDependencies": {
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-html": "^3.0.0",
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^6.0.0",
     "eslint-plugin-react": "^7.1.0"
   },
   "peerDependencies": {
+    "babel-eslint": "^7.2.3",
     "eslint": "^4.1.1"
   },
   "devDependencies": {

@@ -138,7 +138,7 @@ module.exports = {
 
 		// suggest using template literals instead of string concatenation
 		// http://eslint.org/docs/rules/prefer-template
-		'prefer-template': 'error',
+		'prefer-template': 'off',
 
 		// disallow generator functions that do not have yield
 		// http://eslint.org/docs/rules/require-yield

@@ -45,6 +45,7 @@
 	- [arrow-body-style](#arrow-body-style)
 	- [arrow-parens](#arrow-parens)
 	- [object-shorthand](#object-shorthand)
+	- [prefer-template](#prefer-template)
 	- [require-yield](#require-yield)
 	- [max-len](#max-len)
 - [Other plugins](#other-plugins)
@@ -390,6 +391,13 @@ let developer decide when to add bracket
 Example: http://eslint.org/docs/rules/object-shorthand
 
 We just leave it to developers, sometime it is clearer to not use the shorthand
+
+### prefer-template
+```
+'prefer-template': 'off'
+```
+
+sometimes it's just better to have `+` to concat strings
 
 ### require-yield
 ```

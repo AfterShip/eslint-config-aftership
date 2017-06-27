@@ -5,7 +5,10 @@ module.exports = {
 		'./index',
 		'./rules/react'
 	].map(require.resolve),
+	parser: 'babel-eslint',
 	parserOptions: {
+		sourceType: 'module',
+		ecmaVersion: 2017,
 		ecmaFeatures: {
 			experimentalObjectRestSpread: true,
 			jsx: true
@@ -14,6 +17,14 @@ module.exports = {
 	rules: {
 		// in react, we have babel anyway, it auto inserts the `use strict` for us
 		strict: ['error', 'never'],
+
+		'comma-dangle': ['error', {
+			arrays: 'always-multiline',
+			objects: 'always-multiline',
+			imports: 'always-multiline',
+			exports: 'always-multiline',
+			functions: 'always-multiline',
+		}],
 
 		// require camel case names
 		camelcase: ['off', {properties: 'never'}],
