@@ -99,7 +99,8 @@ module.exports = {
 		}],
 
 		// suggest using arrow functions as callbacks
-		'prefer-arrow-callback': ['error', {
+		// this is okay but should not enforce
+		'prefer-arrow-callback': ['off', {
 			allowNamedFunctions: false,
 			allowUnboundThis: true,
 		}],
@@ -112,8 +113,7 @@ module.exports = {
 
 		// Prefer destructuring from arrays and objects
 		// http://eslint.org/docs/rules/prefer-destructuring
-		// TODO: enable
-		'prefer-destructuring': ['off', {
+		'prefer-destructuring': ['warning', {
 			array: true,
 			object: true,
 		}, {
@@ -137,12 +137,14 @@ module.exports = {
 		'prefer-spread': 'error',
 
 		// suggest using template literals instead of string concatenation
+		// e.g. '?' + qs.stringify({...}), such case dont need template literals
 		// http://eslint.org/docs/rules/prefer-template
 		'prefer-template': 'off',
 
 		// disallow generator functions that do not have yield
+		// co return dont need yield
 		// http://eslint.org/docs/rules/require-yield
-		'require-yield': 'error',
+		'require-yield': 'warning',
 
 		// enforce spacing between object rest-spread
 		// http://eslint.org/docs/rules/rest-spread-spacing

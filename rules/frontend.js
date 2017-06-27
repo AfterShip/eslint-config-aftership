@@ -20,12 +20,20 @@ module.exports = {
 		window: false
 	},
 	rules: {
-		// we alias some local folders to modules, for example `project-root/src/app` => `app`
-		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/imports-first.md
-		'import/imports-first': 'off',
+		// in react, we have babel anyway, it auto inserts the `use strict` for us
+		strict: ['error', 'never'],
 
-		// it fails with inject-loader
-		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
-		'import/no-unresolved': 'off'
+		// in frontend, enable this for better version control
+		'comma-dangle': ['error', {
+			arrays: 'always-multiline',
+			objects: 'always-multiline',
+			imports: 'always-multiline',
+			exports: 'always-multiline',
+			functions: 'always-multiline'
+		}],
+
+		// require camel case names
+		// some config properties may have underscore names which is okay
+		camelcase: ['error', {properties: 'never'}]
 	}
 };

@@ -105,8 +105,8 @@ module.exports = {
 
 		// disallow implicit type conversions
 		// http://eslint.org/docs/rules/no-implicit-coercion
-		'no-implicit-coercion': ['off', {
-			boolean: false,
+		'no-implicit-coercion': ['error', {
+			boolean: true,
 			number: true,
 			string: true,
 			allow: [],
@@ -209,7 +209,7 @@ module.exports = {
 		'no-return-await': 'error',
 
 		// disallow use of `javascript:` urls.
-		'no-script-url': 'error',
+		'no-script-url': 'off',
 
 		// disallow self assignment
 		// http://eslint.org/docs/rules/no-self-assign
@@ -229,7 +229,8 @@ module.exports = {
 		'no-unmodified-loop-condition': 'off',
 
 		// disallow usage of expressions in statement position
-		'no-unused-expressions': ['error', {
+		// chai will throw for this rule
+		'no-unused-expressions': ['off', {
 			allowShortCircuit: false,
 			allowTernary: false,
 			allowTaggedTemplates: false,
@@ -277,7 +278,8 @@ module.exports = {
 		'require-await': 'off',
 
 		// requires to declare all vars on top of their containing scope
-		'vars-on-top': 'error',
+		// sometimes it's better to declare when needed
+		'vars-on-top': 'off',
 
 		// require immediate function invocation to be wrapped in parentheses
 		// http://eslint.org/docs/rules/wrap-iife.html

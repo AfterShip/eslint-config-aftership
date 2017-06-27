@@ -2,28 +2,31 @@
 
 module.exports = {
 	rules: {
-		// optionally require trailing commas in multiline object literals
+		// for server side, this feature is way too early to have
 		'comma-dangle': ['error', {
-			arrays: 'only-multiline',
-			objects: 'only-multiline',
-			imports: 'only-multiline',
-			exports: 'only-multiline',
-			functions: 'ignore',
+			arrays: 'never',
+			objects: 'never',
+			imports: 'never',
+			exports: 'never',
+			functions: 'never',
 		}],
 
 		// Disallow await inside of loops
+		// sometimes we have to based on previous result to perform retry logics
 		// http://eslint.org/docs/rules/no-await-in-loop
-		'no-await-in-loop': 'error',
+		'no-await-in-loop': 'off',
 
 		// Disallow comparisons to negative zero
 		// http://eslint.org/docs/rules/no-compare-neg-zero
-		// TODO: enable (semver-major)
-		'no-compare-neg-zero': 'off',
+		'no-compare-neg-zero': 'error',
 
 		// disallow assignment in conditional expressions
+		// http://eslint.org/docs/rules/no-cond-assign
 		'no-cond-assign': ['error', 'always'],
 
 		// disallow use of console
+		// at the time being it's not possible for our projects
+		// http://eslint.org/docs/rules/no-console
 		'no-console': 'off',
 
 		// disallow use of constant expressions in conditions

@@ -2,7 +2,8 @@
 
 module.exports = {
 	extends: [
-		'./index'
+		'./index',
+		'./rules/frontend'
 	].map(require.resolve),
 	parserOptions: {
 		sourceType: 'module',
@@ -19,8 +20,6 @@ module.exports = {
 		}
 	},
 	rules: {
-		// require camel case names
-		camelcase: ['off', {properties: 'never'}],
 		// this two doesn't work in vue
 		'import/no-named-as-default': 'off',
 		'import/no-named-as-default-member': 'off'

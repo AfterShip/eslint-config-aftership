@@ -9,7 +9,7 @@
 
 AfterShip ESLint config (modified from eslint-config-airbnb)
 
-following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a3495e07f484513db203e5d5654e47b221c19f4a](https://github.com/airbnb/javascript/blob/a3495e07f484513db203e5d5654e47b221c19f4a/README.md)
+following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [2666db559dc0ef41887a1138cff4f59b3879892a](https://github.com/airbnb/javascript/tree/2666db559dc0ef41887a1138cff4f59b3879892a)
 
 ## Rules that cannot be checked by ESLint
 * Use `snake_case` for files and folders

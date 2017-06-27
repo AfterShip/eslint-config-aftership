@@ -38,7 +38,8 @@ module.exports = {
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/display-name.md
 		'react/display-name': ['off', {ignoreTranspilerName: false}],
 
-		// Forbid certain propTypes (any, array, object)
+		// Forbid certain propTypes (any, array), use oneOf or arrayOf instead
+		// object is not practical to forbid, `react-router` `style` depends on it
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
 		'react/forbid-prop-types': ['error', {forbid: ['any', 'array']}],
 
@@ -56,6 +57,7 @@ module.exports = {
 
 		// Enforce event handler naming conventions in JSX
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-handler-names.md
+		// TODO: enable this? (we used the exact opposite pattern previously)
 		'react/jsx-handler-names': ['off', {
 			eventHandlerPrefix: 'handle',
 			eventHandlerPropPrefix: 'on',
@@ -67,13 +69,14 @@ module.exports = {
 
 		// Validate JSX has key prop when in array or iterator
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
-		'react/jsx-key': 'off',
+		'react/jsx-key': 'warning',
 
 		// Limit maximum of props on a single line in JSX
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-max-props-per-line.md
 		'react/jsx-max-props-per-line': ['error', {maximum: 1, when: 'multiline'}],
 
 		// Prevent usage of .bind() in JSX props
+		// extract to a new component instead
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md
 		'react/jsx-no-bind': ['error', {
 			ignoreRefs: true,
@@ -102,6 +105,7 @@ module.exports = {
 
 		// Enforce propTypes declarations alphabetical sorting
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
+		// this is way too OCD...
 		'react/sort-prop-types': ['off', {
 			ignoreCase: true,
 			callbacksLast: false,
@@ -131,6 +135,8 @@ module.exports = {
 		'react/jsx-uses-vars': 'error',
 
 		// Prevent usage of dangerous JSX properties
+		// should always feel very very guilty to doing so
+		// use a `eslint-ignore-next-line` to suppress it always
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-danger.md
 		'react/no-danger': 'warn',
 
@@ -159,8 +165,9 @@ module.exports = {
 		'react/no-is-mounted': 'error',
 
 		// Prevent multiple component definition per file
+		// sometimes it's okay to have 2 components in one file
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md
-		'react/no-multi-comp': ['error', {ignoreStateless: true}],
+		'react/no-multi-comp': ['off', {ignoreStateless: true}],
 
 		// Prevent usage of setState
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-set-state.md

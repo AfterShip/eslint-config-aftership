@@ -151,24 +151,24 @@ module.exports = {
 
 		// specify the max number of lines in a file
 		// http://eslint.org/docs/rules/max-lines
-		'max-lines': ['off', {
-			max: 300,
+		'max-lines': ['warning', {
+			max: 400,
 			skipBlankLines: true,
 			skipComments: true
 		}],
 
 		// specify the maximum depth callbacks can be nested
-		'max-nested-callbacks': 'off',
+		'max-nested-callbacks': ['off', 3],
 
 		// limits the number of parameters that can be used in the function declaration.
-		'max-params': ['off', 3],
+		'max-params': ['warning', 4],
 
 		// specify the maximum number of statement allowed in a function
-		'max-statements': ['off', 10],
+		'max-statements': ['warning', 10],
 
 		// restrict the number of statements per line
 		// http://eslint.org/docs/rules/max-statements-per-line
-		'max-statements-per-line': ['off', {max: 1}],
+		'max-statements-per-line': ['error', {max: 1}],
 
 		// require multiline ternary
 		// http://eslint.org/docs/rules/multiline-ternary
@@ -249,7 +249,7 @@ module.exports = {
 		// disallow use of the Object constructor
 		'no-new-object': 'error',
 
-		// this is very common
+		// it's very common to use ++/-- as the increment/decrement in loops
 		// http://eslint.org/docs/rules/no-plusplus
 		'no-plusplus': 'off',
 
@@ -259,16 +259,16 @@ module.exports = {
 			'error',
 			{
 				selector: 'ForInStatement',
-				message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+				message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.'
 			},
 			{
 				selector: 'LabeledStatement',
-				message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+				message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.'
 			},
 			{
 				selector: 'WithStatement',
-				message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
-			},
+				message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
+			}
 		],
 
 		// disallow space between function identifier and application
@@ -334,8 +334,9 @@ module.exports = {
 		'padded-blocks': ['error', 'never'],
 
 		// require quotes around object literal property names
+		// this is not a big deal, sometimes it's more unified if quote all props
 		// http://eslint.org/docs/rules/quote-props.html
-		'quote-props': ['error', 'as-needed', {keywords: false, unnecessary: true, numbers: false}],
+		'quote-props': ['off', 'as-needed', {keywords: false, unnecessary: true, numbers: false}],
 
 		// specify whether double or single quotes should be used
 		quotes: ['error', 'single', {avoidEscape: true}],

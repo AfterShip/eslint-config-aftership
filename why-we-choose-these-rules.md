@@ -108,7 +108,7 @@ if requireStringLiterals is true, it doesn't allow using variable to compare wit
 ```
 Example: http://eslint.org/docs/rules/class-methods-use-this
 
-Force the instance methods to use `this`
+Force the instance methods to use `this`, a class method is totally meaningless if it does not use `this`, a utility function will just to the job in such case.
 
 ### no-alert
 Allow `alert`
@@ -141,15 +141,15 @@ We all agree that help improving the readability of code
 ### no-loop-func
 Allow define function inside loop
 ```
-'no-loop-func': 'off'
+'no-loop-func': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-loop-func
 
-Disabling it because it breaks our loop function:
+such loop function should be strongly **discouraged**
 
 ```js
 for (let results of data) {
-	_.forOwn(results, function (value, key) {
+	_.each(results, function (value, key) {
 		// ......
 	});
 }
@@ -157,7 +157,7 @@ for (let results of data) {
 
 ### no-new
 ```
-'no-new': 'off'
+'no-new': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-new
 
@@ -170,7 +170,7 @@ Allow resign the parameter's value of function
 ```
 Example: http://eslint.org/docs/rules/no-param-reassign
 
-We prefer `options = options || {}`
+It's okay to have `options = options || {}`
 
 ### no-script-url
 ```
@@ -182,9 +182,11 @@ we want to preserve the semantic meaning of link, such as `<a href="javascript:v
 
 ### no-throw-literal
 ```
-'no-throw-literal': 'off'
+'no-throw-literal': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-throw-literal
+
+It's generally bad idea because we will lose all of the error stack
 
 ### no-unused-expressions
 ```
