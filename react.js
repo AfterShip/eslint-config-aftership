@@ -1,14 +1,10 @@
 'use strict';
 
-const extendConfig = require('./lib/extend_config');
-
-module.exports = extendConfig({
+module.exports = {
 	extends: [
-		'eslint-config-airbnb',
-		'eslint-config-aftership/rules/main',
-		'eslint-config-aftership/rules/frontend',
-		'eslint-config-aftership/rules/camelcase'
-	],
+		'./index',
+		'./rules/react'
+	].map(require.resolve),
 	parserOptions: {
 		ecmaFeatures: {
 			experimentalObjectRestSpread: true,
@@ -16,6 +12,12 @@ module.exports = extendConfig({
 		}
 	},
 	rules: {
+		// in react, we have babel anyway, it auto inserts the `use strict` for us
+		strict: ['error', 'never'],
+
+		// require camel case names
+		camelcase: ['off', {properties: 'never'}],
+
 		// for array, sometime it is not all the same type
 		// for object, it is very painful to define the object structure every time
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-prop-types.md
@@ -64,4 +66,4 @@ module.exports = extendConfig({
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-extension.md
 		'react/require-extension': 'off'
 	}
-});
+};

@@ -35,7 +35,6 @@
 	- [indent](#indent)
 	- [new-cap](#new-cap)
 	- [no-continue](#no-continue)
-	- [no-lonely-if](#no-lonely-if)
 	- [no-mixed-operators](#no-mixed-operators)
 	- [no-plusplus](#no-plusplus)
 	- [no-tabs](#no-tabs)
@@ -46,13 +45,7 @@
 	- [arrow-body-style](#arrow-body-style)
 	- [arrow-parens](#arrow-parens)
 	- [object-shorthand](#object-shorthand)
-	- [prefer-arrow-callback](#prefer-arrow-callback)
-	- [prefer-const](#prefer-const)
-	- [prefer-rest-params](#prefer-rest-params)
-	- [prefer-spread](#prefer-spread)
-	- [prefer-template](#prefer-template)
 	- [require-yield](#require-yield)
-- [Legacy](#legacy)
 	- [max-len](#max-len)
 - [Other plugins](#other-plugins)
 	- [import/newline-after-import](#importnewline-after-import)
@@ -64,14 +57,20 @@
 ## Possible Errors
 
 ### comma-dangle
-Don't put comma in the last item of object/array
+
+allow put the comma at the end of the element, but not force it
+
 ```
-'comma-dangle': ['error', 'never']
+'comma-dangle': ['error', {
+	arrays: 'only-multiline',
+	objects: 'only-multiline',
+	imports: 'only-multiline',
+	exports: 'only-multiline',
+	functions: 'ignore',
+}]
+
 ```
 Example: http://eslint.org/docs/rules/comma-dangle
-
-1. It is not a standard ES3 JS code
-2. It just looks weird
 
 ### no-console
 Allow `console`
@@ -80,7 +79,7 @@ Allow `console`
 ```
 Example: http://eslint.org/docs/rules/no-console
 
-We use it a lot, it is difficult for us to enable this rules
+We use it a lot, it is difficult for us to enable this rule
 
 ### no-prototype-builtins
 ```
@@ -104,25 +103,25 @@ if requireStringLiterals is true, it doesn't allow using variable to compare wit
 
 ### class-methods-use-this
 ```
-'class-methods-use-this': 'off'
+'class-methods-use-this': 'error'
 ```
 Example: http://eslint.org/docs/rules/class-methods-use-this
 
-don't force every class methods to use `this`
+Force the instance methods to use `this`
 
 ### no-alert
 Allow `alert`
 ```
-'no-alert': 'off'
+'no-alert': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-alert
 
-Front end guys may need it
+Frontend will never call `alert`
 
 ### no-else-return
 No `else` if the `if` condition has `return`
 ```
-'no-else-return': 'off'
+'no-else-return': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-else-return
 
@@ -216,26 +215,21 @@ Example: http://eslint.org/docs/rules/no-shadow
 prevents shadowing of built-in global variables
 
 ### no-unused-vars
-Only check if local variables (name without `_` prefix) are used
+Check all variables that is not used
 ```
-'no-unused-vars': [2, {
-	args: 'none'
-	vars: 'local'
-	varsIgnorePattern: '^_'
-}]
+'no-unused-vars': ['error', {
+	vars: 'all', 
+	args: 'after-used', 
+	ignoreRestSiblings: true
+}],
 ```
 Example: http://eslint.org/docs/rules/no-unused-vars
 
-1. Make sure we clean up our source code, no unnecessary variables
-2. We ignore variables with `_` prefix because we have a lot of `_this` for reserve use
-
 ### no-use-before-define
 ```
-'no-use-before-define': 'off'
+'no-use-before-define': ['error', {functions: false, classes: true, variables: true}]
 ```
 Example: http://eslint.org/docs/rules/no-use-before-define
-
-We may need to use the function before we define it, check `js hoisting`
 
 ## Node.js and CommonJS
 
@@ -274,19 +268,35 @@ camelcase: 'off'
 ```
 Example: http://eslint.org/docs/rules/camelcase
 
-We use snake case
+We use snake case for backend projects
+
+For frontend projects, this options is set to 
+
+```
+camelcase: 'error'
+```
 
 ### func-names
-Don't force to add function name in anonymous function
+Should try to give a function expression a name for debug purpose
 ```
-'func-names': 'off'
+'func-names': 'warn'
 ```
 Example: http://eslint.org/docs/rules/func-names
 
 ### indent
 ```
 indent: ['error', 'tab', {
-	SwitchCase: 1
+	SwitchCase: 1,
+	VariableDeclarator: 1,
+	outerIIFEBody: 1,
+	FunctionDeclaration: {
+		parameters: 1,
+		body: 1
+	},
+	FunctionExpression: {
+		parameters: 1,
+		body: 1
+	}
 }]
 ```
 Example: http://eslint.org/docs/rules/indent
@@ -310,14 +320,6 @@ There are some codes, such as `new Bunyan.createLogger`, cannot pass, so disable
 Example: http://eslint.org/docs/rules/no-continue
 
 we don't want to remove support of `continue` in loop
-
-### no-lonely-if
-```
-'no-lonely-if': 'off'
-```
-Example: http://eslint.org/docs/rules/no-lonely-if
-
-disable it allow better readability
 
 ### no-mixed-operators
 ```
@@ -389,53 +391,13 @@ Example: http://eslint.org/docs/rules/object-shorthand
 
 We just leave it to developers, sometime it is clearer to not use the shorthand
 
-### prefer-arrow-callback
-```
-'prefer-arrow-callback': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-arrow-callback
-
-### prefer-const
-```
-'prefer-const': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-const
-
-We want to define constant only when it is **REALLY** a constant
-
-### prefer-rest-params
-```
-'prefer-rest-params': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-rest-params
-
-node 4.2 doesn't support rest params yet
-
-### prefer-spread
-```
-'prefer-spread': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-spread
-
-node 4.2 doesn't have full support on spread
-
-### prefer-template
-```
-'prefer-template': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-template
-
-sometime not using template string is more readable
-
 ### require-yield
 ```
 'require-yield': 'off'
 ```
 Example: http://eslint.org/docs/rules/require-yield
 
-need to use generator function in koa even if we don't use yield
-
-## Legacy
+Even in koa, the controller/middleware will most likely have `yield` call
 
 ### max-len
 ```
@@ -466,11 +428,32 @@ const AftershipPrivateError = AftershipError.PrivateError;
 
 ### import/no-extraneous-dependencies
 ```
-'import/no-extraneous-dependencies': 'off'
+'import/no-extraneous-dependencies': ['error', {
+	devDependencies: [
+		'test/**', // tape, common npm pattern
+		'tests/**', // also common npm pattern
+		'spec/**', // mocha, rspec-like pattern
+		'**/__tests__/**', // jest pattern
+		'**/__test__/**', // jest pattern
+		'test.{js,jsx}', // repos with a single test file
+		'test-*.{js,jsx}', // repos with multiple top-level test files
+		'**/*.{test,spec}.{js,jsx}', // tests where the extension denotes that it is a test
+		'**/webpack.config.js', // webpack config
+		'**/webpack.config.*.js', // webpack config
+		'**/rollup.config.js', // rollup config
+		'**/rollup.config.*.js', // rollup config
+		'**/gulpfile.js', // gulp config
+		'**/gulpfile.*.js', // gulp config
+		'**/Gruntfile', // grunt config
+		'**/scripts/**', // project scripts
+		'**/protractor.conf.*.js', // protractor config
+	],
+	optionalDependencies: false,
+}],
 ```
+
 Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
 
-we need to import devDependencies in test files
 
 ### import/prefer-default-export
 ```

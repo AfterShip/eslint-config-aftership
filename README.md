@@ -82,19 +82,17 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo is using node version `<= 0.10`, `aftership/legacy` will assume you are using ES5 instead of ES6 up
+		If your repo is a front-end project using babel.js, you should extends `aftership/{react|vue}`
 
 		```json
 		{
-			"extends": "aftership/legacy"
-		}
-		```
-
-		If your repo is a front-end project using babel.js, you should extends `aftership/react` instead`
-
-		```json
-		{
-			"extends": "aftership/react"
+			"extends": "aftership/{react|vue}",
+			"settings": {
+				"import/resolver": {
+					"webpack": {
+					"config": "webpack.conf.js"
+				}
+			}
 		}
 		```
 
@@ -179,6 +177,6 @@ Z for removing rules/options (more loose)
 - NA
 
 ## License
-Copyright (c) 2015 AfterShip
+Copyright (c) 2017 AfterShip
  
 Licensed under the MIT license.
