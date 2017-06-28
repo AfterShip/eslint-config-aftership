@@ -1,5 +1,7 @@
 # eslint-config-aftership
 
+!! NOTE this is for node <= v4 only, if your have a legacy project to maintain, or dont want to bother upgrade to the latest version, please see [v3 branch](https://github.com/AfterShip/eslint-config-aftership/tree/3.x), if you are upgrading to v4, please see [upgrade guide](https://github.com/AfterShip/eslint-config-aftership/blob/4.x/upgrade_guides/v3tov4.md), see all changes in [v4 shiplist](https://github.com/AfterShip/eslint-config-aftership/issues/13)
+
 [![Build Status](https://travis-ci.org/AfterShip/eslint-config-aftership.svg?branch=master)](https://travis-ci.org/AfterShip/eslint-config-aftership)
 [![Dependency Status](https://gemnasium.com/AfterShip/eslint-config-aftership.svg)](https://gemnasium.com/AfterShip/eslint-config-aftership)
 
