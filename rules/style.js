@@ -164,7 +164,7 @@ module.exports = {
 		'max-params': ['warn', 4],
 
 		// specify the maximum number of statement allowed in a function
-		'max-statements': ['warn', 10],
+		'max-statements': ['off', 10],
 
 		// restrict the number of statements per line
 		// http://eslint.org/docs/rules/max-statements-per-line
