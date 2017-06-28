@@ -85,19 +85,37 @@ as we support frontend and backend project at the same time, some framework spec
 		}
 		```
 
-		If your repo is a front-end project using babel.js, you should extends `aftership/{react|vue}`, and install additional packages
+		If your repo is a **React** project using webpack.js, you should extends `aftership/react`, and install additional packages
 
 		```sh
-		npm install eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint eslint-import-resolver-webpack
+		npm install eslint-plugin-html eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint eslint-import-resolver-webpack
 		```
 
 		```json
 		{
-			"extends": "aftership/{react|vue}",
+			"extends": "aftership/react",
 			"settings": {
 				"import/resolver": {
 					"webpack": {
-					"config": "webpack.conf.js"
+					"config": "webpack.config.js"
+				}
+			}
+		}
+		```
+
+		If your repo is a **Vue** project using webpack, you should extends `aftership/vue`, and install additional packages
+
+		```sh
+		npm install eslint-plugin-html eslint-plugin-vue@3.3.0 babel-eslint vue-eslint-parser@1.1.0-7 eslint-import-resolver-webpack
+		```
+
+		```json
+		{
+			"extends": "aftership/vue",
+			"settings": {
+				"import/resolver": {
+					"webpack": {
+					"config": "webpack.config.js"
 				}
 			}
 		}
