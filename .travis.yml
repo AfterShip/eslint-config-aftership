@@ -10,7 +10,6 @@ notifications:
 env:
   - CACHE_DIR=cache CXX=g++-4.8
 cache:
-  yarn: true
   apt: true
   directories:
     - $CACHE_DIR

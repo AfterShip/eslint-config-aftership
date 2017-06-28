@@ -1,5 +1,6 @@
 # eslint-config-aftership
 
+[![Build Status](https://travis-ci.org/AfterShip/eslint-config-aftership.svg?branch=master)](https://travis-ci.org/AfterShip/eslint-config-aftership)
 [![Dependency Status](https://gemnasium.com/AfterShip/eslint-config-aftership.svg)](https://gemnasium.com/AfterShip/eslint-config-aftership)
 
 [![node](https://img.shields.io/node/v/eslint-config-aftership.svg)]()
@@ -41,7 +42,7 @@ following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 
 
 		}
 
-		example_function1() {
+		exampleFunction1() {
 
 		}
 
