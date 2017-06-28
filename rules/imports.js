@@ -20,14 +20,14 @@ module.exports = {
 		},
 		'import/extensions': [
 			'.js',
-			'.jsx',
+			'.jsx'
 		],
 		'import/core-modules': [
 		],
 		'import/ignore': [
 			'node_modules',
-			'\\.(coffee|scss|css|less|hbs|svg|json)$',
-		],
+			'\\.(coffee|scss|css|less|hbs|svg|json)$'
+		]
 	},
 
 	rules: {
@@ -89,9 +89,9 @@ module.exports = {
 				'**/gulpfile.*.js', // gulp config
 				'**/Gruntfile', // grunt config
 				'**/scripts/**', // project scripts
-				'**/protractor.conf.*.js', // protractor config
+				'**/protractor.conf.*.js' // protractor config
 			],
-			optionalDependencies: false,
+			optionalDependencies: false
 		}],
 
 		// Forbid mutable exports
@@ -137,7 +137,7 @@ module.exports = {
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
 		'import/extensions': ['error', 'always', {
 			js: 'never',
-			jsx: 'never',
+			jsx: 'never'
 		}],
 
 		// Enforce a convention in module import order
@@ -145,7 +145,7 @@ module.exports = {
 		// TODO: enable?
 		'import/order': ['off', {
 			groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-			'newlines-between': 'never',
+			'newlines-between': 'never'
 		}],
 
 		// Require a newline after the last import/require in a group
@@ -175,7 +175,7 @@ module.exports = {
 		// prevent importing the submodules of other modules
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-internal-modules.md
 		'import/no-internal-modules': ['off', {
-			allow: [],
+			allow: []
 		}],
 
 		// Warn if a module could be mistakenly parsed as a script by a consumer
@@ -196,6 +196,6 @@ module.exports = {
 
 		// Prevent importing the default as if it were named
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
-		'import/no-named-default': 'error',
-	},
+		'import/no-named-default': 'error'
+	}
 };

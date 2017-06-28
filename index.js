@@ -12,8 +12,7 @@ module.exports = {
 		'./rules/variables'
 	].map(require.resolve),
 	env: {
-		mocha: true,
-		node: true
+		mocha: true
 	},
 	parserOptions: {
 		ecmaVersion: 2017,

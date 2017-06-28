@@ -18,13 +18,13 @@ module.exports = {
 		// http://eslint.org/docs/rules/arrow-body-style
 		// it's optional to have () for arrow functions
 		'arrow-body-style': ['off', 'always', {
-			requireReturnForObjectLiteral: false,
+			requireReturnForObjectLiteral: false
 		}],
 
 		// require parens in arrow function arguments
 		// http://eslint.org/docs/rules/arrow-parens
 		'arrow-parens': ['off', 'as-needed', {
-			requireForBlockBody: true,
+			requireForBlockBody: true
 		}],
 
 		// require space before/after arrow function's arrow
@@ -45,7 +45,7 @@ module.exports = {
 		// disallow arrow functions where they could be confused with comparisons
 		// http://eslint.org/docs/rules/no-confusing-arrow
 		'no-confusing-arrow': ['error', {
-			allowParens: true,
+			allowParens: true
 		}],
 
 		// disallow modifying variables that are declared using const
@@ -85,7 +85,7 @@ module.exports = {
 		'no-useless-rename': ['error', {
 			ignoreDestructuring: false,
 			ignoreImport: false,
-			ignoreExport: false,
+			ignoreExport: false
 		}],
 
 		// require let or const instead of var
@@ -95,29 +95,29 @@ module.exports = {
 		// http://eslint.org/docs/rules/object-shorthand
 		'object-shorthand': ['off', 'always', {
 			ignoreConstructors: false,
-			avoidQuotes: true,
+			avoidQuotes: true
 		}],
 
 		// suggest using arrow functions as callbacks
 		// this is okay but should not enforce
 		'prefer-arrow-callback': ['off', {
 			allowNamedFunctions: false,
-			allowUnboundThis: true,
+			allowUnboundThis: true
 		}],
 
 		// suggest using of const declaration for variables that are never modified after declared
 		'prefer-const': ['error', {
 			destructuring: 'any',
-			ignoreReadBeforeAssign: true,
+			ignoreReadBeforeAssign: true
 		}],
 
 		// Prefer destructuring from arrays and objects
 		// http://eslint.org/docs/rules/prefer-destructuring
-		'prefer-destructuring': ['warning', {
+		'prefer-destructuring': ['warn', {
 			array: true,
-			object: true,
+			object: true
 		}, {
-			enforceForRenamedProperties: false,
+			enforceForRenamedProperties: false
 		}],
 
 		// disallow parseInt() in favor of binary, octal, and hexadecimal literals
@@ -144,7 +144,7 @@ module.exports = {
 		// disallow generator functions that do not have yield
 		// co return dont need yield
 		// http://eslint.org/docs/rules/require-yield
-		'require-yield': 'warning',
+		'require-yield': 'warn',
 
 		// enforce spacing between object rest-spread
 		// http://eslint.org/docs/rules/rest-spread-spacing
@@ -155,7 +155,7 @@ module.exports = {
 		'sort-imports': ['off', {
 			ignoreCase: false,
 			ignoreMemberSort: false,
-			memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+			memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
 		}],
 
 		// require a Symbol description

@@ -21,13 +21,13 @@ module.exports = {
 			line: {
 				ignorePattern: '.*',
 				ignoreInlineComments: true,
-				ignoreConsecutiveComments: true,
+				ignoreConsecutiveComments: true
 			},
 			block: {
 				ignorePattern: '.*',
 				ignoreInlineComments: true,
-				ignoreConsecutiveComments: true,
-			},
+				ignoreConsecutiveComments: true
+			}
 		}],
 
 		// enforce spacing before and after comma
@@ -119,7 +119,7 @@ module.exports = {
 		'line-comment-position': ['off', {
 			position: 'above',
 			ignorePattern: '',
-			applyDefaultPatterns: true,
+			applyDefaultPatterns: true
 		}],
 
 		// disallow mixed 'LF' and 'CRLF' as linebreaks
@@ -133,7 +133,7 @@ module.exports = {
 		// http://eslint.org/docs/rules/lines-around-directive
 		'lines-around-directive': ['error', {
 			before: 'always',
-			after: 'always',
+			after: 'always'
 		}],
 
 		// specify the maximum depth that blocks can be nested
@@ -146,12 +146,12 @@ module.exports = {
 			ignoreComments: false,
 			ignoreRegExpLiterals: true,
 			ignoreStrings: true,
-			ignoreTemplateLiterals: true,
+			ignoreTemplateLiterals: true
 		}],
 
 		// specify the max number of lines in a file
 		// http://eslint.org/docs/rules/max-lines
-		'max-lines': ['warning', {
+		'max-lines': ['warn', {
 			max: 400,
 			skipBlankLines: true,
 			skipComments: true
@@ -161,10 +161,10 @@ module.exports = {
 		'max-nested-callbacks': ['off', 3],
 
 		// limits the number of parameters that can be used in the function declaration.
-		'max-params': ['warning', 4],
+		'max-params': ['warn', 4],
 
 		// specify the maximum number of statement allowed in a function
-		'max-statements': ['warning', 10],
+		'max-statements': ['warn', 10],
 
 		// restrict the number of statements per line
 		// http://eslint.org/docs/rules/max-statements-per-line
@@ -180,7 +180,7 @@ module.exports = {
 			newIsCap: true,
 			newIsCapExceptions: [],
 			capIsNew: false,
-			capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
+			capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List']
 		}],
 
 		// disallow the omission of parentheses when invoking a constructor with no arguments
@@ -313,7 +313,7 @@ module.exports = {
 		// enforce "same line" or "multiple line" on object properties.
 		// http://eslint.org/docs/rules/object-property-newline
 		'object-property-newline': ['error', {
-			allowMultiplePropertiesPerLine: true,
+			allowMultiplePropertiesPerLine: true
 		}],
 
 		// allow just one var statement per function
@@ -379,7 +379,7 @@ module.exports = {
 		'space-unary-ops': ['error', {
 			words: true,
 			nonwords: false,
-			overrides: {},
+			overrides: {}
 		}],
 
 		// require or disallow a space immediately following the // or /* in a comment
@@ -387,12 +387,12 @@ module.exports = {
 		'spaced-comment': ['error', 'always', {
 			line: {
 				exceptions: ['-', '+'],
-				markers: ['=', '!'], // space here to support sprockets directives
+				markers: ['=', '!'] // space here to support sprockets directives
 			},
 			block: {
 				exceptions: ['-', '+'],
 				markers: ['=', '!'], // space here to support sprockets directives
-				balanced: true,
+				balanced: true
 			}
 		}],
 

@@ -18,7 +18,7 @@ module.exports = {
 		// enforce that class methods use "this"
 		// http://eslint.org/docs/rules/class-methods-use-this
 		'class-methods-use-this': ['error', {
-			exceptMethods: [],
+			exceptMethods: []
 		}],
 
 		// require return statements to either always or never specify values
@@ -67,7 +67,7 @@ module.exports = {
 			allow: [
 				'arrowFunctions',
 				'functions',
-				'methods',
+				'methods'
 			]
 		}],
 
@@ -109,7 +109,7 @@ module.exports = {
 			boolean: true,
 			number: true,
 			string: true,
-			allow: [],
+			allow: []
 		}],
 
 		// disallow var and named functions in global scope
@@ -140,7 +140,7 @@ module.exports = {
 			ignore: [],
 			ignoreArrayIndexes: true,
 			enforceConst: true,
-			detectObjects: false,
+			detectObjects: false
 		}],
 
 		// disallow use of multiple spaces
@@ -178,7 +178,7 @@ module.exports = {
 				'request', // for Express requests
 				'res', // for Express responses
 				'response', // for Express responses
-				'$scope', // for Angular 1 scopes
+				'$scope' // for Angular 1 scopes
 			]
 		}],
 
@@ -193,13 +193,13 @@ module.exports = {
 		'no-restricted-properties': ['error', {
 			object: 'arguments',
 			property: 'callee',
-			message: 'arguments.callee is deprecated',
+			message: 'arguments.callee is deprecated'
 		}, {
 			property: '__defineGetter__',
-			message: 'Please use Object.defineProperty instead.',
+			message: 'Please use Object.defineProperty instead.'
 		}, {
 			property: '__defineSetter__',
-			message: 'Please use Object.defineProperty instead.',
+			message: 'Please use Object.defineProperty instead.'
 		}],
 
 		// disallow use of assignment in return statement
@@ -233,7 +233,7 @@ module.exports = {
 		'no-unused-expressions': ['off', {
 			allowShortCircuit: false,
 			allowTernary: false,
-			allowTaggedTemplates: false,
+			allowTaggedTemplates: false
 		}],
 
 		// disallow unused labels

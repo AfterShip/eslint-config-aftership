@@ -2,9 +2,13 @@
 
 module.exports = {
 	extends: [
+		'plugin:vue/recommanded'
+	].concat([
 		'./index',
-		'./rules/frontend'
-	].map(require.resolve),
+		'./rules/frontend',
+		'./rules/vue'
+	].map(require.resolve)),
+	parser: 'babel-eslint',
 	parserOptions: {
 		sourceType: 'module',
 		ecmaFeatures: {

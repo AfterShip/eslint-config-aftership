@@ -11,13 +11,13 @@ AfterShip ESLint config (modified from eslint-config-airbnb)
 
 following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [2666db559dc0ef41887a1138cff4f59b3879892a](https://github.com/airbnb/javascript/tree/2666db559dc0ef41887a1138cff4f59b3879892a)
 
-## Rules that cannot be checked by ESLint
+## Rules that cannot be checked by ESLint (Backend only)
 * Use `snake_case` for files and folders
 * Use `camelCase` when naming `functions`
-* Use `UpperCamelCase` when naming `class variables`
+* Use `PascalCase` when naming `class variables`
 * Use `snake_case` when naming `variables`
 
-	`let name = 'John';`, `let email_address = 'john@gmail.com';`
+	`const name = 'John';`, `const email_address = 'john@gmail.com';`
 
 * Use `UPPERCASE` when naming `constant variables` but no need for `required module`
 
@@ -66,11 +66,13 @@ Z for removing rules/options (more loose)
 
 ## Installation
 
+as we support frontend and backend project at the same time, some framework specific plugins are declared in `optionalDependencies`, so you have install then at the project level.
+
 ### on your repository:
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
 - If you are not or you want to install in the existing repository:
-	1. `npm install --save-dev eslint-config-aftership`
+	1. `npm install --save-dev eslint-config-aftership eslint eslint-plugin-import`
 
 	2. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
 
@@ -82,7 +84,11 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo is a front-end project using babel.js, you should extends `aftership/{react|vue}`
+		If your repo is a front-end project using babel.js, you should extends `aftership/{react|vue}`, and install additional packages
+
+		```sh
+		npm install eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint eslint-import-resolver-webpack
+		```
 
 		```json
 		{
@@ -102,7 +108,7 @@ Z for removing rules/options (more loose)
 		```json
 		{
 		  "scripts": {
-		    "lint": "eslint --ext .jsx,.js ."
+		    "lint": "eslint --ext .{jsx|vue},.js ."
 		  }
 		}
 		```

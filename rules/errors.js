@@ -8,7 +8,7 @@ module.exports = {
 			objects: 'never',
 			imports: 'never',
 			exports: 'never',
-			functions: 'never',
+			functions: 'never'
 		}],
 
 		// Disallow await inside of loops
@@ -65,7 +65,7 @@ module.exports = {
 		'no-extra-parens': ['off', 'all', {
 			conditionalAssign: true,
 			nestedBinaryExpressions: false,
-			returnAssign: false,
+			returnAssign: false
 		}],
 
 		// disallow unnecessary semicolons
@@ -127,6 +127,6 @@ module.exports = {
 
 		// ensure that the results of typeof are compared against a valid string
 		// http://eslint.org/docs/rules/valid-typeof
-		'valid-typeof': ['error', {requireStringLiterals: true}],
+		'valid-typeof': ['error', {requireStringLiterals: true}]
 	}
 };

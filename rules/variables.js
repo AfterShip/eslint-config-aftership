@@ -44,6 +44,6 @@ module.exports = {
 
 		// disallow use of variables before they are defined
 		// but enable function hoist
-		'no-use-before-define': ['error', {functions: false, classes: true, variables: true}],
+		'no-use-before-define': ['error', {functions: false, classes: true, variables: true}]
 	}
 };
