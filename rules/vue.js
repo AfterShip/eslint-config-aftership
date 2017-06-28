@@ -11,7 +11,13 @@ module.exports = {
 			jsx: true
 		}
 	},
+	settings: {
+		'import/extensions': ['.js', '.vue']
+	},
 	rules: {
+		"import/extensions": ['error', {
+			vue: 'never'
+		}],
 		// ++++++++++++++ //
 		// Best Practices //
 		// ++++++++++++++ //
@@ -24,24 +30,7 @@ module.exports = {
 		// https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/html-no-self-closing.md
 		'vue/html-no-self-closing': 'error',
 
-		'vue/order-in-components': ['error', {
-			order: [
-				['name', 'delimiters', 'functional', 'model'],
-				['components', 'directives', 'filters'],
-				['parent', 'mixins', 'extends', 'provide', 'inject'],
-				'el',
-				'template',
-				'props',
-				'propsData',
-				'data',
-				'computed',
-				'watch',
-				'lifecycle_hooks',
-				'methods',
-				'render',
-				'renderError'
-			]
-		}],
+		'vue/order-in-components': ['error'],
 
 		// https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/no-duplicate-attributes.md
 		'vue/no-duplicate-attributes': 'error',

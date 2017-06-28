@@ -439,28 +439,12 @@ const AftershipPrivateError = AftershipError.PrivateError;
 ### import/no-extraneous-dependencies
 ```
 'import/no-extraneous-dependencies': ['error', {
-	devDependencies: [
-		'test/**', // tape, common npm pattern
-		'tests/**', // also common npm pattern
-		'spec/**', // mocha, rspec-like pattern
-		'**/__tests__/**', // jest pattern
-		'**/__test__/**', // jest pattern
-		'test.{js,jsx}', // repos with a single test file
-		'test-*.{js,jsx}', // repos with multiple top-level test files
-		'**/*.{test,spec}.{js,jsx}', // tests where the extension denotes that it is a test
-		'**/webpack.config.js', // webpack config
-		'**/webpack.config.*.js', // webpack config
-		'**/rollup.config.js', // rollup config
-		'**/rollup.config.*.js', // rollup config
-		'**/gulpfile.js', // gulp config
-		'**/gulpfile.*.js', // gulp config
-		'**/Gruntfile', // grunt config
-		'**/scripts/**', // project scripts
-		'**/protractor.conf.*.js', // protractor config
-	],
+	devDependencies: true,
 	optionalDependencies: false,
 }],
 ```
+
+We use devDependencies in frontend projects, so will disablet the devDependencies checks
 
 Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
 

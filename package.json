@@ -29,7 +29,8 @@
     "eslint-plugin-html": "^3.0.0",
     "eslint-plugin-jsx-a11y": "^6.0.0",
     "eslint-plugin-react": "^7.1.0",
-    "eslint-plugin-vue": "^2.1.0"
+    "eslint-plugin-vue": "^3.3.0",
+    "vue-eslint-parser": "^1.1.0-7"
   },
   "peerDependencies": {
     "eslint": "^4.1.1",

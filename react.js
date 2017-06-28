@@ -4,7 +4,8 @@ module.exports = {
 	extends: [
 		'./index',
 		'./rules/frontend',
-		'./rules/react'
+		'./rules/react',
+		'./rules/react-a11y'
 	].map(require.resolve),
 	// babel-eslint could help to parse static propTypes = {...}
 	parser: 'babel-eslint',

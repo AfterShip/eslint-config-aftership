@@ -11,7 +11,8 @@ module.exports = {
 	],
 	settings: {
 		'html/indent': 'tab',
-		'html/report-bad-indent': 'error'
+		'html/report-bad-indent': 'error',
+		'html/html-extensions': ['.html', '.pug', '.ejs']
 	},
 	globals: {
 		console: false, // for console.log

@@ -2,25 +2,20 @@
 
 module.exports = {
 	extends: [
-		'plugin:vue/recommanded'
-	].concat([
 		'./index',
 		'./rules/frontend',
 		'./rules/vue'
-	].map(require.resolve)),
-	parser: 'babel-eslint',
+	].map(require.resolve).concat([
+		'plugin:vue/recommended'
+	]),
+	parser: 'vue-eslint-parser',
 	parserOptions: {
+		parser: 'babel-eslint',
 		sourceType: 'module',
+		ecmaVersion: 2017,
 		ecmaFeatures: {
+			jsx: true,
 			experimentalObjectRestSpread: true
-		}
-	},
-	settings: {
-		'import/extensions': ['.js', '.vue'],
-		'import/resolver': {
-			node: {
-				extensions: ['.js', '.vue', '.json']
-			}
 		}
 	},
 	rules: {
