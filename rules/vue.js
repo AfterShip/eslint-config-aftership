@@ -15,7 +15,7 @@ module.exports = {
 		'import/extensions': ['.js', '.vue']
 	},
 	rules: {
-		"import/extensions": ['error', {
+		'import/extensions': ['error', {
 			vue: 'never'
 		}],
 		// ++++++++++++++ //
