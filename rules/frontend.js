@@ -4,7 +4,8 @@ module.exports = {
 	env: {
 		commonjs: true,
 		node: false,
-		webextensions: true
+		webextensions: true,
+		browser: true
 	},
 	plugins: [
 		'html'
