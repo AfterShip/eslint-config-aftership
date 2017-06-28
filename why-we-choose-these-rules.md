@@ -29,13 +29,12 @@
 	- [global-require](#global-require)
 	- [no-mixed-requires](#no-mixed-requires)
 	- [no-path-concat](#no-path-concat)
-- [Stylistic Issues](#stylistic-issues)
+- [Style](#style)
 	- [camelcase](#camelcase)
 	- [func-names](#func-names)
 	- [indent](#indent)
 	- [new-cap](#new-cap)
 	- [no-continue](#no-continue)
-	- [no-lonely-if](#no-lonely-if)
 	- [no-mixed-operators](#no-mixed-operators)
 	- [no-plusplus](#no-plusplus)
 	- [no-tabs](#no-tabs)
@@ -46,14 +45,11 @@
 	- [arrow-body-style](#arrow-body-style)
 	- [arrow-parens](#arrow-parens)
 	- [object-shorthand](#object-shorthand)
-	- [prefer-arrow-callback](#prefer-arrow-callback)
-	- [prefer-const](#prefer-const)
-	- [prefer-rest-params](#prefer-rest-params)
-	- [prefer-spread](#prefer-spread)
 	- [prefer-template](#prefer-template)
 	- [require-yield](#require-yield)
-- [Legacy](#legacy)
 	- [max-len](#max-len)
+	- [max-lines](#max-lines)
+	- [max-params](#max-params)
 - [Other plugins](#other-plugins)
 	- [import/newline-after-import](#importnewline-after-import)
 	- [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
@@ -64,14 +60,32 @@
 ## Possible Errors
 
 ### comma-dangle
-Don't put comma in the last item of object/array
-```
-'comma-dangle': ['error', 'never']
-```
-Example: http://eslint.org/docs/rules/comma-dangle
 
-1. It is not a standard ES3 JS code
-2. It just looks weird
+in backend projects, dont put tailing commas
+
+```
+'comma-dangle': ['error', {
+	arrays: 'ignore',
+	objects: 'ignore',
+	imports: 'ignore',
+	exports: 'ignore',
+	functions: 'ignore'
+}]
+```
+
+in frontend projects, always enable multi line array/object/function to have tailing comma, this is for better version control purpose
+
+```
+'comma-dangle': ['error', {
+	arrays: 'always-multiline',
+	objects: 'always-multiline',
+	imports: 'always-multiline',
+	exports: 'always-multiline',
+	functions: 'always-multiline'
+}]
+```
+
+Example: http://eslint.org/docs/rules/comma-dangle
 
 ### no-console
 Allow `console`
@@ -80,7 +94,7 @@ Allow `console`
 ```
 Example: http://eslint.org/docs/rules/no-console
 
-We use it a lot, it is difficult for us to enable this rules
+We use it a lot, it is difficult for us to enable this rule
 
 ### no-prototype-builtins
 ```
@@ -104,25 +118,25 @@ if requireStringLiterals is true, it doesn't allow using variable to compare wit
 
 ### class-methods-use-this
 ```
-'class-methods-use-this': 'off'
+'class-methods-use-this': 'error'
 ```
 Example: http://eslint.org/docs/rules/class-methods-use-this
 
-don't force every class methods to use `this`
+Force the instance methods to use `this`, a class method is totally meaningless if it does not use `this`, a utility function will just to the job in such case.
 
 ### no-alert
 Allow `alert`
 ```
-'no-alert': 'off'
+'no-alert': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-alert
 
-Front end guys may need it
+Frontend will never call `alert`
 
 ### no-else-return
 No `else` if the `if` condition has `return`
 ```
-'no-else-return': 'off'
+'no-else-return': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-else-return
 
@@ -141,15 +155,15 @@ We all agree that help improving the readability of code
 ### no-loop-func
 Allow define function inside loop
 ```
-'no-loop-func': 'off'
+'no-loop-func': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-loop-func
 
-Disabling it because it breaks our loop function:
+such loop function should be strongly **discouraged**
 
 ```js
 for (let results of data) {
-	_.forOwn(results, function (value, key) {
+	_.each(results, function (value, key) {
 		// ......
 	});
 }
@@ -157,7 +171,7 @@ for (let results of data) {
 
 ### no-new
 ```
-'no-new': 'off'
+'no-new': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-new
 
@@ -166,11 +180,23 @@ prefer always use new to create class instance for better readability
 ### no-param-reassign
 Allow resign the parameter's value of function
 ```
-'no-param-reassign': 'off'
+'no-param-reassign': ['error', {
+	props: true,
+	ignorePropertyModificationsFor: [
+		'acc', // for reduce accumulators
+		'e', // for e.returnvalue
+		'ctx', // for Koa routing
+		'req', // for Express requests
+		'request', // for Express requests
+		'res', // for Express responses
+		'response', // for Express responses
+		'$scope' // for Angular 1 scopes
+	]
+}]
 ```
 Example: http://eslint.org/docs/rules/no-param-reassign
 
-We prefer `options = options || {}`
+It's so bad to mutate the parameter, except for koa/express. If possible, always use `func(param = 'default')` to set default parameters
 
 ### no-script-url
 ```
@@ -182,9 +208,11 @@ we want to preserve the semantic meaning of link, such as `<a href="javascript:v
 
 ### no-throw-literal
 ```
-'no-throw-literal': 'off'
+'no-throw-literal': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-throw-literal
+
+It's generally bad idea because we will lose all of the error stack
 
 ### no-unused-expressions
 ```
@@ -216,26 +244,24 @@ Example: http://eslint.org/docs/rules/no-shadow
 prevents shadowing of built-in global variables
 
 ### no-unused-vars
-Only check if local variables (name without `_` prefix) are used
+Check all variables that is not used
 ```
-'no-unused-vars': [2, {
-	args: 'none'
-	vars: 'local'
-	varsIgnorePattern: '^_'
-}]
+'no-unused-vars': ['error', {
+	vars: 'all', 
+	args: 'after-used', 
+	ignoreRestSiblings: true,
+	argsIgnorePattern': '^_.+'
+}],
 ```
 Example: http://eslint.org/docs/rules/no-unused-vars
 
-1. Make sure we clean up our source code, no unnecessary variables
-2. We ignore variables with `_` prefix because we have a lot of `_this` for reserve use
+But ignore those started with `_`
 
 ### no-use-before-define
 ```
-'no-use-before-define': 'off'
+'no-use-before-define': ['error', {functions: false, classes: true, variables: true}]
 ```
 Example: http://eslint.org/docs/rules/no-use-before-define
-
-We may need to use the function before we define it, check `js hoisting`
 
 ## Node.js and CommonJS
 
@@ -262,10 +288,10 @@ to group require together for better readability
 ```
 Example: http://eslint.org/docs/rules/no-path-concat
 
-1. frontend doesn't have `path` module
-2. we don't use `Windows`, we don't care about `Windows`
+1. frontend dont use path concat
+2. in backend always use `path` module
 
-## Stylistic Issues
+## Style
 
 ### camelcase
 Don't check if variables are camel case
@@ -274,10 +300,16 @@ camelcase: 'off'
 ```
 Example: http://eslint.org/docs/rules/camelcase
 
-We use snake case
+We use snake case for backend projects
+
+For frontend projects, this options is set to 
+
+```
+camelcase: 'error'
+```
 
 ### func-names
-Don't force to add function name in anonymous function
+It is very annoying sometimes
 ```
 'func-names': 'off'
 ```
@@ -286,7 +318,17 @@ Example: http://eslint.org/docs/rules/func-names
 ### indent
 ```
 indent: ['error', 'tab', {
-	SwitchCase: 1
+	SwitchCase: 1,
+	VariableDeclarator: 1,
+	outerIIFEBody: 1,
+	FunctionDeclaration: {
+		parameters: 1,
+		body: 1
+	},
+	FunctionExpression: {
+		parameters: 1,
+		body: 1
+	}
 }]
 ```
 Example: http://eslint.org/docs/rules/indent
@@ -310,14 +352,6 @@ There are some codes, such as `new Bunyan.createLogger`, cannot pass, so disable
 Example: http://eslint.org/docs/rules/no-continue
 
 we don't want to remove support of `continue` in loop
-
-### no-lonely-if
-```
-'no-lonely-if': 'off'
-```
-Example: http://eslint.org/docs/rules/no-lonely-if
-
-disable it allow better readability
 
 ### no-mixed-operators
 ```
@@ -389,43 +423,12 @@ Example: http://eslint.org/docs/rules/object-shorthand
 
 We just leave it to developers, sometime it is clearer to not use the shorthand
 
-### prefer-arrow-callback
-```
-'prefer-arrow-callback': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-arrow-callback
-
-### prefer-const
-```
-'prefer-const': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-const
-
-We want to define constant only when it is **REALLY** a constant
-
-### prefer-rest-params
-```
-'prefer-rest-params': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-rest-params
-
-node 4.2 doesn't support rest params yet
-
-### prefer-spread
-```
-'prefer-spread': 'off'
-```
-Example: http://eslint.org/docs/rules/prefer-spread
-
-node 4.2 doesn't have full support on spread
-
 ### prefer-template
 ```
 'prefer-template': 'off'
 ```
-Example: http://eslint.org/docs/rules/prefer-template
 
-sometime not using template string is more readable
+sometimes it's just better to have `+` to concat strings
 
 ### require-yield
 ```
@@ -433,9 +436,7 @@ sometime not using template string is more readable
 ```
 Example: http://eslint.org/docs/rules/require-yield
 
-need to use generator function in koa even if we don't use yield
-
-## Legacy
+Even in koa, the controller/middleware will most likely have `yield` call
 
 ### max-len
 ```
@@ -449,6 +450,24 @@ need to use generator function in koa even if we don't use yield
 Example: http://eslint.org/docs/rules/max-len
 
 We all have a large iMac screen, so setting 200 as max length is fair
+
+### max-lines
+```
+'max-lines': ['warn', {
+	max: 400,
+	skipBlankLines: true,
+	skipComments: true
+}]
+```
+
+will display an annoying warning for a file that is way too long, try to separate the logic!
+
+### max-params
+```
+['warn', 4]
+```
+
+a function having more than 5 parameters get break down quickly, try to maintain parameters within 4 parameters
 
 ## Other plugins
 
@@ -466,11 +485,16 @@ const AftershipPrivateError = AftershipError.PrivateError;
 
 ### import/no-extraneous-dependencies
 ```
-'import/no-extraneous-dependencies': 'off'
+'import/no-extraneous-dependencies': ['error', {
+	devDependencies: true,
+	optionalDependencies: false,
+}],
 ```
+
+We use devDependencies in frontend projects, so will disablet the devDependencies checks
+
 Example: https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
 
-we need to import devDependencies in test files
 
 ### import/prefer-default-export
 ```

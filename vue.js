@@ -1,25 +1,21 @@
 'use strict';
 
-const extendConfig = require('./lib/extend_config');
-
-module.exports = extendConfig({
+module.exports = {
 	extends: [
-		'eslint-config-airbnb/base',
-		'eslint-config-aftership/rules/main',
-		'eslint-config-aftership/rules/frontend',
-		'eslint-config-aftership/rules/camelcase'
-	],
+		'./index',
+		'./rules/frontend',
+		'./rules/vue'
+	].map(require.resolve).concat([
+		'plugin:vue/recommended'
+	]),
+	parser: 'vue-eslint-parser',
 	parserOptions: {
+		parser: 'babel-eslint',
+		sourceType: 'module',
+		ecmaVersion: 2017,
 		ecmaFeatures: {
+			jsx: true,
 			experimentalObjectRestSpread: true
-		}
-	},
-	settings: {
-		'import/extensions': ['.js', '.vue'],
-		'import/resolver': {
-			node: {
-				extensions: ['.js', '.vue', '.json']
-			}
 		}
 	},
 	rules: {
@@ -27,4 +23,4 @@ module.exports = extendConfig({
 		'import/no-named-as-default': 'off',
 		'import/no-named-as-default-member': 'off'
 	}
-});
+};

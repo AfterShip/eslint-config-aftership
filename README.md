@@ -1,5 +1,8 @@
 # eslint-config-aftership
 
+!! NOTE this is for node <= v4 only, if your have a legacy project to maintain, or dont want to bother upgrade to the latest version, please see [v3 branch](https://github.com/AfterShip/eslint-config-aftership/tree/3.x), if you are upgrading to v4, please see [upgrade guide](https://github.com/AfterShip/eslint-config-aftership/blob/4.x/upgrade_guides/v3tov4.md), see all changes in [v4 shiplist](https://github.com/AfterShip/eslint-config-aftership/issues/13)
+
+[![Build Status](https://travis-ci.org/AfterShip/eslint-config-aftership.svg?branch=master)](https://travis-ci.org/AfterShip/eslint-config-aftership)
 [![Dependency Status](https://gemnasium.com/AfterShip/eslint-config-aftership.svg)](https://gemnasium.com/AfterShip/eslint-config-aftership)
 
 [![node](https://img.shields.io/node/v/eslint-config-aftership.svg)]()
@@ -9,15 +12,15 @@
 
 AfterShip ESLint config (modified from eslint-config-airbnb)
 
-following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a3495e07f484513db203e5d5654e47b221c19f4a](https://github.com/airbnb/javascript/blob/a3495e07f484513db203e5d5654e47b221c19f4a/README.md)
+following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [2666db559dc0ef41887a1138cff4f59b3879892a](https://github.com/airbnb/javascript/tree/2666db559dc0ef41887a1138cff4f59b3879892a)
 
-## Rules that cannot be checked by ESLint
+## Rules that cannot be checked by ESLint (Backend only)
 * Use `snake_case` for files and folders
 * Use `camelCase` when naming `functions`
-* Use `UpperCamelCase` when naming `class variables`
+* Use `PascalCase` when naming `class variables`
 * Use `snake_case` when naming `variables`
 
-	`let name = 'John';`, `let email_address = 'john@gmail.com';`
+	`const name = 'John';`, `const email_address = 'john@gmail.com';`
 
 * Use `UPPERCASE` when naming `constant variables` but no need for `required module`
 
@@ -41,7 +44,7 @@ following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) 
 
 		}
 
-		example_function1() {
+		exampleFunction1() {
 
 		}
 
@@ -66,11 +69,13 @@ Z for removing rules/options (more loose)
 
 ## Installation
 
+as we support frontend and backend project at the same time, some framework specific plugins are declared in `optionalDependencies`, so you have install then at the project level.
+
 ### on your repository:
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
 
 - If you are not or you want to install in the existing repository:
-	1. `npm install --save-dev eslint-config-aftership`
+	1. `npm install --save-dev eslint-config-aftership eslint eslint-plugin-import`
 
 	2. Keep the `^` in the `package.json` for `eslint-config-aftership`, if the project is still in development. Replace the `^` with `~` if you want to prevent new rules which may brother you in travis.
 
@@ -82,19 +87,39 @@ Z for removing rules/options (more loose)
 		}
 		```
 
-		If your repo is using node version `<= 0.10`, `aftership/legacy` will assume you are using ES5 instead of ES6 up
+		If your repo is a **React** project using webpack.js, you should extends `aftership/react`, and install additional packages
+
+		```sh
+		npm install eslint-plugin-html eslint-plugin-react eslint-plugin-jsx-a11y babel-eslint eslint-import-resolver-webpack
+		```
 
 		```json
 		{
-			"extends": "aftership/legacy"
+			"extends": "aftership/react",
+			"settings": {
+				"import/resolver": {
+					"webpack": {
+					"config": "webpack.config.js"
+				}
+			}
 		}
 		```
 
-		If your repo is a front-end project using babel.js, you should extends `aftership/react` instead`
+		If your repo is a **Vue** project using webpack, you should extends `aftership/vue`, and install additional packages
+
+		```sh
+		npm install eslint-plugin-html eslint-plugin-vue@3.3.0 babel-eslint vue-eslint-parser@1.1.0-7 eslint-import-resolver-webpack
+		```
 
 		```json
 		{
-			"extends": "aftership/react"
+			"extends": "aftership/vue",
+			"settings": {
+				"import/resolver": {
+					"webpack": {
+					"config": "webpack.config.js"
+				}
+			}
 		}
 		```
 
@@ -104,7 +129,7 @@ Z for removing rules/options (more loose)
 		```json
 		{
 		  "scripts": {
-		    "lint": "eslint --ext .jsx,.js ."
+		    "lint": "eslint --ext .{jsx|vue},.js ."
 		  }
 		}
 		```
@@ -179,6 +204,6 @@ Z for removing rules/options (more loose)
 - NA
 
 ## License
-Copyright (c) 2015 AfterShip
+Copyright (c) 2017 AfterShip
  
 Licensed under the MIT license.

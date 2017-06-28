@@ -3,19 +3,19 @@
 module.exports = {
 	extends: [
 		'./index',
-		'./rules/frontend',
-		'./rules/react',
-		'./rules/react-a11y'
+		'./rules/frontend'
 	].map(require.resolve),
-	// babel-eslint could help to parse static propTypes = {...}
 	parser: 'babel-eslint',
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2017,
 		ecmaFeatures: {
-			experimentalObjectRestSpread: true,
-			jsx: true
+			experimentalObjectRestSpread: true
 		}
 	},
-	rules: {}
+	rules: {
+		// this two doesn't work in vue
+		'import/no-named-as-default': 'off',
+		'import/no-named-as-default-member': 'off'
+	}
 };

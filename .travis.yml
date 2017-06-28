@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - "6"
+  - "8"
+sudo: false
+
+notifications:
+  email:
+    - hans@aftership.com
+env:
+  - CACHE_DIR=cache CXX=g++-4.8
+cache:
+  apt: true
+  directories:
+    - $CACHE_DIR
+install:
+  - npm install
+script:
+  - npm run lint
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
