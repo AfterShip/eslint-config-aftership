@@ -29,7 +29,7 @@
 	- [global-require](#global-require)
 	- [no-mixed-requires](#no-mixed-requires)
 	- [no-path-concat](#no-path-concat)
-- [Stylistic Issues](#stylistic-issues)
+- [Style](#style)
 	- [camelcase](#camelcase)
 	- [func-names](#func-names)
 	- [indent](#indent)
@@ -48,6 +48,8 @@
 	- [prefer-template](#prefer-template)
 	- [require-yield](#require-yield)
 	- [max-len](#max-len)
+	- [max-lines](#max-lines)
+	- [max-params](#max-params)
 - [Other plugins](#other-plugins)
 	- [import/newline-after-import](#importnewline-after-import)
 	- [import/no-extraneous-dependencies](#importno-extraneous-dependencies)
@@ -59,18 +61,30 @@
 
 ### comma-dangle
 
-allow put the comma at the end of the element, but not force it
+in backend projects, dont put tailing commas
 
 ```
 'comma-dangle': ['error', {
-	arrays: 'only-multiline',
-	objects: 'only-multiline',
-	imports: 'only-multiline',
-	exports: 'only-multiline',
-	functions: 'ignore',
+	arrays: 'ignore',
+	objects: 'ignore',
+	imports: 'ignore',
+	exports: 'ignore',
+	functions: 'ignore'
 }]
+```
+
+in frontend projects, always enable multi line array/object/function to have tailing comma, this is for better version control purpose
 
 ```
+'comma-dangle': ['error', {
+	arrays: 'always-multiline',
+	objects: 'always-multiline',
+	imports: 'always-multiline',
+	exports: 'always-multiline',
+	functions: 'always-multiline'
+}]
+```
+
 Example: http://eslint.org/docs/rules/comma-dangle
 
 ### no-console
@@ -166,11 +180,23 @@ prefer always use new to create class instance for better readability
 ### no-param-reassign
 Allow resign the parameter's value of function
 ```
-'no-param-reassign': 'off'
+'no-param-reassign': ['error', {
+	props: true,
+	ignorePropertyModificationsFor: [
+		'acc', // for reduce accumulators
+		'e', // for e.returnvalue
+		'ctx', // for Koa routing
+		'req', // for Express requests
+		'request', // for Express requests
+		'res', // for Express responses
+		'response', // for Express responses
+		'$scope' // for Angular 1 scopes
+	]
+}]
 ```
 Example: http://eslint.org/docs/rules/no-param-reassign
 
-It's okay to have `options = options || {}`
+It's so bad to mutate the parameter, except for koa/express. If possible, always use `func(param = 'default')` to set default parameters
 
 ### no-script-url
 ```
@@ -223,10 +249,13 @@ Check all variables that is not used
 'no-unused-vars': ['error', {
 	vars: 'all', 
 	args: 'after-used', 
-	ignoreRestSiblings: true
+	ignoreRestSiblings: true,
+	argsIgnorePattern': '^_.+'
 }],
 ```
 Example: http://eslint.org/docs/rules/no-unused-vars
+
+But ignore those started with `_`
 
 ### no-use-before-define
 ```
@@ -259,10 +288,10 @@ to group require together for better readability
 ```
 Example: http://eslint.org/docs/rules/no-path-concat
 
-1. frontend doesn't have `path` module
-2. we don't use `Windows`, we don't care about `Windows`
+1. frontend dont use path concat
+2. in backend always use `path` module
 
-## Stylistic Issues
+## Style
 
 ### camelcase
 Don't check if variables are camel case
@@ -280,9 +309,9 @@ camelcase: 'error'
 ```
 
 ### func-names
-Should try to give a function expression a name for debug purpose
+It is very annoying sometimes
 ```
-'func-names': 'warn'
+'func-names': 'off'
 ```
 Example: http://eslint.org/docs/rules/func-names
 
@@ -421,6 +450,24 @@ Even in koa, the controller/middleware will most likely have `yield` call
 Example: http://eslint.org/docs/rules/max-len
 
 We all have a large iMac screen, so setting 200 as max length is fair
+
+### max-lines
+```
+'max-lines': ['warn', {
+	max: 400,
+	skipBlankLines: true,
+	skipComments: true
+}]
+```
+
+will display an annoying warning for a file that is way too long, try to separate the logic!
+
+### max-params
+```
+['warn', 4]
+```
+
+a function having more than 5 parameters get break down quickly, try to maintain parameters within 4 parameters
 
 ## Other plugins
 
