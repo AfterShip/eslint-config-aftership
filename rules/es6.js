@@ -142,9 +142,9 @@ module.exports = {
 		'prefer-template': 'off',
 
 		// disallow generator functions that do not have yield
-		// co return dont need yield
+		// koa in some cases dont need to yield
 		// http://eslint.org/docs/rules/require-yield
-		'require-yield': 'warn',
+		'require-yield': 'off',
 
 		// enforce spacing between object rest-spread
 		// http://eslint.org/docs/rules/rest-spread-spacing
