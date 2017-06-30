@@ -178,6 +178,7 @@ module.exports = {
 				'request', // for Express requests
 				'res', // for Express responses
 				'response', // for Express responses
+				'state', // for vuex
 				'$scope' // for Angular 1 scopes
 			]
 		}],
