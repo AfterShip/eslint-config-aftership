@@ -1,6 +1,8 @@
 'use strict';
 
-const restrictedGlobals = require('eslint-restricted-globals');
+const eslintRestrictedGlobals = require('eslint-restricted-globals');
+const allows = ['name', 'history', 'status', 'location', 'event'];
+const restrictedGlobals = eslintRestrictedGlobals.filter(g => !allows.includes(g));
 
 module.exports = {
 	rules: {
