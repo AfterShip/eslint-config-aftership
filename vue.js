@@ -3,6 +3,7 @@
 module.exports = {
 	extends: [
 		'./index',
+		'./rules/imports',
 		'./rules/frontend',
 		'./rules/vue'
 	].map(require.resolve).concat([

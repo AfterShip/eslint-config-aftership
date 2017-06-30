@@ -6,7 +6,6 @@ module.exports = {
 		'./rules/errors',
 		'./rules/es6',
 		'./rules/strict',
-		'./rules/imports',
 		'./rules/node',
 		'./rules/style',
 		'./rules/variables'

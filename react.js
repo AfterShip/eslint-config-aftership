@@ -3,6 +3,7 @@
 module.exports = {
 	extends: [
 		'./index',
+		'./rules/imports',
 		'./rules/frontend',
 		'./rules/react',
 		'./rules/react-a11y'

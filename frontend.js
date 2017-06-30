@@ -3,6 +3,7 @@
 module.exports = {
 	extends: [
 		'./index',
+		'./rules/imports',
 		'./rules/frontend'
 	].map(require.resolve),
 	parser: 'babel-eslint',
