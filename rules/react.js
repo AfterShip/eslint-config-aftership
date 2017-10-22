@@ -284,6 +284,10 @@ module.exports = {
 			skipShapeProps: true
 		}],
 
+		// Prevent unused state values
+		// https://github.com/yannickcr/eslint-plugin-react/pull/1103/
+		'react/no-unused-state': 'error',
+
 		// Require style prop value be an object or var
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/style-prop-object.md
 		'react/style-prop-object': 'error',
@@ -295,6 +299,14 @@ module.exports = {
 		// Prevent passing of children as props
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
 		'react/no-children-prop': 'error',
+
+		// Enforce all defaultProps have a corresponding non-required PropType
+		// https://github.com/yannickcr/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/default-props-match-prop-types.md
+		'react/default-props-match-prop-types': ['error', {allowRequiredDefaults: false}],
+
+		// Prevent usage of shouldComponentUpdate when extending React.PureComponent
+		// https://github.com/yannickcr/eslint-plugin-react/blob/9e13ae2c51e44872b45cc15bf1ac3a72105bdd0e/docs/rules/no-redundant-should-component-update.md
+		'react/no-redundant-should-component-update': 'error',
 
 		// Validate whitespace in and around the JSX opening and closing brackets
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md

@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-aftership",
   "description": "AfterShip ESLint config (modified from Airbnb)",
-  "version": "4.0.2",
+  "version": "4.1.0",
   "homepage": "https://github.com/AfterShip/eslint-config-aftership",
   "author": {
     "name": "AfterShip",
@@ -24,12 +24,12 @@
     "prepush": "npm run lint"
   },
   "optionalDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint-plugin-import": "^2.6.0",
+    "babel-eslint": "^8.0.1",
     "eslint-import-resolver-webpack": "^0.8.3",
-    "eslint-plugin-html": "^3.0.0",
-    "eslint-plugin-jsx-a11y": "^6.0.0",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-html": "^3.2.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "eslint-plugin-vue": "^3.3.0",
     "vue-eslint-parser": "^1.1.0-7"
   },
@@ -37,9 +37,9 @@
     "eslint": "^4.1.1"
   },
   "devDependencies": {
-    "eslint": "^4.1.1",
+    "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.6.0",
-    "husky": "^0.14.1"
+    "husky": "^0.14.3"
   },
   "dependencies": {
     "eslint-restricted-globals": "^0.1.1"
