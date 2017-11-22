@@ -7,6 +7,9 @@ module.exports = {
 		'./rules/frontend'
 	].map(require.resolve),
 	parser: 'babel-eslint',
+	env: {
+		node: false
+	},
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2017,
