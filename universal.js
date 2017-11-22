@@ -5,15 +5,20 @@ module.exports = {
 		'./rules/best-practices',
 		'./rules/errors',
 		'./rules/es6',
-		'./rules/strict',
+		'./rules/imports',
+		'./rules/frontend',
 		'./rules/node',
 		'./rules/style',
 		'./rules/variables'
 	].map(require.resolve),
+	env: {
+		node: true,
+		browser: true
+	},
 	parserOptions: {
 		ecmaVersion: 2017,
-		// we use require() instead of `import ... from ...`
-		sourceType: 'script'
+		// in universal projects, we use import/export
+		sourceType: 'module'
 	},
 	rules: {}
 };
