@@ -24,20 +24,20 @@
     "prepush": "npm run lint"
   },
   "optionalDependencies": {
-    "babel-eslint": "^8.0.2",
-    "eslint-import-resolver-webpack": "^0.8.3",
-    "eslint-plugin-html": "^4.0.0",
+    "babel-eslint": "^8.2.1",
+    "eslint-import-resolver-webpack": "^0.8.4",
+    "eslint-plugin-html": "^4.0.2",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.5.1",
-    "eslint-plugin-vue": "^2.1.0",
-    "vue-eslint-parser": "2.0.1-beta.2"
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-vue": "^4.2.2",
+    "vue-eslint-parser": "2.0.2"
   },
   "peerDependencies": {
     "eslint": "^4.11.0"
   },
   "devDependencies": {
-    "eslint": "^4.11.0",
+    "eslint": "^4.16.0",
     "eslint-plugin-import": "^2.6.0",
     "husky": "^0.14.3"
   },
