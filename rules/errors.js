@@ -25,9 +25,9 @@ module.exports = {
 		'no-cond-assign': ['error', 'always'],
 
 		// disallow use of console
-		// at the time being it's not possible for our projects
 		// http://eslint.org/docs/rules/no-console
-		'no-console': 'off',
+		// we force ppl to use better practice to log things, e.g. bunyan/winston
+		'no-console': 'error',
 
 		// disallow use of constant expressions in conditions
 		'no-constant-condition': 'warn',
