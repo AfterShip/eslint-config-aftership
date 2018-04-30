@@ -1,9 +1,6 @@
 'use strict';
 
 module.exports = {
-	plugins: [
-		'sort-requires'
-	],
 	rules: {
 		// enforce spacing inside array brackets
 		'array-bracket-spacing': ['error', 'never'],
@@ -359,10 +356,6 @@ module.exports = {
 
 		// sort variables within the same declaration block
 		'sort-vars': 'off',
-
-		// sort require orders
-		// https://github.com/kentor/eslint-plugin-sort-requires
-		'sort-requires/sort-requires': 'error',
 
 		// require or disallow space before blocks
 		'space-before-blocks': 'error',
