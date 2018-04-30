@@ -24,7 +24,8 @@ module.exports = {
 
 		// disallow declaration of variables already declared in the outer scope
 		'no-shadow': ['error', {
-			builtinGlobals: true
+			builtinGlobals: true,
+			allow: allows
 		}],
 
 		// disallow shadowing of names such as arguments
