@@ -30,7 +30,9 @@ module.exports = {
 				'shouldComponentUpdate',
 				'componentWillUpdate',
 				'componentDidUpdate',
-				'componentWillUnmount'
+				'componentWillUnmount',
+				'componentDidCatch',
+				'getSnapshotBeforeUpdate'
 			]
 		}],
 
@@ -210,13 +212,43 @@ module.exports = {
 		'react/sort-comp': ['error', {
 			order: [
 				'static-methods',
+				'instance-variables',
 				'lifecycle',
 				'/^on.+$/',
+				'getters',
+				'setters',
 				'/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
+				'instance-methods',
 				'everything-else',
-				'/^render.+$/',
-				'render'
-			]
+				'rendering'
+			],
+			groups: {
+				lifecycle: [
+					'displayName',
+					'propTypes',
+					'contextTypes',
+					'childContextTypes',
+					'mixins',
+					'statics',
+					'defaultProps',
+					'constructor',
+					'getDefaultProps',
+					'getInitialState',
+					'state',
+					'getChildContext',
+					'componentWillMount',
+					'componentDidMount',
+					'componentWillReceiveProps',
+					'shouldComponentUpdate',
+					'componentWillUpdate',
+					'componentDidUpdate',
+					'componentWillUnmount'
+				],
+				rendering: [
+					'/^render.+$/',
+					'render'
+				]
+			}
 		}],
 
 		// Prevent missing parentheses around multilines JSX
@@ -347,7 +379,7 @@ module.exports = {
 		},
 		react: {
 			pragma: 'React',
-			version: '15.0'
+			version: '16.0'
 		}
 	}
 };
