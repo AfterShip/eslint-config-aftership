@@ -43,10 +43,19 @@ module.exports = {
 		'no-undefined': 'off',
 
 		// disallow declaration of variables that are not used in the code
-		'no-unused-vars': ['error', {vars: 'all', args: 'after-used', ignoreRestSiblings: true, 'argsIgnorePattern': '^_.+'}],
+		'no-unused-vars': ['error', {
+			vars: 'all',
+			args: 'after-used',
+			ignoreRestSiblings: true,
+			'argsIgnorePattern': '^_.+'
+		}],
 
 		// disallow use of variables before they are defined
 		// but enable function hoist
-		'no-use-before-define': ['error', {functions: false, classes: true, variables: true}]
+		'no-use-before-define': ['error', {
+			functions: false,
+			classes: true,
+			variables: true
+		}]
 	}
 };

@@ -8,9 +8,7 @@ module.exports = {
 		ecmaVersion: 6,
 		sourceType: 'module'
 	},
-	plugins: [
-		'import'
-	],
+	plugins: ['import'],
 
 	settings: {
 		'import/resolver': {
@@ -18,16 +16,9 @@ module.exports = {
 				extensions: ['.js', '.json']
 			}
 		},
-		'import/extensions': [
-			'.js',
-			'.jsx'
-		],
-		'import/core-modules': [
-		],
-		'import/ignore': [
-			'node_modules',
-			'\\.(coffee|scss|css|less|hbs|svg|json)$'
-		]
+		'import/extensions': ['.js', '.jsx'],
+		'import/core-modules': [],
+		'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$']
 	},
 
 	rules: {
@@ -122,15 +113,17 @@ module.exports = {
 
 		// Enforce a convention in module import order
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md
-		// TODO: enable?
-		'import/order': ['off', {
-			groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-			'newlines-between': 'never'
+		'import/order': ['error', {
+			groups: [
+				'builtin',
+				'external',
+				'internal'
+			]
 		}],
 
 		// Require a newline after the last import/require in a group
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
-		'import/newline-after-import': 'off',
+		'import/newline-after-import': 'error',
 
 		// sometimes it's better to group functions in one file (like util functions)
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/prefer-default-export.md
@@ -177,6 +170,55 @@ module.exports = {
 
 		// Prevent importing the default as if it were named
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
-		'import/no-named-default': 'error'
+		'import/no-named-default': 'error',
+
+		// Reports if a module's default export is unnamed
+		// https://github.com/benmosher/eslint-plugin-import/blob/d9b712ac7fd1fddc391f7b234827925c160d956f/docs/rules/no-anonymous-default-export.md
+		'import/no-anonymous-default-export': ['off', {
+			allowArray: false,
+			allowArrowFunction: false,
+			allowAnonymousClass: false,
+			allowAnonymousFunction: false,
+			allowLiteral: false,
+			allowObject: false
+		}],
+
+		// This rule enforces that all exports are declared at the bottom of the file.
+		// https://github.com/benmosher/eslint-plugin-import/blob/98acd6afd04dcb6920b81330114e146dc8532ea4/docs/rules/exports-last.md
+		// TODO: enable?
+		'import/exports-last': 'off',
+
+		// Reports when named exports are not grouped together in a single export declaration
+		// or when multiple assignments to CommonJS module.exports or exports object are present
+		// in a single file.
+		// https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/group-exports.md
+		'import/group-exports': 'off',
+
+		// forbid default exports. this is a terrible rule, do not use it.
+		// https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-default-export.md
+		'import/no-default-export': 'off',
+
+		// Forbid a module from importing itself
+		// https://github.com/benmosher/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-self-import.md
+		'import/no-self-import': 'error',
+
+		// Forbid cyclical dependencies between modules
+		// https://github.com/benmosher/eslint-plugin-import/blob/d81f48a2506182738409805f5272eff4d77c9348/docs/rules/no-cycle.md
+		'import/no-cycle': ['error', {maxDepth: Infinity}],
+
+		// Ensures that there are no useless path segments
+		// https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/no-useless-path-segments.md
+		'import/no-useless-path-segments': 'error',
+
+		// dynamic imports require a leading comment with a webpackChunkName
+		// https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
+		'import/dynamic-import-chunkname': ['off', {
+			importFunctions: [],
+			webpackChunknameFormat: '[0-9a-zA-Z-_/.]+'
+		}],
+
+		// Use this rule to prevent imports to folders in relative parent paths.
+		// https://github.com/benmosher/eslint-plugin-import/blob/c34f14f67f077acd5a61b3da9c0b0de298d20059/docs/rules/no-relative-parent-imports.md
+		'import/no-relative-parent-imports': 'off'
 	}
 };

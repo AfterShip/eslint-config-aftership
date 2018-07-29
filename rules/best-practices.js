@@ -59,16 +59,12 @@ module.exports = {
 		'no-div-regex': 'off',
 
 		// disallow else after a return in an if
-		'no-else-return': 'error',
+		'no-else-return': ['error', {allowElseIf: false}],
 
 		// disallow empty functions, except for standalone funcs/arrows
 		// http://eslint.org/docs/rules/no-empty-function
 		'no-empty-function': ['error', {
-			allow: [
-				'arrowFunctions',
-				'functions',
-				'methods'
-			]
+			allow: ['arrowFunctions', 'functions', 'methods']
 		}],
 
 		// disallow empty destructuring patterns
@@ -144,7 +140,9 @@ module.exports = {
 		}],
 
 		// disallow use of multiple spaces
-		'no-multi-spaces': 'error',
+		'no-multi-spaces': ['error', {
+			ignoreEOLComments: false
+		}],
 
 		// disallow use of multiline strings
 		'no-multi-str': 'error',
@@ -170,8 +168,7 @@ module.exports = {
 		// rule: http://eslint.org/docs/rules/no-param-reassign.html
 		'no-param-reassign': ['error', {
 			props: true,
-			ignorePropertyModificationsFor: [
-				'acc', // for reduce accumulators
+			ignorePropertyModificationsFor: ['acc', // for reduce accumulators
 				'e', // for e.returnvalue
 				'ctx', // for Koa routing
 				'req', // for Express requests
@@ -191,17 +188,56 @@ module.exports = {
 
 		// disallow certain object properties
 		// http://eslint.org/docs/rules/no-restricted-properties
-		'no-restricted-properties': ['error', {
-			object: 'arguments',
-			property: 'callee',
-			message: 'arguments.callee is deprecated'
-		}, {
-			property: '__defineGetter__',
-			message: 'Please use Object.defineProperty instead.'
-		}, {
-			property: '__defineSetter__',
-			message: 'Please use Object.defineProperty instead.'
-		}],
+		'no-restricted-properties': ['error',
+			{
+				object: 'arguments',
+				property: 'callee',
+				message: 'arguments.callee is deprecated'
+			},
+			{
+				object: 'global',
+				property: 'isFinite',
+				message: 'Please use Number.isFinite instead'
+			},
+			{
+				object: 'self',
+				property: 'isFinite',
+				message: 'Please use Number.isFinite instead'
+			},
+			{
+				object: 'window',
+				property: 'isFinite',
+				message: 'Please use Number.isFinite instead'
+			},
+			{
+				object: 'global',
+				property: 'isNaN',
+				message: 'Please use Number.isNaN instead'
+			},
+			{
+				object: 'self',
+				property: 'isNaN',
+				message: 'Please use Number.isNaN instead'
+			},
+			{
+				object: 'window',
+				property: 'isNaN',
+				message: 'Please use Number.isNaN instead'
+			},
+			{
+				property: '__defineGetter__',
+				message: 'Please use Object.defineProperty instead.'
+			},
+			{
+				property: '__defineSetter__',
+				message: 'Please use Object.defineProperty instead.'
+			},
+			{
+				object: 'Math',
+				property: 'pow',
+				message: 'Use the exponentiation operator (**) instead.'
+			}
+		],
 
 		// disallow use of assignment in return statement
 		'no-return-assign': ['error', 'always'],
@@ -210,11 +246,13 @@ module.exports = {
 		'no-return-await': 'error',
 
 		// disallow use of `javascript:` urls.
-		'no-script-url': 'off',
+		'no-script-url': 'error',
 
 		// disallow self assignment
 		// http://eslint.org/docs/rules/no-self-assign
-		'no-self-assign': 'error',
+		'no-self-assign': ['error', {
+			props: true
+		}],
 
 		// disallow comparisons where both sides are exactly the same
 		'no-self-compare': 'error',

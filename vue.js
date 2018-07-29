@@ -1,14 +1,10 @@
 'use strict';
 
 module.exports = {
-	extends: [
-		'./index',
+	extends: ['./index',
 		'./rules/imports',
 		'./rules/frontend',
-		'./rules/vue'
-	].map(require.resolve).concat([
-		'plugin:vue/recommended'
-	]),
+		'./rules/vue'].map(require.resolve).concat(['plugin:vue/recommended']),
 	parser: 'vue-eslint-parser',
 	parserOptions: {
 		parser: 'babel-eslint',

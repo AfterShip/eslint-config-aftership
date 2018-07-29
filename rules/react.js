@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = {
-	plugins: [
-		'react'
-	],
+	plugins: ['react'],
 
 	parserOptions: {
 		ecmaFeatures: {
@@ -236,8 +234,7 @@ module.exports = {
 		// Enforce component methods order
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
 		'react/sort-comp': ['error', {
-			order: [
-				'static-methods',
+			order: ['static-methods',
 				'instance-variables',
 				'lifecycle',
 				'/^on.+$/',
@@ -246,11 +243,9 @@ module.exports = {
 				'/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/',
 				'instance-methods',
 				'everything-else',
-				'rendering'
-			],
+				'rendering'],
 			groups: {
-				lifecycle: [
-					'displayName',
+				lifecycle: ['displayName',
 					'propTypes',
 					'contextTypes',
 					'childContextTypes',
@@ -268,12 +263,8 @@ module.exports = {
 					'shouldComponentUpdate',
 					'componentWillUpdate',
 					'componentDidUpdate',
-					'componentWillUnmount'
-				],
-				rendering: [
-					'/^render.+$/',
-					'render'
-				]
+					'componentWillUnmount'],
+				rendering: ['/^render.+$/', 'render']
 			}
 		}],
 
@@ -341,8 +332,7 @@ module.exports = {
 		// Prevent unused propType definitions
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
 		'react/no-unused-prop-types': ['error', {
-			customValidators: [
-			],
+			customValidators: [],
 			skipShapeProps: true
 		}],
 
@@ -381,7 +371,6 @@ module.exports = {
 		'react/require-default-props': ['error', {
 			forbidDefaultForRequired: true
 		}],
-
 		// Forbids using non-exported propTypes
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
 		// this is intentionally set to "warn". it would be "error",
@@ -436,11 +425,12 @@ module.exports = {
 
 		// Prevent usage of button elements without an explicit type attribute
 		// https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/button-has-type.md
-		'react/button-has-type': ['error', {
-			button: true,
-			submit: true,
-			reset: false
-		}],
+		'react/button-has-type': ['error',
+			{
+				button: true,
+				submit: true,
+				reset: false
+			}],
 
 		// Ensures inline tags are not rendered without spaces between them
 		'react/jsx-child-element-spacing': 'off',

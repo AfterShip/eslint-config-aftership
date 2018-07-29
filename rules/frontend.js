@@ -6,9 +6,7 @@ module.exports = {
 		webextensions: true,
 		browser: true
 	},
-	plugins: [
-		'html'
-	],
+	plugins: ['html'],
 	settings: {
 		'html/indent': 'tab',
 		'html/report-bad-indent': 'error',
@@ -35,6 +33,6 @@ module.exports = {
 
 		// require camel case names
 		// some config properties may have underscore names which is okay
-		camelcase: ['error', {properties: 'never'}]
+		camelcase: ['error', {properties: 'never', ignoreDestructuring: true}]
 	}
 };

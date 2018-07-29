@@ -1,11 +1,9 @@
 'use strict';
 
 module.exports = {
-	extends: [
-		'./index',
+	extends: ['./index',
 		'./rules/imports',
-		'./rules/frontend'
-	].map(require.resolve),
+		'./rules/frontend'].map(require.resolve),
 	parser: 'babel-eslint',
 	env: {
 		node: false

@@ -1,9 +1,7 @@
 'use strict';
 
 module.exports = {
-	plugins: [
-		'vue'
-	],
+	plugins: ['vue'],
 	parserOptions: {
 		ecmaVersion: 2017,
 		sourceType: 'module',
@@ -15,9 +13,10 @@ module.exports = {
 		'import/extensions': ['.js', '.vue']
 	},
 	rules: {
-		'import/extensions': ['error', {
-			vue: 'never'
-		}],
+		'import/extensions': ['error',
+			{
+				vue: 'never'
+			}],
 		// ++++++++++++++ //
 		// Best Practices //
 		// ++++++++++++++ //
