@@ -1,10 +1,8 @@
 # eslint-config-aftership
 
-!! NOTE this is for node >= v6 only, if your have a legacy project to maintain, or dont want to bother upgrade to the latest version, please see [v3 branch](https://github.com/AfterShip/eslint-config-aftership/tree/3.x), if you are upgrading to v4, please see [upgrade guide](https://github.com/AfterShip/eslint-config-aftership/blob/4.x/upgrade_guides/v3tov4.md), see all changes in [v4 shiplist](https://github.com/AfterShip/eslint-config-aftership/issues/13)
+!! NOTE this is for node >= v8 only, if your have a legacy project to maintain, or dont want to bother upgrade to the latest version, please see [v3 branch](https://github.com/AfterShip/eslint-config-aftership/tree/3.x), if you are upgrading to v5, please see [upgrade guide](https://github.com/AfterShip/eslint-config-aftership/blob/4.x/upgrade_guides/v3tov4.md), see all changes in [v4 shiplist](https://github.com/AfterShip/eslint-config-aftership/issues/13)
 
 [![Build Status](https://travis-ci.org/AfterShip/eslint-config-aftership.svg?branch=master)](https://travis-ci.org/AfterShip/eslint-config-aftership)
-[![Dependency Status](https://gemnasium.com/AfterShip/eslint-config-aftership.svg)](https://gemnasium.com/AfterShip/eslint-config-aftership)
-
 [![node](https://img.shields.io/node/v/eslint-config-aftership.svg)]()
 [![npm](https://img.shields.io/npm/v/eslint-config-aftership.svg)]()
 [![npm](https://img.shields.io/npm/dm/eslint-config-aftership.svg)]()
@@ -12,7 +10,7 @@
 
 AfterShip ESLint config (modified from eslint-config-airbnb)
 
-following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [2666db559dc0ef41887a1138cff4f59b3879892a](https://github.com/airbnb/javascript/tree/2666db559dc0ef41887a1138cff4f59b3879892a)
+following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a12dec90d173464a3fc4e4536b8c6f639fb93236](https://github.com/airbnb/javascript/tree/a12dec90d173464a3fc4e4536b8c6f639fb93236)
 
 ## Rules that cannot be checked by ESLint (Backend only)
 * Use `snake_case` for files and folders
