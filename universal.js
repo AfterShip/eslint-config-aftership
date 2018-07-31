@@ -11,12 +11,12 @@ module.exports = {
 		'./rules/variables'].map(require.resolve),
 	env: {
 		node: true,
-		browser: true
+		browser: true,
 	},
 	parserOptions: {
 		ecmaVersion: 2017,
 		// in universal projects, we use import/export
-		sourceType: 'module'
+		sourceType: 'module',
 	},
-	rules: {}
+	rules: {},
 };

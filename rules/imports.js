@@ -2,23 +2,23 @@
 
 module.exports = {
 	env: {
-		es6: true
+		es6: true,
 	},
 	parserOptions: {
 		ecmaVersion: 6,
-		sourceType: 'module'
+		sourceType: 'module',
 	},
 	plugins: ['import'],
 
 	settings: {
 		'import/resolver': {
 			node: {
-				extensions: ['.js', '.json']
-			}
+				extensions: ['.js', '.json'],
+			},
 		},
 		'import/extensions': ['.js', '.jsx'],
 		'import/core-modules': [],
-		'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$']
+		'import/ignore': ['node_modules', '\\.(coffee|scss|css|less|hbs|svg|json)$'],
 	},
 
 	rules: {
@@ -62,7 +62,7 @@ module.exports = {
 		// paths are treated both as absolute paths, and relative to process.cwd()
 		'import/no-extraneous-dependencies': ['error', {
 			devDependencies: true,
-			optionalDependencies: false
+			optionalDependencies: false,
 		}],
 
 		// Forbid mutable exports
@@ -108,7 +108,7 @@ module.exports = {
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/extensions.md
 		'import/extensions': ['error', 'always', {
 			js: 'never',
-			jsx: 'never'
+			jsx: 'never',
 		}],
 
 		// Enforce a convention in module import order
@@ -117,8 +117,8 @@ module.exports = {
 			groups: [
 				'builtin',
 				'external',
-				'internal'
-			]
+				'internal',
+			],
 		}],
 
 		// Require a newline after the last import/require in a group
@@ -149,7 +149,7 @@ module.exports = {
 		// prevent importing the submodules of other modules
 		// https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-internal-modules.md
 		'import/no-internal-modules': ['off', {
-			allow: []
+			allow: [],
 		}],
 
 		// Warn if a module could be mistakenly parsed as a script by a consumer
@@ -180,7 +180,7 @@ module.exports = {
 			allowAnonymousClass: false,
 			allowAnonymousFunction: false,
 			allowLiteral: false,
-			allowObject: false
+			allowObject: false,
 		}],
 
 		// This rule enforces that all exports are declared at the bottom of the file.
@@ -214,11 +214,11 @@ module.exports = {
 		// https://github.com/benmosher/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/dynamic-import-chunkname.md
 		'import/dynamic-import-chunkname': ['off', {
 			importFunctions: [],
-			webpackChunknameFormat: '[0-9a-zA-Z-_/.]+'
+			webpackChunknameFormat: '[0-9a-zA-Z-_/.]+',
 		}],
 
 		// Use this rule to prevent imports to folders in relative parent paths.
 		// https://github.com/benmosher/eslint-plugin-import/blob/c34f14f67f077acd5a61b3da9c0b0de298d20059/docs/rules/no-relative-parent-imports.md
-		'import/no-relative-parent-imports': 'off'
-	}
+		'import/no-relative-parent-imports': 'off',
+	},
 };

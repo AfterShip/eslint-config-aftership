@@ -25,7 +25,7 @@ module.exports = {
 		// disallow declaration of variables already declared in the outer scope
 		'no-shadow': ['error', {
 			builtinGlobals: true,
-			allow: allows
+			allow: allows,
 		}],
 
 		// disallow shadowing of names such as arguments
@@ -47,7 +47,7 @@ module.exports = {
 			vars: 'all',
 			args: 'after-used',
 			ignoreRestSiblings: true,
-			'argsIgnorePattern': '^_.+'
+			'argsIgnorePattern': '^_.+',
 		}],
 
 		// disallow use of variables before they are defined
@@ -55,7 +55,7 @@ module.exports = {
 		'no-use-before-define': ['error', {
 			functions: false,
 			classes: true,
-			variables: true
-		}]
-	}
+			variables: true,
+		}],
+	},
 };

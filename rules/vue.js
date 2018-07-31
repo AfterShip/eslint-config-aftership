@@ -6,16 +6,16 @@ module.exports = {
 		ecmaVersion: 2017,
 		sourceType: 'module',
 		ecmaFeatures: {
-			jsx: true
-		}
+			jsx: true,
+		},
 	},
 	settings: {
-		'import/extensions': ['.js', '.vue']
+		'import/extensions': ['.js', '.vue'],
 	},
 	rules: {
 		'import/extensions': ['error',
 			{
-				vue: 'never'
+				vue: 'never',
 			}],
 		// ++++++++++++++ //
 		// Best Practices //
@@ -45,6 +45,6 @@ module.exports = {
 		'vue/v-bind-style': ['error', 'shorthand'],
 
 		// https://github.com/vuejs/eslint-plugin-vue/blob/master/docs/rules/v-on-style.md
-		'vue/v-on-style': ['error', 'shorthand']
-	}
+		'vue/v-on-style': ['error', 'shorthand'],
+	},
 };

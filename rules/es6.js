@@ -2,15 +2,12 @@
 
 module.exports = {
 	env: {
-		es6: true
+		es6: true,
 	},
+
 	parserOptions: {
-		ecmaVersion: 6,
+		ecmaVersion: 2018,
 		sourceType: 'module',
-		ecmaFeatures: {
-			generators: false,
-			objectLiteralDuplicateProperties: false
-		}
 	},
 
 	rules: {
@@ -18,13 +15,13 @@ module.exports = {
 		// http://eslint.org/docs/rules/arrow-body-style
 		// it's optional to have () for arrow functions
 		'arrow-body-style': ['off', 'always', {
-			requireReturnForObjectLiteral: false
+			requireReturnForObjectLiteral: false,
 		}],
 
 		// require parens in arrow function arguments
 		// http://eslint.org/docs/rules/arrow-parens
 		'arrow-parens': ['off', 'as-needed', {
-			requireForBlockBody: true
+			requireForBlockBody: true,
 		}],
 
 		// require space before/after arrow function's arrow
@@ -45,7 +42,7 @@ module.exports = {
 		// disallow arrow functions where they could be confused with comparisons
 		// http://eslint.org/docs/rules/no-confusing-arrow
 		'no-confusing-arrow': ['error', {
-			allowParens: true
+			allowParens: true,
 		}],
 
 		// disallow modifying variables that are declared using const
@@ -85,7 +82,7 @@ module.exports = {
 		'no-useless-rename': ['error', {
 			ignoreDestructuring: false,
 			ignoreImport: false,
-			ignoreExport: false
+			ignoreExport: false,
 		}],
 
 		// require let or const instead of var
@@ -95,29 +92,29 @@ module.exports = {
 		// http://eslint.org/docs/rules/object-shorthand
 		'object-shorthand': ['off', 'always', {
 			ignoreConstructors: false,
-			avoidQuotes: true
+			avoidQuotes: true,
 		}],
 
 		// suggest using arrow functions as callbacks
 		// this is okay but should not enforce
 		'prefer-arrow-callback': ['off', {
 			allowNamedFunctions: false,
-			allowUnboundThis: true
+			allowUnboundThis: true,
 		}],
 
 		// suggest using of const declaration for variables that are never modified after declared
 		'prefer-const': ['error', {
 			destructuring: 'any',
-			ignoreReadBeforeAssign: true
+			ignoreReadBeforeAssign: true,
 		}],
 
 		// Prefer destructuring from arrays and objects
 		// http://eslint.org/docs/rules/prefer-destructuring
 		'prefer-destructuring': ['warn', {
 			array: true,
-			object: true
+			object: true,
 		}, {
-			enforceForRenamedProperties: false
+			enforceForRenamedProperties: false,
 		}],
 
 		// disallow parseInt() in favor of binary, octal, and hexadecimal literals
@@ -155,7 +152,7 @@ module.exports = {
 		'sort-imports': ['off', {
 			ignoreCase: false,
 			ignoreMemberSort: false,
-			memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single']
+			memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
 		}],
 
 		// require a Symbol description
@@ -168,6 +165,6 @@ module.exports = {
 
 		// enforce spacing around the * in yield* expressions
 		// http://eslint.org/docs/rules/yield-star-spacing
-		'yield-star-spacing': ['error', 'after']
-	}
+		'yield-star-spacing': ['error', 'after'],
+	},
 };

@@ -5,8 +5,8 @@ module.exports = {
 
 	parserOptions: {
 		ecmaFeatures: {
-			jsx: true
-		}
+			jsx: true,
+		},
 	},
 
 	// View link below for react rules documentation
@@ -30,8 +30,8 @@ module.exports = {
 				'componentDidUpdate',
 				'componentWillUnmount',
 				'componentDidCatch',
-				'getSnapshotBeforeUpdate'
-			]
+				'getSnapshotBeforeUpdate',
+			],
 		}],
 
 		// Prevent missing displayName in a React component definition
@@ -44,7 +44,7 @@ module.exports = {
 		'react/forbid-prop-types': ['error', {
 			forbid: ['any', 'array'],
 			checkContextTypes: true,
-			checkChildContextTypes: true
+			checkChildContextTypes: true,
 		}],
 
 		// Forbid certain props on DOM Nodes
@@ -73,7 +73,7 @@ module.exports = {
 		// TODO: enable this? (we used the exact opposite pattern previously)
 		'react/jsx-handler-names': ['off', {
 			eventHandlerPrefix: 'handle',
-			eventHandlerPropPrefix: 'on'
+			eventHandlerPropPrefix: 'on',
 		}],
 
 		// Validate props indentation in JSX
@@ -94,7 +94,7 @@ module.exports = {
 		'react/jsx-no-bind': ['error', {
 			ignoreRefs: true,
 			allowArrowFunctions: true,
-			allowBind: false
+			allowBind: false,
 		}],
 
 		// Prevent duplicate props in JSX
@@ -113,7 +113,7 @@ module.exports = {
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
 		'react/jsx-pascal-case': ['error', {
 			allowAllCaps: true,
-			ignore: []
+			ignore: [],
 		}],
 
 		// Enforce propTypes declarations alphabetical sorting
@@ -123,7 +123,7 @@ module.exports = {
 			ignoreCase: true,
 			callbacksLast: false,
 			requiredFirst: false,
-			sortShapeProp: true
+			sortShapeProp: true,
 		}],
 
 		// Deprecated in favor of react/jsx-sort-props
@@ -137,14 +137,14 @@ module.exports = {
 			shorthandFirst: false,
 			shorthandLast: false,
 			noSortAlphabetically: false,
-			reservedFirst: true
+			reservedFirst: true,
 		}],
 
 		// Enforce defaultProps declarations alphabetical sorting
 		// https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/jsx-sort-default-props.md
 		// way too OCD x2
 		'react/jsx-sort-default-props': ['off', {
-			ignoreCase: true
+			ignoreCase: true,
 		}],
 
 		// Prevent React to be incorrectly marked as unused
@@ -216,7 +216,7 @@ module.exports = {
 		'react/prop-types': ['error', {
 			ignore: ['children'],
 			customValidators: [],
-			skipUndeclared: false
+			skipUndeclared: false,
 		}],
 
 		// Prevent missing React when using JSX
@@ -264,8 +264,8 @@ module.exports = {
 					'componentWillUpdate',
 					'componentDidUpdate',
 					'componentWillUnmount'],
-				rendering: ['/^render.+$/', 'render']
-			}
+				rendering: ['/^render.+$/', 'render'],
+			},
 		}],
 
 		// Prevent missing parentheses around multilines JSX
@@ -278,7 +278,7 @@ module.exports = {
 			arrow: 'parens-new-line',
 			condition: 'parens-new-line',
 			logical: 'parens-new-line',
-			prop: 'parens-new-line'
+			prop: 'parens-new-line',
 		}],
 
 		// Require that the first prop in a JSX element be on a new line when the element is multiline
@@ -333,7 +333,7 @@ module.exports = {
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unused-prop-types.md
 		'react/no-unused-prop-types': ['error', {
 			customValidators: [],
-			skipShapeProps: true
+			skipShapeProps: true,
 		}],
 
 		// Require style prop value be an object or var
@@ -354,7 +354,7 @@ module.exports = {
 			closingSlash: 'never',
 			beforeSelfClosing: 'always',
 			afterOpening: 'never',
-			beforeClosing: 'never'
+			beforeClosing: 'never',
 		}],
 
 		// Enforce spaces before the closing bracket of self-closing JSX elements
@@ -369,7 +369,7 @@ module.exports = {
 		// Enforce a defaultProps definition for every prop that is not a required prop
 		// https://github.com/yannickcr/eslint-plugin-react/blob/843d71a432baf0f01f598d7cf1eea75ad6896e4b/docs/rules/require-default-props.md
 		'react/require-default-props': ['error', {
-			forbidDefaultForRequired: true
+			forbidDefaultForRequired: true,
 		}],
 		// Forbids using non-exported propTypes
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/forbid-foreign-prop-types.md
@@ -398,7 +398,7 @@ module.exports = {
 		'react/boolean-prop-naming': ['off', {
 			propTypeNames: ['bool', 'mutuallyExclusiveTrueProps'],
 			rule: '^(is|has)[A-Z]([A-Za-z0-9]?)+',
-			message: ''
+			message: '',
 		}],
 
 		// Prevents common casing typos
@@ -429,7 +429,7 @@ module.exports = {
 			{
 				button: true,
 				submit: true,
-				reset: false
+				reset: false,
 			}],
 
 		// Ensures inline tags are not rendered without spaces between them
@@ -449,23 +449,23 @@ module.exports = {
 
 		// Prevent usage of UNSAFE_ methods
 		// https://github.com/yannickcr/eslint-plugin-react/blob/157cc932be2cfaa56b3f5b45df6f6d4322a2f660/docs/rules/no-unsafe.md
-		'react/no-unsafe': 'off'
+		'react/no-unsafe': 'off',
 	},
 
 	settings: {
 		'import/resolver': {
 			node: {
-				extensions: ['.js', '.jsx', '.json']
-			}
+				extensions: ['.js', '.jsx', '.json'],
+			},
 		},
 		react: {
 			pragma: 'React',
-			version: '16.3'
+			version: '16.3',
 		},
 		propWrapperFunctions: [
 			'forbidExtraProps', // https://www.npmjs.com/package/airbnb-prop-types
 			'exact', // https://www.npmjs.com/package/prop-types-exact
-			'Object.freeze' // https://tc39.github.io/ecma262/#sec-object.freeze
-		]
-	}
+			'Object.freeze', // https://tc39.github.io/ecma262/#sec-object.freeze
+		],
+	},
 };

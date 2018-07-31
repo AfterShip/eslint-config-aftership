@@ -12,12 +12,12 @@ module.exports = {
 		ecmaVersion: 2017,
 		ecmaFeatures: {
 			jsx: true,
-			experimentalObjectRestSpread: true
-		}
+			experimentalObjectRestSpread: true,
+		},
 	},
 	rules: {
 		// this two doesn't work in vue
 		'import/no-named-as-default': 'off',
-		'import/no-named-as-default-member': 'off'
-	}
+		'import/no-named-as-default-member': 'off',
+	},
 };

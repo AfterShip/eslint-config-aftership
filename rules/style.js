@@ -32,13 +32,22 @@ module.exports = {
 			line: {
 				ignorePattern: '.*',
 				ignoreInlineComments: true,
-				ignoreConsecutiveComments: true
+				ignoreConsecutiveComments: true,
 			},
 			block: {
 				ignorePattern: '.*',
 				ignoreInlineComments: true,
-				ignoreConsecutiveComments: true
-			}
+				ignoreConsecutiveComments: true,
+			},
+		}],
+
+		// in frontend, enable this for better version control
+		'comma-dangle': ['error', {
+			arrays: 'always-multiline',
+			objects: 'always-multiline',
+			imports: 'always-multiline',
+			exports: 'always-multiline',
+			functions: 'always-multiline',
 		}],
 
 		// enforce spacing before and after comma
@@ -57,8 +66,8 @@ module.exports = {
 				ObjectExpression: false,
 				ObjectPattern: false,
 				VariableDeclaration: false,
-				NewExpression: false
-			}
+				NewExpression: false,
+			},
 		}],
 
 		// disallow padding inside computed properties
@@ -78,7 +87,7 @@ module.exports = {
 		// assigned
 		// http://eslint.org/docs/rules/func-name-matching
 		'func-name-matching': ['off', 'always', {
-			includeCommonJSModuleExports: false
+			includeCommonJSModuleExports: false,
 		}],
 
 		// require function expressions to have a name
@@ -117,14 +126,14 @@ module.exports = {
 			// MemberExpression: null,
 			FunctionDeclaration: {
 				parameters: 1,
-				body: 1
+				body: 1,
 			},
 			FunctionExpression: {
 				parameters: 1,
-				body: 1
+				body: 1,
 			},
 			CallExpression: {
-				arguments: 1
+				arguments: 1,
 			},
 			ArrayExpression: 1,
 			ObjectExpression: 1,
@@ -144,9 +153,9 @@ module.exports = {
 				'JSXClosingElement',
 				'JSXText',
 				'JSXEmptyExpression',
-				'JSXSpreadChild'
+				'JSXSpreadChild',
 			],
-			ignoreComments: false
+			ignoreComments: false,
 		}],
 
 		// specify whether double or single quotes should be used in JSX attributes
@@ -163,8 +172,8 @@ module.exports = {
 			overrides: {
 				return: {after: true},
 				throw: {after: true},
-				case: {after: true}
-			}
+				case: {after: true},
+			},
 		}],
 
 		// enforce position of line comments
@@ -173,7 +182,7 @@ module.exports = {
 		'line-comment-position': ['off', {
 			position: 'above',
 			ignorePattern: '',
-			applyDefaultPatterns: true
+			applyDefaultPatterns: true,
 		}],
 
 		// disallow mixed 'LF' and 'CRLF' as linebreaks
@@ -191,7 +200,7 @@ module.exports = {
 		// http://eslint.org/docs/rules/lines-around-directive
 		'lines-around-directive': ['error', {
 			before: 'always',
-			after: 'always'
+			after: 'always',
 		}],
 
 		// specify the maximum depth that blocks can be nested
@@ -204,7 +213,7 @@ module.exports = {
 			ignoreComments: false,
 			ignoreRegExpLiterals: true,
 			ignoreStrings: true,
-			ignoreTemplateLiterals: true
+			ignoreTemplateLiterals: true,
 		}],
 
 		// specify the max number of lines in a file
@@ -212,7 +221,7 @@ module.exports = {
 		'max-lines': ['warn', {
 			max: 400,
 			skipBlankLines: true,
-			skipComments: true
+			skipComments: true,
 		}],
 
 		// enforce a maximum function length
@@ -221,7 +230,7 @@ module.exports = {
 			max: 50,
 			skipBlankLines: true,
 			skipComments: true,
-			IIFEs: true
+			IIFEs: true,
 		}],
 
 		// specify the maximum depth callbacks can be nested
@@ -251,7 +260,7 @@ module.exports = {
 			newIsCap: true,
 			newIsCapExceptions: [],
 			capIsNew: false,
-			capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List']
+			capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
 		}],
 
 		// disallow the omission of parentheses when invoking a constructor with no arguments
@@ -303,9 +312,9 @@ module.exports = {
 				['&', '|', '^', '~', '<<', '>>', '>>>'],
 				['==', '!=', '===', '!==', '>', '>=', '<', '<='],
 				['&&', '||'],
-				['in', 'instanceof']
+				['in', 'instanceof'],
 			],
-			allowSamePrecedence: false
+			allowSamePrecedence: false,
 		}],
 
 		// disallow mixed spaces and tabs for indentation
@@ -337,16 +346,16 @@ module.exports = {
 		'no-restricted-syntax': ['error',
 			{
 				selector: 'ForInStatement',
-				message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.'
+				message: 'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
 			},
 			{
 				selector: 'LabeledStatement',
-				message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.'
+				message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
 			},
 			{
 				selector: 'WithStatement',
-				message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.'
-			}
+				message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+			},
 		],
 
 		// disallow space between function identifier and application
@@ -361,7 +370,7 @@ module.exports = {
 		// disallow trailing whitespace at the end of lines
 		'no-trailing-spaces': ['error', {
 			skipBlankLines: false,
-			ignoreComments: false
+			ignoreComments: false,
 		}],
 
 		// disallow dangling underscores in identifiers
@@ -369,7 +378,7 @@ module.exports = {
 			allow: [],
 			allowAfterThis: false,
 			allowAfterSuper: false,
-			enforceInMethodNames: false
+			enforceInMethodNames: false,
 		}],
 
 		// disallow the use of Boolean literals in conditional expressions
@@ -395,13 +404,13 @@ module.exports = {
 			ObjectExpression: {minProperties: 4, multiline: true, consistent: true},
 			ObjectPattern: {minProperties: 4, multiline: true, consistent: true},
 			ImportDeclaration: {minProperties: 4, multiline: true, consistent: true},
-			ExportDeclaration: {minProperties: 4, multiline: true, consistent: true}
+			ExportDeclaration: {minProperties: 4, multiline: true, consistent: true},
 		}],
 
 		// enforce "same line" or "multiple line" on object properties.
 		// http://eslint.org/docs/rules/object-property-newline
 		'object-property-newline': ['error', {
-			allowMultiplePropertiesPerLine: true
+			allowMultiplePropertiesPerLine: true,
 		}],
 
 		// allow just one var statement per function
@@ -466,7 +475,7 @@ module.exports = {
 		'space-before-function-paren': ['error', {
 			anonymous: 'always',
 			named: 'never',
-			asyncArrow: 'always'
+			asyncArrow: 'always',
 		}],
 
 		// require or disallow spaces inside parentheses
@@ -480,7 +489,7 @@ module.exports = {
 		'space-unary-ops': ['error', {
 			words: true,
 			nonwords: false,
-			overrides: {}
+			overrides: {},
 		}],
 
 		// require or disallow a space immediately following the // or /* in a comment
@@ -488,13 +497,13 @@ module.exports = {
 		'spaced-comment': ['error', 'always', {
 			line: {
 				exceptions: ['-', '+'],
-				markers: ['=', '!'] // space here to support sprockets directives
+				markers: ['=', '!'], // space here to support sprockets directives
 			},
 			block: {
 				exceptions: ['-', '+'],
 				markers: ['=', '!'], // space here to support sprockets directives
-				balanced: true
-			}
+				balanced: true,
+			},
 		}],
 
 		// Require or disallow spacing between template tags and their literals
@@ -506,6 +515,6 @@ module.exports = {
 		'unicode-bom': ['error', 'never'],
 
 		// require regex literals to be wrapped in parentheses
-		'wrap-regex': 'off'
-	}
+		'wrap-regex': 'off',
+	},
 };

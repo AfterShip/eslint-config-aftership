@@ -9,9 +9,9 @@ module.exports = {
 		'./rules/style',
 		'./rules/variables'].map(require.resolve),
 	parserOptions: {
-		ecmaVersion: 2017,
+		ecmaVersion: 2018,
 		// we use require() instead of `import ... from ...`
-		sourceType: 'script'
+		sourceType: 'script',
 	},
-	rules: {}
+	rules: {},
 };

@@ -6,18 +6,18 @@ module.exports = {
 		'./rules/frontend'].map(require.resolve),
 	parser: 'babel-eslint',
 	env: {
-		node: false
+		node: false,
 	},
 	parserOptions: {
 		sourceType: 'module',
 		ecmaVersion: 2017,
 		ecmaFeatures: {
-			experimentalObjectRestSpread: true
-		}
+			experimentalObjectRestSpread: true,
+		},
 	},
 	rules: {
 		// this two doesn't work in vue
 		'import/no-named-as-default': 'off',
-		'import/no-named-as-default-member': 'off'
-	}
+		'import/no-named-as-default-member': 'off',
+	},
 };
