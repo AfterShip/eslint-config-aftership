@@ -13,14 +13,14 @@ AfterShip ESLint config (modified from eslint-config-airbnb)
 following [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript) commit [a12dec90d173464a3fc4e4536b8c6f639fb93236](https://github.com/airbnb/javascript/tree/a12dec90d173464a3fc4e4536b8c6f639fb93236)
 
 ## Rules that cannot be checked by ESLint (Backend only)
-* Use `snake_case` for files and folders
+* Use `camelCase` for files and folders if possible (exceptions could be made in some special cases)
 * Use `camelCase` when naming `functions`
 * Use `PascalCase` when naming `class variables`
-* Use `snake_case` when naming `variables`
+* Use `camelCase` when naming `variables`
 
-	`const name = 'John';`, `const email_address = 'john@gmail.com';`
+	`const name = 'John';`, `const emailAddress = 'john@gmail.com';`
 
-* Use `UPPERCASE` when naming `constant variables` but no need for `required module`
+* Use `SNAKE_UPPERCASE` when naming `constant variables` but no need for `required module`
 
 	`const USER = 'John';`, `const DEFAULT_EMAIL = 'john@gmail.com';`
 

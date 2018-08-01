@@ -61,19 +61,7 @@
 
 ### comma-dangle
 
-in backend projects, dont put tailing commas
-
-```
-'comma-dangle': ['error', {
-	arrays: 'ignore',
-	objects: 'ignore',
-	imports: 'ignore',
-	exports: 'ignore',
-	functions: 'ignore'
-}]
-```
-
-in frontend projects, always enable multi line array/object/function to have tailing comma, this is for better version control purpose
+in backend projects, always put tailing commas
 
 ```
 'comma-dangle': ['error', {
@@ -90,7 +78,7 @@ Example: http://eslint.org/docs/rules/comma-dangle
 ### no-console
 Allow `console`
 ```
-'no-console': 'off'
+'no-console': 'error'
 ```
 Example: http://eslint.org/docs/rules/no-console
 
@@ -300,7 +288,22 @@ camelcase: 'off'
 ```
 Example: http://eslint.org/docs/rules/camelcase
 
-We use snake case for backend projects
+When giving API responses, sometime we need to use snake_case variables to use object shorthand or object destruction
+
+e.g.
+
+```javascript
+ctx.request.body = {
+	first_name: 'John',
+	first_name: 'Doe',
+};
+
+const {first_name, last_name} = req.body;
+
+ctx.body = {
+	full_name: `${first_name} ${last_name}`
+}
+```
 
 For frontend projects, this options is set to 
 
