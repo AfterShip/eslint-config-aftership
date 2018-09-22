@@ -4,9 +4,6 @@ node_js:
   - "8"
 sudo: false
 
-notifications:
-  email:
-    - hans@aftership.com
 env:
   - CACHE_DIR=cache CXX=g++-4.8
 cache:
