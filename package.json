@@ -27,9 +27,9 @@
     "babel-eslint": "^8.2.6",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-html": "^4.0.5",
-    "eslint-plugin-import": "^2.13.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.10.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-vue": "^5.0.0-beta.1",
     "vue-eslint-parser": "3.2.2"
   },
@@ -37,11 +37,11 @@
     "eslint": "^5.0.0"
   },
   "devDependencies": {
-    "eslint": "^5.2.0",
-    "husky": "^0.14.3"
+    "eslint": "^5.10.0",
+    "husky": "^1.2.0"
   },
   "dependencies": {
-    "eslint-restricted-globals": "^0.1.1"
+    "eslint-restricted-globals": "^0.2.0"
   },
   "keywords": [
     "aftership",
