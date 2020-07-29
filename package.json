@@ -27,9 +27,9 @@
     "babel-eslint": "^8.2.6",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-html": "^4.0.5",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-vue": "^5.0.0-beta.1",
     "vue-eslint-parser": "4.0.3"
   },
@@ -38,7 +38,7 @@
   },
   "devDependencies": {
     "eslint": "^5.10.0",
-    "husky": "^1.2.0"
+    "husky": "^4.2.5"
   },
   "dependencies": {
     "eslint-restricted-globals": "^0.2.0"
