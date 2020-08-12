@@ -1,6 +1,8 @@
 # eslint-config-aftership
 
-!! NOTE this is for node >= v8 only, if your have a legacy project to maintain, or dont want to bother upgrade to the latest version, please see [v3 branch](https://github.com/AfterShip/eslint-config-aftership/tree/3.x), if you are upgrading to v5, please see [upgrade guide](https://github.com/AfterShip/eslint-config-aftership/blob/4.x/upgrade_guides/v3tov4.md), see all changes in [v4 shiplist](https://github.com/AfterShip/eslint-config-aftership/issues/13)
+This is for node 10 or above only.
+
+Please check legacy tags for previous version of node runtime support.
 
 [![Build Status](https://travis-ci.org/AfterShip/eslint-config-aftership.svg?branch=master)](https://travis-ci.org/AfterShip/eslint-config-aftership)
 [![node](https://img.shields.io/node/v/eslint-config-aftership.svg)]()
@@ -57,17 +59,17 @@ See [here](https://github.com/AfterShip/eslint-config-aftership/blob/master/why-
 
 ## Versioning
 
-### X.Y.Z
+We follow semver for the versioning strategy.
 
-X for the eslint major version
+Major version indicates the eslint major version
 
-Y for adding rules/options (more strict)
+Minor version indicates adding rules/options (more strict)
 
-Z for removing rules/options (more loose)
+Path version indicates removing rules/options (more loose)
 
 ## Installation
 
-as we support frontend and backend project at the same time, some framework specific plugins are declared in `optionalDependencies`, so you have install then at the project level.
+As we support frontend and backend project at the same time, please refer to the following guide for all optional dependencies.
 
 ### on your repository:
 - **If you are `AfterShip` member, `grunt-init-node` already installed it for you**
@@ -106,7 +108,7 @@ as we support frontend and backend project at the same time, some framework spec
 		If your repo is a **Vue** project using webpack, you should extends `aftership/vue`, and install additional packages
 
 		```sh
-		npm install eslint-plugin-html eslint-plugin-vue@3.3.0 babel-eslint vue-eslint-parser@1.1.0-7 eslint-import-resolver-webpack
+		npm install eslint-plugin-html eslint-plugin-vue babel-eslint vue-eslint-parser eslint-import-resolver-webpack
 		```
 
 		```json
@@ -198,10 +200,7 @@ as we support frontend and backend project at the same time, some framework spec
 		let g:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 		```
 
-## Known Issues
-- NA
-
 ## License
-Copyright (c) 2017 AfterShip
+Copyright (c) 2020 AfterShip
  
 Licensed under the MIT license.
