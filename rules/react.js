@@ -295,7 +295,7 @@ module.exports = {
 
 		// Disallow target="_blank" on links
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-target-blank.md
-		'react/jsx-no-target-blank': ['error', {enforceDynamicLinks: 'always'}],
+		'react/jsx-no-target-blank': ['error', {allowReferrer: true, enforceDynamicLinks: 'always'}],
 
 		// only .jsx files may have JSX
 		// https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-filename-extension.md
